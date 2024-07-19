@@ -1,21 +1,9 @@
- // script.js
-
-const questions = [
+ const questions = [
     { question: "Qual è il plurale di amica?", answers: ["amice", "amiche", "amici"], correct: "amiche" },
     { question: "Qual è il plurale di buona?", answers: ["buone", "buoni"], correct: "buone" },
-    { question: "Qual è il plurale di intelligente?", answers: ["intelligente", "intelligenti"], correct: "intelligenti" },
-    { question: "Qual è il plurale di lenta?", answers: ["lenti", "lente"], correct: "lente" },
-    { question: "Qual è il plurale di sporca?", answers: ["sporce", "sporche", "sporchi"], correct: "sporche" },
-    { question: "Qual è il plurale di cattiva?", answers: ["cattive", "cattivi"], correct: "cattive" },
-    { question: "Qual è il plurale di veloce?", answers: ["veloce", "veloci"], correct: "veloci" },
-    { question: "Qual è il plurale di improvvisa?", answers: ["improvvise", "improvvisi"], correct: "improvvise" },
-    { question: "Qual è il plurale di brava?", answers: ["brave", "bravi"], correct: "brave" },
-    { question: "Qual è il plurale di leggera?", answers: ["leggere", "leggeri"], correct: "leggere" },
-    { question: "Qual è il plurale di allegra?", answers: ["allegre", "allegri"], correct: "allegre" },
-    { question: "Qual è il plurale di triste?", answers: ["triste", "tristi"], correct: "tristi" },
-    { question: "Qual è il plurale di larga?", answers: ["larghe", "larghe"], correct: "larghe" },
-    { question: "Qual è il plurale di stretta?", answers: ["strette", "stretti"], correct: "strette" },
-    { question: "Qual è il plurale di bollente?", answers: ["bollenti", "bollente"], correct: "bollenti" }
+    { question: "Qual è il plurale di intelligente?", answers: ["intelligenti", "intelligenti"], correct: "intelligenti" },
+    { question: "Qual è il plurale di lenta?", answers: ["lente", "lente"], correct: "lente" },
+    { question: "Qual è il plurale di sporca?", answers: ["sporche", "sporche", "sporchi"], correct: "sporche" },
 ];
 
 const questionContainer = document.getElementById('question-container');
@@ -49,12 +37,15 @@ function showQuestion() {
     buttons.forEach((button, index) => {
         button.textContent = currentQuestion.answers[index];
         button.onclick = () => selectAnswer(button.textContent);
+        button.style.display = 'inline-block'; // Assicura che i pulsanti siano visibili
     });
 }
 
 function resetState() {
     questionContainer.style.display = 'block';
     feedbackContainer.style.display = 'none';
+    continueButton.style.display = 'none';
+    exitButton.style.display = 'none';
 }
 
 function selectAnswer(selectedAnswer) {
@@ -67,15 +58,14 @@ function selectAnswer(selectedAnswer) {
     }
     currentQuestionIndex++;
     if (currentQuestionIndex < 5 && currentQuestionIndex < questions.length) {
-        questionContainer.style.display = 'none';
-        feedbackContainer.style.display = 'block';
+        showQuestion();
     } else {
         endQuiz();
     }
 }
 
 function continueQuiz() {
-    if (currentQuestionIndex < 5) {
+    if (currentQuestionIndex < 5 && currentQuestionIndex < questions.length) {
         showQuestion();
     } else {
         endQuiz();
@@ -92,14 +82,14 @@ function exitQuiz() {
 
 function endQuiz() {
     questionContainer.style.display = 'none';
-    feedbackContainer.style.display = 'none';
+    feedbackContainer.style.display = 'block';
     const totalTime = Math.round((new Date() - startTime) / 1000);
     feedbackElement.textContent = `Hai risposto a ${score} domande corrette in ${totalTime} secondi. Vuoi giocare ancora?`;
     continueButton.style.display = 'inline-block';
     exitButton.style.display = 'inline-block';
 }
 
-continueButton.addEventListener('click', startQuiz);
+continueButton.addEventListener('click', continueQuiz);
 exitButton.addEventListener('click', exitQuiz);
 
 startQuiz();
