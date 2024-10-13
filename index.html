@@ -1,26 +1,151 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Sul Plurale femminile </title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Quiz Verbo Essere</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 5px;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>SITO IN COSTRUZIONE</h1>
-        <div id="question-container">
-            <p id="question"></p>
-            <button class="answer-button" id="btn1"></button>
-            <button class="answer-button" id="btn2"></button>
-            <button class="answer-button" id="btn3"></button>
-        </div>
-        <div id="feedback-container">
-            <p id="feedback"></p>
-            <button id="continue-button">Continua</button>
-            <button id="exit-button">Esci</button>
-        </div>
+
+    <h1>Quiz Verbo Essere</h1>
+    <p id="frase">Frase con verbo mancante</p>
+    
+    <div class="button-container" id="button-container">
+        <!-- I bottoni delle risposte saranno generati qui -->
     </div>
-    <script src="script.js"></script>
+    
+    <p id="message"></p>
+
+    <script>
+        const frasi = [
+            { frase: "Io xxx stanco", corretta: "sono", opzioni: ["sei", "è", "siamo"] },
+            { frase: "Tu xxx felice oggi", corretta: "sei", opzioni: ["è", "siamo", "sono"] },
+            { frase: "Lui xxx molto alto", corretta: "è", opzioni: ["sei", "sono", "siamo"] },
+            { frase: "Lei xxx la mia amica", corretta: "è", opzioni: ["sono", "siamo", "siete"] },
+            { frase: "Noi xxx al cinema", corretta: "siamo", opzioni: ["siete", "è", "sono"] },
+            { frase: "Voi xxx pronti per partire", corretta: "siete", opzioni: ["sono", "è", "siamo"] },
+            { frase: "Loro xxx stanchi", corretta: "sono", opzioni: ["è", "siamo", "siete"] },
+            { frase: "Io xxx contento del risultato", corretta: "sono", opzioni: ["sei", "è", "siamo"] },
+            { frase: "Tu xxx molto intelligente", corretta: "sei", opzioni: ["è", "siete", "siamo"] },
+            { frase: "Loro xxx in vacanza", corretta: "sono", opzioni: ["è", "siamo", "siete"] },
+            { frase: "Noi xxx molto felici", corretta: "siamo", opzioni: ["siete", "è", "sono"] },
+            { frase: "Voi xxx a casa stasera", corretta: "siete", opzioni: ["è", "siamo", "sono"] }
+        ];
+
+        let punteggio = 0;
+        let domandaCorrente = 0;
+        const numDomande = 5;
+        let startTime;
+        let fraseAttuale;
+
+        // Funzione per iniziare una nuova serie di domande
+        function iniziaGioco() {
+            punteggio = 0;
+            domandaCorrente = 0;
+            startTime = new Date();  // Memorizza l'orario di inizio
+            poniDomanda();
+        }
+
+        // Funzione che pone una nuova domanda
+        function poniDomanda() {
+            if (domandaCorrente < numDomande) {
+                domandaCorrente++;
+
+                // Seleziona una frase casuale (senza ripetizioni) e la rimuove dall'array delle frasi
+                fraseAttuale = frasi.splice(Math.floor(Math.random() * frasi.length), 1)[0];
+
+                // Mostra la frase con il verbo mancante
+                const fraseElemento = document.getElementById("frase");
+                fraseElemento.textContent = `Frase ${domandaCorrente}/${numDomande}: "${fraseAttuale.frase}"`;
+
+                // Combina la risposta corretta con le opzioni errate (evitando duplicati)
+                let risposte = [...fraseAttuale.opzioni, fraseAttuale.corretta];
+
+                // Mescola le opzioni
+                risposte = risposte.sort(() => Math.random() - 0.5);
+
+                // Genera i bottoni delle risposte
+                const buttonContainer = document.getElementById("button-container");
+                buttonContainer.innerHTML = ''; // Pulisce i bottoni precedenti
+                risposte.forEach(risposta => {
+                    const button = document.createElement("button");
+                    button.textContent = risposta;
+                    button.onclick = () => controllaRisposta(risposta, fraseAttuale.corretta);
+                    buttonContainer.appendChild(button);
+                });
+
+                document.getElementById("message").textContent = '';
+            } else {
+                mostraRisultato();
+            }
+        }
+
+        // Funzione per controllare la risposta
+        function controllaRisposta(risposta, corretta) {
+            const message = document.getElementById("message");
+            if (risposta === corretta) {
+                punteggio++;
+                message.textContent = "Risposta corretta!";
+                message.style.color = "green";
+                setTimeout(poniDomanda, 1000); // Procede alla prossima domanda
+            } else {
+                message.textContent = "Risposta sbagliata! Riprova.";
+                message.style.color = "red";
+            }
+        }
+
+        // Funzione per mostrare il risultato finale e chiedere se continuare
+        function mostraRisultato() {
+            const buttonContainer = document.getElementById("button-container");
+            buttonContainer.innerHTML = ''; // Pulisce i bottoni precedenti
+            
+            const endTime = new Date();
+            const tempoImpiegato = Math.floor((endTime - startTime) / 1000);  // Calcola il tempo impiegato in secondi
+
+            document.getElementById("frase").textContent = `Hai completato il quiz! Tempo: ${tempoImpiegato} secondi.`;
+
+            const message = document.getElementById("message");
+            message.textContent = "Vuoi giocare ancora?";
+            message.style.color = "blue";
+
+            // Crea i bottoni "Sì" e "No" per continuare o terminare il gioco
+            const btnSi = document.createElement("button");
+            btnSi.textContent = "Sì";
+            btnSi.onclick = iniziaGioco;
+            buttonContainer.appendChild(btnSi);
+
+            const btnNo = document.createElement("button");
+            btnNo.textContent = "No";
+            btnNo.onclick = () => {
+                message.textContent = "Grazie per aver giocato!";
+                buttonContainer.innerHTML = ''; // Rimuove i bottoni
+            };
+            buttonContainer.appendChild(btnNo);
+        }
+
+        // Inizia il gioco alla prima apertura della pagina
+        iniziaGioco();
+    </script>
+
 </body>
 </html>
+
