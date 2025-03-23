@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Didattico - Menù</title>
+    <style>
+        h1 {font-size: 60px; color:rgba(255, 0, 64, 0.925);}
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+           
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 30px;
+            margin: 40px auto;
+            cursor: pointer;
+            display: block;
+            margin-bottom: 10px;
+            text-align: center;
+        
+        }
+        p {font-size: 40px;}
+
+    </style>
+</head>
+<body>
+    <h1>Quiz di grammatica</h1>
+    <div id="argomenti">
+        <p> Scegli l'argomento:</p>
+        
+        <button onclick="seleziona('essere')">Presente indicativo del verbo Essere</button>
+        <button onclick="seleziona('avere')">Presente indicativo del verbo Avere</button>
+        <button onclick="seleziona('ausiliari')">Presente indicativo Ausiliari (Essere e Avere)</button>
+        <button onclick="seleziona('artDet')">Articoli determinativi</button>
+        <button onclick="seleziona('artIndet')">Articoli indeterminativi</button>
+        <button onclick="seleziona('preposizioni')">Preposizioni</button>
+    </div>
+
+    <p id="livello" style="display: none;">Scegli la modalità:</p>
+    <div id="scelta-livello" style="display: none;">
+        <button onclick="caricaLivello('bottoni')">Livello1(Bottoni)</button>
+        <button onclick="caricaLivello('input')">Livello2(Input)</button>
+    </div>
+
+    <script>
+        let argomento = "";
+
+        function seleziona(scelta) {
+            document.getElementById('argomenti').style.display = 'none';
+            argomento = scelta;
+            document.getElementById("livello").style.display = "block";
+            document.getElementById("scelta-livello").style.display = "block";
+        }
+
+        function caricaLivello(livello) {
+            // Reindirizza alla pagina corrispondente passando argomento e livello come parametri
+            window.location.href = `base_${livello}.html?argomento=${argomento}`;
+        }
+
+    </script>
+</body>
+</html>
