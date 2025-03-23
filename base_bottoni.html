@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Modalità Bottoni</title>
+    <style>
+        h1{
+            font-size:50px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 30px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #message {
+            margin-top: 40px;
+            font-size: 40px;
+        }
+        #bottoni-continuazione {
+            margin-top: 20px;
+        }
+        #frase {
+
+        }
+    </style>
+</head>
+<body>
+    <h1 id= "titolo_quiz">Quiz - Livello 1</h1>
+    <p id="frase">Caricamento...</p>
+    <div id="bottoni-risposte"></div>
+    <p id="message"></p>
+    <p id="message1"></p>
+
+    <div id="bottoni-continuazione"></div>
+
+    <!-- Importa i dati dal file dati.js -->
+    <script src="dati.js"></script>
+
+    <script>
+        class Quiz {
+            constructor(argomento) {
+                this.argomento = argomento;
+                document.getElementById("titolo_quiz").innerHTML = "Quiz su:  " + argomento.charAt(0).toUpperCase() + argomento.slice(1)+ "<br>- Indicativo presente <br>Livello 1";
+                this.domande = dati[this.argomento]; // Accede ai dati definiti in dati.js
+                this.domandeSelezionate = []; // Array per le 5 frasi selezionate casualmente
+                this.domandaCorrente = 0;
+                this.inizioTempo = null; // Per il calcolo del tempo impiegato
+            }
+
+            caricaDati() {
+                this.inizioTempo = new Date(); // Registra l'ora di inizio
+
+                // Seleziona 5 frasi casuali
+                this.domandeSelezionate = this.domande.sort(() => Math.random() - 0.5).slice(0, 5);
+
+                // Ripulisce il messaggio e i bottoni "Sì" e "No"
+                document.getElementById("message").textContent = "";
+                document.getElementById("message1").textContent = "";
+                document.getElementById("bottoni-continuazione").innerHTML = "";
+
+                this.poniDomanda(); // Carica la prima domanda
+            }
+
+            poniDomanda() {
+                if (this.domandaCorrente < this.domandeSelezionate.length) {
+                    const domanda = this.domandeSelezionate[this.domandaCorrente];
+                    document.getElementById("frase").textContent = domanda.frase;
+                    document.getElementById("frase").style.fontSize = "40px"; 
+                    
+
+                    const risposteContainer = document.getElementById("bottoni-risposte");
+                    risposteContainer.innerHTML = ""; // Pulisce le risposte precedenti
+
+                    // Combina la risposta corretta con quelle distrattive e mescola l'array
+                    const risposte = [...domanda.risposte];
+                    const randomIndex = Math.floor(Math.random() * domanda.risposte.length);
+                    [risposte[0], risposte[randomIndex]] = [risposte[randomIndex], risposte[0]];
+
+                    // Crea i bottoni per le risposte
+                    risposte.forEach(risposta => {
+                        const bottone = document.createElement("button");
+                        bottone.textContent = risposta;
+                        bottone.onclick = () => this.controllaRisposta(risposta, domanda.corretta);
+                        risposteContainer.appendChild(bottone);
+                    });
+                } else {
+                    this.mostraRisultato();
+                }
+            }
+
+            controllaRisposta(risposta, corretta) {
+                const message = document.getElementById("message");
+
+                if (corretta.includes (risposta)) {
+                    message.textContent = "Risposta corretta!";
+                    message.style.color = "green";
+
+                    // Dopo un breve intervallo, pulisci il messaggio e passa alla prossima domanda
+                    setTimeout(() => {
+                        message.textContent = ""; // Pulisce il feedback
+                        this.domandaCorrente++;
+                        this.poniDomanda();
+                    }, 1000);
+                } else {
+                    message.textContent = "Risposta sbagliata! Riprova.";
+                    message.style.color = "red";
+
+                    // Dopo un breve intervallo, pulisci il messaggio
+                    setTimeout(() => {
+                        message.textContent = ""; // Pulisce il feedback
+                    }, 1000);
+                }
+            }
+
+            mostraRisultato() {
+                const tempoFine = new Date(); // Registra l'ora di fine
+                const tempoImpiegato = Math.round((tempoFine - this.inizioTempo) / 1000); // Calcola tempo in secondi
+
+                document.getElementById("frase").textContent = "Hai completato il quiz!";
+                document.getElementById("frase").style.fontSize = "30px";
+                document.getElementById("bottoni-risposte").innerHTML = "";
+
+                const message = document.getElementById("message");
+                const message1 = document.getElementById("message1");
+                message.textContent = `Tempo impiegato: ${tempoImpiegato} secondi. `;
+                message.style.color = "red";
+                message.style.fontSize = "30px";
+                message1.textContent="Vuoi continuare?";
+                message1.style.color = "blue";
+                message1.style.fontSize = "30px";
+
+                const bottoniContainer = document.getElementById("bottoni-continuazione");
+
+                // Pulsante "Sì"
+                const bottoneSi = document.createElement("button");
+                bottoneSi.textContent = "Sì";
+                bottoneSi.onclick = () => {
+                    this.domandaCorrente = 0; // Resetta il contatore
+                    this.caricaDati(); // Ricomincia il quiz
+                };
+                bottoniContainer.appendChild(bottoneSi);
+
+                // Pulsante "No"
+                const bottoneNo = document.createElement("button");
+                bottoneNo.textContent = "No";
+                bottoneNo.onclick = () => {
+                    message.textContent = "Ciao! Alla prossima.";
+                    message1.textContent ="";
+                    bottoniContainer.innerHTML = ""; // Rimuove i bottoni
+                };
+                bottoniContainer.appendChild(bottoneNo);
+            }
+        }
+
+        // Legge l'argomento dai parametri URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const argomento = urlParams.get("argomento");
+
+        // Inizializza il quiz con l'argomento selezionato
+        const quiz = new Quiz(argomento);
+        quiz.caricaDati();
+    </script>
+</body>
+</html>
