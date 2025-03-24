@@ -58,7 +58,7 @@
                 this.inizioTempo = new Date(); // Registra l'ora di inizio
 
                 // Seleziona 5 frasi casuali
-                this.domandeSelezionate = this.domande.sort(() => Math.random() - 0.8).slice(0, 5);
+                this.domandeSelezionate = this.domande.sort(() => Math.random() - 0.5).slice(0, 8);
 
                 // Ripulisce il messaggio e i bottoni "Sì" e "No"
                 document.getElementById("message").textContent = "";
