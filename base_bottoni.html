@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -6,8 +6,9 @@
     <title>Quiz - Modalità Bottoni</title>
     <style>
         h1{
-            font-size:30px;
+            font-size:50px; color: rgb(195, 0, 255); text-align: center;
         }
+        
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -18,6 +19,7 @@
             font-size: 30px;
             margin: 10px;
             cursor: pointer;
+            text-align: center;
         }
         #message {
             margin-top: 40px;
@@ -47,7 +49,7 @@
         class Quiz {
             constructor(argomento) {
                 this.argomento = argomento;
-                document.getElementById("titolo_quiz").innerHTML = "Quiz su:  " + argomento.charAt(0).toUpperCase() + argomento.slice(1)+ "<br>- Indicativo presente <br>Livello 1";
+                document.getElementById("titolo_quiz").innerHTML = "Quiz su:  " + argomento.charAt(0).toUpperCase() + argomento.slice(1)+ "<br> Indicativo presente <br>Livello 1";
                 this.domande = dati[this.argomento]; // Accede ai dati definiti in dati.js
                 this.domandeSelezionate = []; // Array per le 5 frasi selezionate casualmente
                 this.domandaCorrente = 0;
