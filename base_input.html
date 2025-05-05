@@ -91,7 +91,7 @@
                 const domanda = this.domandeSelezionate[this.domandaCorrente];
                 const message = document.getElementById("message");
 
-                if (rispostaInserita.toLowerCase() === domanda.corretta.toLowerCase()) {
+                if (rispostaInserita.toLowerCase() === domanda.corretta) {
                     message.textContent = "Risposta corretta!";
                     message.style.color = "green";
                     this.erroriConsecutivi = 0;
