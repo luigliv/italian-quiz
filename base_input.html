@@ -85,21 +85,30 @@
                     this.mostraRisultato();
                 }
             }
-
-            controllaRisposta() {
-                const rispostaInserita = document.getElementById("risposta").value.trim();
+             controllaRisposta() {
+                const rispostaInserita = document.getElementById("risposta").value.trim().toLowerCase();
                 const domanda = this.domandeSelezionate[this.domandaCorrente];
                 const message = document.getElementById("message");
-
-                if (rispostaInserita.toLowerCase() === domanda.corretta) {
+            
+                const risposteCorrette = domanda.corretta.map(r => r.toLowerCase());
+            
+                if (risposteCorrette.includes(rispostaInserita)) {
                     message.textContent = "Risposta corretta!";
                     message.style.color = "green";
                     this.erroriConsecutivi = 0;
-
+            
                     setTimeout(() => {
                         this.domandaCorrente++;
                         this.poniDomanda();
                     }, 1000);
+    } else {
+        message.textContent = "Risposta sbagliata. Riprova.";
+        message.style.color = "red";
+        this.erroriConsecutivi++;
+
+        // (Gestione errori aggiuntiva, se presente)
+    }
+}
                 } else {
                     this.erroriConsecutivi++;
                     message.textContent = "Risposta sbagliata! Riprova.";
