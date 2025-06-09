@@ -1,111 +1,164 @@
-
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quiz Didattico – Menù</title>
-  <style>
-    h1 { font-size: 60px; color: rgba(102, 78, 84, 0.925); padding-left: 100px; }
-    body {
-      font-family: Arial, sans-serif;
-      text-align: left;
-      margin-top: 50px;
-    }
-    p { font-size: 40px; padding-left: 100px; }
-    ol { padding-left: 100px; }
-    li { margin: 10px 0; }
-    a {
-      font-size: 25px;
-      color: blue;
-      text-decoration: underline;
-    }
-    a:hover {
-      background-color: darkblue;
-      color: white;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 30px;
-      margin: 40px auto;
-      cursor: pointer;
-      display: block;
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Livello 1</title>
+    <style>
+        h1 {
+            font-size: 40px;
+            color: rgb(255, 0, 64);
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 22px;
+        }
+        .bottone-risposta {
+            padding: 10px 20px;
+            font-size: 24px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 28px;
+        }
+    </style>
 </head>
 <body>
-  <h1>Quiz di grammatica</h1>
+    <h1 id="titolo_quiz">Caricamento...</h1>
+    <p id="frase" style="font-size: 36px;">Caricamento...</p>
+    <div id="bottoni-risposte"></div>
+    <p id="message"></p>
+    <div id="bottoni-continuazione"></div>
 
-  <div id="argomenti">
-    <p>Scegli l'argomento:</p>
-    <ol>
-            <li><a href="#" onclick="seleziona('Verbo%20Essere.%20Presente%20indicativo'); return false;">Presente indicativo del verbo Essere</a></li>
-            <li><a href="#" onclick="seleziona('Verbo%20Avere.%20Presente%20indicativo'); return false;">Presente indicativo del verbo Avere</a></li>
-            <li><a href="#" onclick="seleziona( 'Participio%20passato'); return false;"> Participio passato</a></li>
-            <li><a href="#" onclick="seleziona( 'Passato%20prossimo'); return false;"> Passato prossimo</a></li>
-            <li><a href="#" onclick="seleziona('Articoli%20Determinativi'); return false;">Articoli determinativi</a></li>
-            <li><a href="#" onclick="seleziona('Articoli%20Indeterminativi'); return false;">Articoli indeterminativi</a></li>
-            <li><a href="#" onclick="seleziona('preposizioni'); return false;">Preposizioni</a></li>
-            <li><a href="#" onclick="seleziona('verbi'); return false;">
-                    Verbi regolari (Bottoni / Input)
-                </a>
-            </li>
-            <li>
-                <a href="#" onclick="seleziona('verbi_irregolari'); return false;">
-                    Verbi irregolari (Bottoni / Input)
-                </a>
-            </li>
-    </ol>
-  </div>
+    <script src="dati.js"></script>
+    <script>
+        class Quiz {
+            constructor(argomento) {
+                this.argomento = argomento;
 
-  <p id="livello" style="display: none;">Scegli la modalità:</p>
-  <div id="scelta-livello" style="display: none;">
-    <button onclick="caricaLivello('bottoni')">Livello 1 (Bottoni)</button>
-    <button onclick="caricaLivello('input')">Livello 2 (Input)</button>
-  </div>
+                // FORMATTAZIONE DEL TITOLO SU DUE RIGHE
+                const parole = argomento.split(" ");
+                let titoloFormattato;
+                if (parole.length >= 2) {
+                    titoloFormattato = parole.slice(0, 2).join(" ") + "<br>" + parole.slice(2).join(" ");
+                } else {
+                    titoloFormattato = argomento;
+                }
+                document.getElementById("titolo_quiz").innerHTML =
+                    "Quiz su:<br><strong>" + titoloFormattato + "</strong><br>Livello 1";
 
-  <script>
-    let argomento = "";
-
-    function seleziona(scelta) {
-      argomento = scelta;
-      // Nascondi la lista dei link
-      document.getElementById("argomenti").style.display = "none";
-      // Mostra la selezione del livello (o, per “verbi”, può saltare direttamente a verbi.html)
-      document.getElementById("livello").style.display = "block";
-      document.getElementById("scelta-livello").style.display = "block";
-    }
-
-    function caricaLivello(livello) {
-      // Se l'argomento selezionato è "verbi", apri direttamente il quiz dei verbi
-      if (argomento === "verbi") {
-        // Se hai un unico file che gestisce sia Bottoni che Input, puoi rimandare a un diverso URL.
-        // Per esempio:
-        //   - “verbi_bottoni.html” per livello 1,
-        //   - “verbi_input.html” per livello 2.
-        //
-        // In questo esempio ipotizziamo che:
-        //   Livello 1 (Bottoni) → verbi_bottoni.html
-        //   Livello 2 (Input)    → verbi_input.html
-        //
-        if (livello === "bottoni") {
-          window.location.href = "verbi_bottoni.html";
-        } else {
-          window.location.href = "verbi_input.html";
-        }
-         } else if (argomento === "verbi_irregolari") {
-            if (livello === "bottoni") {
-                window.location.href = "verbi_irregolari_bottoni.html";
-             } else {
-                window.location.href = "verbi_irregolari_input.html";
+                this.domande = dati[this.argomento];
+                this.domandeSelezionate = [];
+                this.domandaCorrente = 0;
             }
-      }
-      else {
-        // Per tutti gli altri argomenti, usa il vecchio schema base_<livello>.html?argomento=...
-        window.location.href = `base_${livello}.html?argomento=${argomento}`;
-      }
-    }
-  </script>
+
+            // Fisher–Yates shuffle
+            shuffle(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+
+            caricaDati() {
+                document.getElementById("bottoni-continuazione").innerHTML = "";
+
+                // seleziona 8 domande a caso
+                this.domandeSelezionate = this.domande
+                    .sort(() => Math.random() - 0.5)
+                    .slice(0, 8);
+                this.domandaCorrente = 0;
+                this.poniDomanda();
+            }
+
+            poniDomanda() {
+                const domanda = this.domandeSelezionate[this.domandaCorrente];
+                document.getElementById("frase").textContent = domanda.frase;
+
+                // crea una copia delle risposte e mescolala
+                const risposteMescolate = this.shuffle([...domanda.risposte]);
+
+                const container = document.getElementById("bottoni-risposte");
+                container.innerHTML = "";
+
+                risposteMescolate.forEach(risposta => {
+                    const bottone = document.createElement("button");
+                    bottone.textContent = risposta;
+                    bottone.className = "bottone-risposta";
+                    bottone.onclick = () => this.controllaRisposta(risposta);
+                    container.appendChild(bottone);
+                });
+
+                document.getElementById("message").textContent = "";
+            }
+
+            controllaRisposta(rispostaUtente) {
+                const domanda = this.domandeSelezionate[this.domandaCorrente];
+                const corrette = domanda.corretta;
+
+                const message = document.getElementById("message");
+
+                if (corrette.includes(rispostaUtente)) {
+                    message.textContent = "Risposta corretta!";
+                    message.style.color = "green";
+
+                    setTimeout(() => {
+                        this.domandaCorrente++;
+                        if (this.domandaCorrente < this.domandeSelezionate.length) {
+                            this.poniDomanda();
+                        } else {
+                            this.mostraRisultato();
+                        }
+                    }, 1000);
+                } else {
+                    message.textContent = "Risposta sbagliata! Riprova.";
+                    message.style.color = "red";
+                }
+            }
+
+            mostraRisultato() {
+                document.getElementById("frase").textContent = "Hai completato il quiz!";
+                document.getElementById("bottoni-risposte").innerHTML = "";
+
+                const message = document.getElementById("message");
+                message.innerHTML = "Vuoi continuare?";
+
+                const bottoniContainer = document.getElementById("bottoni-continuazione");
+                bottoniContainer.innerHTML = "";
+
+                const bottoneSi = document.createElement("button");
+                bottoneSi.textContent = "Sì";
+                bottoneSi.className = "bottone-risposta";
+                bottoneSi.onclick = () => {
+                    this.caricaDati();
+                };
+
+                const bottoneNo = document.createElement("button");
+                bottoneNo.textContent = "No";
+                bottoneNo.className = "bottone-risposta";
+                bottoneNo.onclick = () => {
+                    message.textContent = "Ciao! Alla prossima.";
+                    bottoniContainer.innerHTML = "";
+                };
+
+                bottoniContainer.appendChild(bottoneSi);
+                bottoniContainer.appendChild(bottoneNo);
+            }
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const argomento = urlParams.get("argomento");
+        const quiz = new Quiz(argomento);
+
+        window.onload = () => {
+            quiz.caricaDati();
+        };
+    </script>
 </body>
 </html>
+
