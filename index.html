@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -6,7 +6,7 @@
   <title>Quiz Didattico – Menù</title>
   <style>
     h1 {
-      font-size: 35px;
+      font-size: 6vw;
       color: rgba(102, 78, 84, 0.925);
       padding-left: 20px;
     }
@@ -18,7 +18,7 @@
     }
 
     p {
-      font-size: 27px;
+      font-size: 5vw;
       padding-left: 20px;
     }
 
@@ -31,7 +31,7 @@
     }
 
     a {
-      font-size: 27px;
+      font-size: 5vw;
       color: blue;
       text-decoration: underline;
     }
@@ -43,16 +43,24 @@
 
     button {
       padding: 10px 20px;
-      font-size: 20px;
+      font-size: 4.5vw;
       text-align: left;
       cursor: pointer;
     }
 
     #scelta-livello {
       display: flex;
+      flex-direction: column;
       gap: 20px;
       padding-left: 20px;
       margin-top: 10px;
+    }
+
+    /* Per schermi grandi (es. desktop) si applicano font fissi */
+    @media (min-width: 800px) {
+      h1 { font-size: 35px; }
+      p, a { font-size: 27px; }
+      button { font-size: 20px; }
     }
   </style>
 </head>
@@ -96,17 +104,9 @@
 
     function caricaLivello(livello) {
       if (argomento === "verbi") {
-        if (livello === "bottoni") {
-          window.location.href = "verbi_bottoni.html";
-        } else {
-          window.location.href = "verbi_input.html";
-        }
+        window.location.href = livello === "bottoni" ? "verbi_bottoni.html" : "verbi_input.html";
       } else if (argomento === "verbi_irregolari") {
-        if (livello === "bottoni") {
-          window.location.href = "verbi_irregolari_bottoni.html";
-        } else {
-          window.location.href = "verbi_irregolari_input.html";
-        }
+        window.location.href = livello === "bottoni" ? "verbi_irregolari_bottoni.html" : "verbi_irregolari_input.html";
       } else {
         window.location.href = `base_${livello}.html?argomento=${argomento}`;
       }
@@ -114,6 +114,7 @@
   </script>
 </body>
 </html>
+
  
 
 
