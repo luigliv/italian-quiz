@@ -5,40 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quiz Didattico – Menù</title>
   <style>
-    h1 { font-size: 35px; color: rgba(102, 78, 84, 0.925); padding-left: 20px; }
+    h1 {
+      font-size: 35px;
+      color: rgba(102, 78, 84, 0.925);
+      padding-left: 20px;
+    }
+
     body {
       font-family: Arial, sans-serif;
       text-align: left;
       margin-top: 50px;
     }
-    p { font-size: 27px; padding-left: 20px; }
-    ol { padding-left: 20px; }
-    li { margin: 10px 0; }
+
+    p {
+      font-size: 27px;
+      padding-left: 20px;
+    }
+
+    ol {
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
     a {
-      font-size: 15px;
+      font-size: 27px;
       color: blue;
       text-decoration: underline;
     }
+
     a:hover {
       background-color: darkblue;
       color: white;
     }
+
     button {
       padding: 10px 20px;
       font-size: 20px;
-      margin: left;
-      cursor: pointer;
-       
       text-align: left;
+      cursor: pointer;
     }
- #scelta-livello {
-  display: flex;
-  gap: 20px;              /* distanza tra i bottoni */
-  padding-left: 20px;     /* allineamento con il testo */
-  margin-top: 10px;
-}
 
-
+    #scelta-livello {
+      display: flex;
+      gap: 20px;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -47,25 +62,19 @@
   <div id="argomenti">
     <p>Scegli l'argomento:</p>
     <ol>
-            <li><a href="#" onclick="seleziona('Verbo%20Essere.%20Presente%20indicativo'); return false;">Presente indicativo del verbo Essere</a></li>
-            <li><a href="#" onclick="seleziona('Verbo%20Avere.%20Presente%20indicativo'); return false;">Presente indicativo del verbo Avere</a></li>
-            <li><a href="#" onclick="seleziona( 'Participio%20passato'); return false;"> Participio passato</a></li>
-            <li><a href="#" onclick="seleziona( 'Passato%20prossimo'); return false;"> Passato prossimo</a></li>
-            <li><a href="#" onclick="seleziona('Articoli%20Determinativi'); return false;">Articoli determinativi</a></li>
-            <li><a href="#" onclick="seleziona('Articoli%20Indeterminativi'); return false;">Articoli indeterminativi</a></li>
-            <li><a href="#" onclick="seleziona('preposizioni'); return false;">Preposizioni</a></li>
-            <li><a href="#" onclick="seleziona('verbi'); return false;">
-                    Verbi regolari (Bottoni / Input)
-                </a>
-            </li>
-            <li>
-                <a href="#" onclick="seleziona('verbi_irregolari'); return false;">
-                    Verbi irregolari (Bottoni / Input)
-                </a>
-            </li>
+      <li><a href="#" onclick="seleziona('Verbo%20Essere.%20Presente%20indicativo'); return false;">Presente indicativo del verbo Essere</a></li>
+      <li><a href="#" onclick="seleziona('Verbo%20Avere.%20Presente%20indicativo'); return false;">Presente indicativo del verbo Avere</a></li>
+      <li><a href="#" onclick="seleziona('Participio%20passato'); return false;">Participio passato</a></li>
+      <li><a href="#" onclick="seleziona('Passato%20prossimo'); return false;">Passato prossimo</a></li>
+      <li><a href="#" onclick="seleziona('Articoli%20Determinativi'); return false;">Articoli determinativi</a></li>
+      <li><a href="#" onclick="seleziona('Articoli%20Indeterminativi'); return false;">Articoli indeterminativi</a></li>
+      <li><a href="#" onclick="seleziona('preposizioni'); return false;">Preposizioni</a></li>
+      <li><a href="#" onclick="seleziona('verbi'); return false;">Verbi regolari (Bottoni / Input)</a></li>
+      <li><a href="#" onclick="seleziona('verbi_irregolari'); return false;">Verbi irregolari (Bottoni / Input)</a></li>
     </ol>
   </div>
-<p id="argomento-scelto" style="display: none; font-weight: bold; font-size: 24px; padding-left: 20px;"></p>
+
+  <p id="argomento-scelto" style="display: none; font-weight: bold; font-size: 24px; padding-left: 20px;"></p>
 
   <p id="livello" style="display: none;">Scegli la modalità:</p>
   <div id="scelta-livello" style="display: none;">
@@ -78,47 +87,33 @@
 
     function seleziona(scelta) {
       argomento = scelta;
-      // Nascondi la lista dei link
       document.getElementById("argomenti").style.display = "none";
       document.getElementById("argomento-scelto").textContent = "Hai scelto: " + scelta.replaceAll("%20", " ");
-    document.getElementById("argomento-scelto").style.display = "block";
-
-      // Mostra la selezione del livello (o, per “verbi”, può saltare direttamente a verbi.html)
+      document.getElementById("argomento-scelto").style.display = "block";
       document.getElementById("livello").style.display = "block";
       document.getElementById("scelta-livello").style.display = "block";
     }
 
     function caricaLivello(livello) {
-      // Se l'argomento selezionato è "verbi", apri direttamente il quiz dei verbi
       if (argomento === "verbi") {
-        // Se hai un unico file che gestisce sia Bottoni che Input, puoi rimandare a un diverso URL.
-        // Per esempio:
-        //   - “verbi_bottoni.html” per livello 1,
-        //   - “verbi_input.html” per livello 2.
-        //
-        // In questo esempio ipotizziamo che:
-        //   Livello 1 (Bottoni) → verbi_bottoni.html
-        //   Livello 2 (Input)    → verbi_input.html
-        //
         if (livello === "bottoni") {
           window.location.href = "verbi_bottoni.html";
         } else {
           window.location.href = "verbi_input.html";
         }
-         } else if (argomento === "verbi_irregolari") {
-            if (livello === "bottoni") {
-                window.location.href = "verbi_irregolari_bottoni.html";
-             } else {
-                window.location.href = "verbi_irregolari_input.html";
-            }
-      }
-      else {
-        // Per tutti gli altri argomenti, usa il vecchio schema base_<livello>.html?argomento=...
+      } else if (argomento === "verbi_irregolari") {
+        if (livello === "bottoni") {
+          window.location.href = "verbi_irregolari_bottoni.html";
+        } else {
+          window.location.href = "verbi_irregolari_input.html";
+        }
+      } else {
         window.location.href = `base_${livello}.html?argomento=${argomento}`;
       }
     }
   </script>
 </body>
-</html> 
+</html>
+ 
 
 
