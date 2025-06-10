@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -25,12 +25,20 @@
     }
     button {
       padding: 10px 20px;
-      font-size: 30px;
-      margin: 40px auto;
+      font-size: 20px;
+      margin: left;
       cursor: pointer;
-      display: block;
-      text-align: center;
+       
+      text-align: left;
     }
+ #scelta-livello {
+  display: flex;
+  gap: 20px;              /* distanza tra i bottoni */
+  padding-left: 20px;     /* allineamento con il testo */
+  margin-top: 10px;
+}
+
+
   </style>
 </head>
 <body>
@@ -57,6 +65,7 @@
             </li>
     </ol>
   </div>
+<p id="argomento-scelto" style="display: none; font-weight: bold; font-size: 24px; padding-left: 20px;"></p>
 
   <p id="livello" style="display: none;">Scegli la modalità:</p>
   <div id="scelta-livello" style="display: none;">
@@ -71,6 +80,9 @@
       argomento = scelta;
       // Nascondi la lista dei link
       document.getElementById("argomenti").style.display = "none";
+      document.getElementById("argomento-scelto").textContent = "Hai scelto: " + scelta.replaceAll("%20", " ");
+    document.getElementById("argomento-scelto").style.display = "block";
+
       // Mostra la selezione del livello (o, per “verbi”, può saltare direttamente a verbi.html)
       document.getElementById("livello").style.display = "block";
       document.getElementById("scelta-livello").style.display = "block";
@@ -107,5 +119,6 @@
     }
   </script>
 </body>
-</html>
+</html> 
+
 
