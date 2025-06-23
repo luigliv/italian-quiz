@@ -6,30 +6,58 @@
     <title>Quiz - Livello 1</title>
     <style>
         h1 {
-            font-size: 30px;
+            font-size: 35px;
             color: rgb(255, 0, 64);
         }
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 30px;
-            font-size: 22px;
+            font-size: 18px;
+        #titolo-quiz {
+  line-height: 1.2;
+}
         }
         .bottone-risposta {
             padding: 10px 20px;
-            font-size: 24px;
+            font-size: 18px;
             margin: 10px;
             cursor: pointer;
         }
         #message {
             margin-top: 20px;
-            font-size: 28px;
+            font-size: 20px;
+        }
+        #descrizione {
+            font-style: italic;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+        #frase {font-size: 20px;}
+        
+        #torna-menu {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #f0f0f0;
+            padding: 10px 15px;
+            border: 1px solid #aaa;
+            border-radius: 8px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        #torna-menu:hover {
+            background-color: #e0e0e0;
         }
     </style>
 </head>
 <body>
     <h1 id="titolo_quiz">Caricamento...</h1>
-    <p id="frase" style="font-size: 36px;">Caricamento...</p>
+    <p id="descrizione">Caricamento descrizione...</p>
+    <p id="frase" >Caricamento frase...</p>
     <div id="bottoni-risposte"></div>
     <p id="message"></p>
     <div id="bottoni-continuazione"></div>
@@ -39,24 +67,30 @@
         class Quiz {
             constructor(argomento) {
                 this.argomento = argomento;
+                const sezione = dati[this.argomento];
 
-                // FORMATTAZIONE DEL TITOLO SU DUE RIGHE
-                const parole = argomento.split(" ");
-                let titoloFormattato;
-                if (parole.length >= 2) {
-                    titoloFormattato = parole.slice(0, 2).join(" ") + "<br>" + parole.slice(2).join(" ");
-                } else {
-                    titoloFormattato = argomento;
+                if (!sezione || !Array.isArray(sezione.domande)) {
+                    alert("Errore: argomento non valido o dati mancanti.");
+                    document.body.innerHTML = "<h2>Dati non disponibili per questo argomento.</h2><a href='menu.html'>Torna al menu</a>";
+                    return;
                 }
-                document.getElementById("titolo_quiz").innerHTML =
-                    "Quiz su:<br><strong>" + titoloFormattato + "</strong><br>Livello 1";
 
-                this.domande = dati[this.argomento];
+                this.descrizione = sezione.descrizione || "";
+                this.domande = sezione.domande;
+
+                const parole = argomento.split(" ");
+                let titoloFormattato = parole.length >= 2
+                   
+                      ? parole.slice(0, 2).join(" ") + "<br><span style='font-size: 80%;'>" + parole.slice(2).join(" ") + "</span>"
+                    : argomento;
+
+                document.getElementById("titolo_quiz").innerHTML = "Quiz su:<br><strong>" + titoloFormattato + "</strong><br>Livello 1";
+                document.getElementById("descrizione").textContent = this.descrizione;
+
                 this.domandeSelezionate = [];
                 this.domandaCorrente = 0;
             }
 
-            // Fisher–Yates shuffle
             shuffle(array) {
                 for (let i = array.length - 1; i > 0; i--) {
                     const j = Math.floor(Math.random() * (i + 1));
@@ -67,20 +101,23 @@
 
             caricaDati() {
                 document.getElementById("bottoni-continuazione").innerHTML = "";
-
-                // seleziona 8 domande a caso
-                this.domandeSelezionate = this.domande
-                    .sort(() => Math.random() - 0.5)
-                    .slice(0, 8);
+                this.domandeSelezionate = this.shuffle([...this.domande]).slice(0, 8);
                 this.domandaCorrente = 0;
                 this.poniDomanda();
             }
 
             poniDomanda() {
                 const domanda = this.domandeSelezionate[this.domandaCorrente];
-                document.getElementById("frase").textContent = domanda.frase;
-
-                // crea una copia delle risposte e mescolala
+                document.getElementById("frase").innerHTML = domanda.frase;
+                    // Adatta stile per il tema "pronomi"
+    if (this.argomento === "pronomi") {
+        document.getElementById("frase").style.fontSize = "20px";
+        document.getElementById("frase").style.lineHeight = "1.4";
+    } else {
+        // Ripristina stile standard per altri argomenti
+        document.getElementById("frase").style.fontSize = "25px";
+        document.getElementById("frase").style.lineHeight = "normal";
+    }
                 const risposteMescolate = this.shuffle([...domanda.risposte]);
 
                 const container = document.getElementById("bottoni-risposte");
@@ -100,7 +137,6 @@
             controllaRisposta(rispostaUtente) {
                 const domanda = this.domandeSelezionate[this.domandaCorrente];
                 const corrette = domanda.corretta;
-
                 const message = document.getElementById("message");
 
                 if (corrette.includes(rispostaUtente)) {
@@ -159,6 +195,6 @@
             quiz.caricaDati();
         };
     </script>
+    <a href="menu.html" id="torna-menu">← Menu</a>
 </body>
 </html>
-
