@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -77,13 +77,13 @@
   @media (max-width: 600px) {
     h1 {
       color: #c1272d;
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin-bottom: 10px;
     }
-    p {font-size: 1.8rem;
+    p {font-size: 1.5rem;
     }
     #frase-verbo {
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin: 20px 0;
     }
 
@@ -103,6 +103,24 @@
       padding: 10px 16px;
     }
   }
+  #torna-menu {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+#torna-menu:hover {
+    background-color: #e0e0e0;
+}
+
 </style>
 
 
@@ -111,7 +129,7 @@
 <body>
   <h1>Verbi Regolari <br> Presente Indicativo </br></h1>
   <p>
-    Es:"capire" => noi <u>capiamo</u>>
+    Es:"capire" => noi <u>capiamo</u>
     </p>
 
   <div id="frase-verbo">Caricamento…</div>
@@ -289,5 +307,7 @@
         });
     };
   </script>
+  <a href="menu.html" id="torna-menu">← Menu</a>
+
 </body>
 </html>
