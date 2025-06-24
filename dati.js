@@ -164,7 +164,7 @@
   { frase: "(Verbo: guardare) Mentre ___ la televisione, il gatto è saltato sul tavolo.", corretta: ["guardavo"], risposte: ["guardavo", "ho guardato", "guardai", "guardo"] },
   { frase: "(Verbo: bere) Da piccolo non ___ mai il latte.", corretta: ["bevevo"], risposte: ["bevevo", "bevvo", "ho bevuto", "beveva"] },
   { frase: "(Verbo: studiare) Quando eravamo al liceo, noi ___ molto per gli esami.", corretta: ["studiavamo"], risposte: ["studiammo", "studiavamo", "abbiamo studiato", "studievamo"] },
-  { frase: "(Verbo: avere) Da bambino io ___ paura del buio.", corretta: ["avevo"], risposte: ["avevo", "ho avuto", "aveva", "avievo"] },
+  { frase: "(Verbo: avere) Da bambino io ___ paura del buio.", corretta: ["avevo"], risposte: ["avevo", "ho avuto", "aveva", "avevi"] },
   { frase: "(Verbo: fare) I miei nonni ___ il pane in casa ogni sabato.", corretta: ["facevano"], risposte: ["facevano", "fanno", "faccevano", "hanno fatto"] },
   { frase: "(Verbo: piovere) Quando siamo usciti, non ___ più.", corretta: ["pioveva"], risposte: ["ha piovuto", "pioveva", "piovuto", "stava piovendo"] }
        ]
