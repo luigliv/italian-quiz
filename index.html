@@ -5,16 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quiz Didattico – Menù</title>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: left;
+      margin-top: 50px;
+    }
+
     h1 {
       font-size: 6vw;
       color: rgba(102, 78, 84, 0.925);
       padding-left: 20px;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      text-align: left;
-      margin-top: 50px;
+    h2 {
+      font-size: 5vw;
+      color: #664e54;
+      margin-bottom: 10px;
     }
 
     p {
@@ -56,11 +62,26 @@
       margin-top: 10px;
     }
 
-    /* Per schermi grandi (es. desktop) si applicano font fissi */
+    .contenitore-colonne {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding-left: 20px;
+    }
+
+    .colonna {
+      flex: 1;
+    }
+
+    /* Per schermi grandi (es. desktop) */
     @media (min-width: 800px) {
       h1 { font-size: 35px; }
+      h2 { font-size: 25px; }
       p, a { font-size: 23px; }
       button { font-size: 20px; }
+      .contenitore-colonne {
+        flex-direction: row;
+      }
     }
   </style>
 </head>
@@ -69,29 +90,39 @@
 
   <div id="argomenti">
     <p>Scegli l'argomento:</p>
-    <ol>
-      <li><a href="#" onclick="seleziona('Verbo%20Essere.%20Presente%20indicativo'); return false;">Presente indicativo del verbo Essere</a></li>
-      <li><a href="#" onclick="seleziona('Verbo%20Avere.%20Presente%20indicativo'); return false;">Presente indicativo del verbo Avere</a></li>
-      <li><a href="#" onclick="seleziona('Participio%20passato'); return false;">Participio passato</a></li>
-      <li><a href="#" onclick="seleziona('Passato%20prossimo'); return false;">Passato prossimo</a></li>
-      <li><a href="#" onclick="seleziona('Imperfetto%20indicativo'); return false;">Imperfetto indicativo</a></li>
-      <li><a href="#" onclick="seleziona('Articoli%20Determinativi'); return false;">Articoli determinativi</a></li>
-      <li><a href="#" onclick="seleziona('Articoli%20Indeterminativi'); return false;">Articoli indeterminativi</a></li>
-      <li><a href="#" onclick="seleziona('Preposizioni'); return false;">Preposizioni</a></li>
-       <li><a href="#" onclick="seleziona('Plurali'); return false;">Plurali</a></li>
-       <li><a href="#" onclick="seleziona('Aggettivi%20possessivi'); return false;">Aggettivi possessivi</a></li>
-        <li><a href="#" onclick="seleziona('Pronomi'); return false;">Pronomi</a></li>
-      <li><a href="#" onclick="seleziona('verbi'); return false;">Verbi regolari (Pres.Indicativo)</a></li>
-      <li><a href="#" onclick="seleziona('verbi_irregolari'); return false;">Verbi irregolari (Pres. Indicativo)</a></li>
-    </ol>
+    <div class="contenitore-colonne">
+      <div class="colonna">
+        <h2>VERBI</h2>
+        <ol>
+          <li><a href="#" onclick="seleziona('Verbo%20Essere.%20Presente%20indicativo'); return false;">Essere – Presente</a></li>
+          <li><a href="#" onclick="seleziona('Verbo%20Avere.%20Presente%20indicativo'); return false;">Avere – Presente</a></li>
+          <li><a href="#" onclick="seleziona('Participio%20passato'); return false;">Participio passato</a></li>
+          <li><a href="#" onclick="seleziona('Passato%20prossimo'); return false;">Passato prossimo</a></li>
+          <li><a href="#" onclick="seleziona('Imperfetto%20indicativo'); return false;">Imperfetto</a></li>
+          <li><a href="#" onclick="seleziona('verbi'); return false;">Verbi regolari</a></li>
+          <li><a href="#" onclick="seleziona('verbi_irregolari'); return false;">Verbi irregolari</a></li>
+        </ol>
+      </div>
+      <div class="colonna">
+        <h2>VARIE</h2>
+        <ol>
+          <li><a href="#" onclick="seleziona('Articoli%20Determinativi'); return false;">Articoli determinativi</a></li>
+          <li><a href="#" onclick="seleziona('Articoli%20Indeterminativi'); return false;">Articoli indeterminativi</a></li>
+          <li><a href="#" onclick="seleziona('Preposizioni'); return false;">Preposizioni</a></li>
+          <li><a href="#" onclick="seleziona('Plurali'); return false;">Plurali</a></li>
+          <li><a href="#" onclick="seleziona('Aggettivi%20possessivi'); return false;">Aggettivi possessivi</a></li>
+          <li><a href="#" onclick="seleziona('Pronomi'); return false;">Pronomi</a></li>
+        </ol>
+      </div>
+    </div>
   </div>
 
   <p id="argomento-scelto" style="display: none; font-weight: bold; font-size: 24px; padding-left: 20px;"></p>
 
   <p id="livello" style="display: none;">Scegli la modalità:</p>
   <div id="scelta-livello" style="display: none;">
-    <button onclick="caricaLivello('bottoni')">Livello 1 </button>
-    <button onclick="caricaLivello('input')">Livello 2 </button>
+    <button onclick="caricaLivello('bottoni')">Livello 1</button>
+    <button onclick="caricaLivello('input')">Livello 2</button>
   </div>
 
   <script>
@@ -118,4 +149,5 @@
   </script>
 </body>
 </html>
+
 
