@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -30,10 +30,11 @@
 
     ol {
       padding-left: 20px;
+      margin: 0;
     }
 
     li {
-      margin: 10px 0;
+      margin: 8px 0;
     }
 
     a {
@@ -48,16 +49,21 @@
     }
 
     button {
-      padding: 10px 20px;
-      font-size: 4.5vw;
+      padding: 10px 16px;
+      font-size: 18px;
       text-align: left;
       cursor: pointer;
+      border: none;
+      background-color: #c1272d;
+      color: white;
+      border-radius: 6px;
+      max-width: 250px;
     }
 
     #scelta-livello {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 12px;
       margin-top: 20px;
     }
 
@@ -72,12 +78,7 @@
       flex: 1;
     }
 
-    /* Desktop layout */
-    @media (max-width: 600px) {
-      body {
-        padding: 20px;
-      }
-
+    @media (min-width: 700px) {
       h1 { font-size: 35px; }
       h2 { font-size: 25px; }
       p, a { font-size: 20px; }
@@ -85,7 +86,13 @@
 
       .contenitore-colonne {
         flex-direction: row;
-        gap: 5px;
+        gap: 20px;
+      }
+
+      #scelta-livello {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 20px;
       }
     }
   </style>
@@ -99,60 +106,4 @@
       <div class="colonna">
         <h2>VERBI</h2>
         <ol>
-          <li><a href="#" onclick="seleziona('Verbo%20Essere.%20Presente%20indicativo'); return false;">Essere – Presente</a></li>
-          <li><a href="#" onclick="seleziona('Verbo%20Avere.%20Presente%20indicativo'); return false;">Avere – Presente</a></li>
-          <li><a href="#" onclick="seleziona('Participio%20passato'); return false;">Participio passato</a></li>
-          <li><a href="#" onclick="seleziona('Passato%20prossimo'); return false;">Passato prossimo</a></li>
-          <li><a href="#" onclick="seleziona('Imperfetto%20indicativo'); return false;">Imperfetto</a></li>
-          <li><a href="#" onclick="seleziona('Futuro%20semplice'); return false;">Futuro semplice</a></li>
-          <li><a href="#" onclick="seleziona('verbi'); return false;">Presente regolari</a></li>
-          <li><a href="#" onclick="seleziona('verbi_irregolari'); return false;">Presente irregolari</a></li>
-        </ol>
-      </div>
-      <div class="colonna">
-        <h2>VARIE</h2>
-        <ol>
-          <li><a href="#" onclick="seleziona('Articoli%20Determinativi'); return false;">Articoli determinativi</a></li>
-          <li><a href="#" onclick="seleziona('Articoli%20Indeterminativi'); return false;">Articoli indeterminativi</a></li>
-          <li><a href="#" onclick="seleziona('Preposizioni'); return false;">Preposizioni</a></li>
-          <li><a href="#" onclick="seleziona('Plurali'); return false;">Plurali</a></li>
-          <li><a href="#" onclick="seleziona('Aggettivi%20possessivi'); return false;">Aggettivi possessivi</a></li>
-          <li><a href="#" onclick="seleziona('Pronomi'); return false;">Pronomi</a></li>
-        </ol>
-      </div>
-    </div>
-  </div>
-
-  <p id="argomento-scelto" style="display: none; font-weight: bold; font-size: 5vw; margin-top: 20px;"></p>
-
-  <p id="livello" style="display: none; font-size: 5vw; margin-top: 10px;">Scegli la modalità:</p>
-
-  <div id="scelta-livello" style="display: none;">
-    <button onclick="caricaLivello('bottoni')">Livello 1</button>
-    <button onclick="caricaLivello('input')">Livello 2</button>
-  </div>
-
-  <script>
-    let argomento = "";
-
-    function seleziona(scelta) {
-      argomento = scelta;
-      document.getElementById("argomenti").style.display = "none";
-      document.getElementById("argomento-scelto").textContent = "Hai scelto: " + scelta.replaceAll("%20", " ");
-      document.getElementById("argomento-scelto").style.display = "block";
-      document.getElementById("livello").style.display = "block";
-      document.getElementById("scelta-livello").style.display = "block";
-    }
-
-    function caricaLivello(livello) {
-      if (argomento === "verbi") {
-        window.location.href = livello === "bottoni" ? "verbi_bottoni.html" : "verbi_input.html";
-      } else if (argomento === "verbi_irregolari") {
-        window.location.href = livello === "bottoni" ? "verbi_irregolari_bottoni.html" : "verbi_irregolari_input.html";
-      } else {
-        window.location.href = `base_${livello}.html?argomento=${argomento}`;
-      }
-    }
-  </script>
-</body>
-</html>
+          <li><a href="#" on
