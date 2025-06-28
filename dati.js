@@ -130,7 +130,7 @@
 { frase: "(Verbo: ridere) Hanno ___ tanto", corretta: ["riso"], risposte: ["riso", "riduto", "ridato", "risuto"] },
 { frase: "(Verbo: succedere) È ___ un incidente", corretta: ["successo"], risposte: ["successo", "succeduto", "succedato", "succeso"] },
 { frase: "(Verbo: bere) Hai ___ troppo vino", corretta: ["bevuto"], risposte: ["bevuto", "bevito", "bevvuto", "beuto"] },
-{ frase: "(Verbo: conoscere) Ho ___ una persona gentile", corretta: ["conosciuto,"conosciuta""], risposte: ["conosciuto", "conosciato", "conosciuta", "conossuto"] },
+{ frase: "(Verbo: conoscere) Ho ___ una persona gentile", corretta: ["conosciuto,"conosciuta"], risposte: ["conosciuto", "conosciato", "conosciuta", "conossuto"] },
 
 { frase: "(Verbo: coprire) Hai ___ il bambino?", corretta: ["coperto"], risposte: ["coperto", "coprito", "coprato", "copruto"] },
 { frase: "(Verbo: risolvere) Ho ___ il problema", corretta: ["risolto"], risposte: ["risolto", "risolvuto", "risolvito", "risoluto"] },
