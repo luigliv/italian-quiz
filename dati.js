@@ -166,7 +166,7 @@
     { frase: "(Verbo: vivere) Ha ___ in Italia per due anni", corretta: ["vissuto"], risposte: ["vissuto", "vivuto", "visto", "vivato"] },
 
     { frase: "(Verbo: parlare) Ieri ho ___ con Lucia", corretta: ["parlato"], risposte: ["parlato", "parlata", "parlatto", "parluto"] },
-    { frase: "(Verbo: mangiare) Abbiamo ___ la pizza", corretta: ["mangiato",mangiata], risposte: ["mangiato", "mangiata", "mangiatto", "mangato"] },
+    { frase: "(Verbo: mangiare) Abbiamo ___ la pizza", corretta: ["mangiato",mangiata"], risposte: ["mangiato", "mangiata", "mangiatto", "mangato"] },
     { frase: "(Verbo: guardare) Hai ___ quel film?", corretta: ["guardato"], risposte: ["guardato", "guardita", "guarduto", "guardita"] },
     { frase: "(Verbo: ascoltare) Ho ___ la tua canzone", corretta: ["ascoltato","ascoltata"], risposte: ["ascoltato", "ascoltatto", "ascoltata", "ascoltuto"] },
     { frase: "(Verbo: lavorare) Maria ha ___ tutto il giorno", corretta: ["lavorato"], risposte: ["lavorato", "lavorata", "lavoruto", "lavoratto"] },
