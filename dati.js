@@ -1,3 +1,4 @@
+     
   
    const dati = {
     "Verbo Essere. Presente indicativo":{ 
@@ -130,7 +131,7 @@
 { frase: "(Verbo: ridere) Hanno ___ tanto", corretta: ["riso"], risposte: ["riso", "riduto", "ridato", "risuto"] },
 { frase: "(Verbo: succedere) È ___ un incidente", corretta: ["successo"], risposte: ["successo", "succeduto", "succedato", "succeso"] },
 { frase: "(Verbo: bere) Hai ___ troppo vino", corretta: ["bevuto"], risposte: ["bevuto", "bevito", "bevvuto", "beuto"] },
-{ frase: "(Verbo: conoscere) Ho ___ una persona gentile", corretta: ["conosciuto,"conosciuta"], risposte: ["conosciuto", "conosciato", "conosciuta", "conossuto"] },
+{ frase: "(Verbo: conoscere) Ho ___ una persona gentile", corretta: ["conosciuto","conosciuta"], risposte: ["conosciuto", "conosciato", "conosciuta", "conossuto"] },
 
 { frase: "(Verbo: coprire) Hai ___ il bambino?", corretta: ["coperto"], risposte: ["coperto", "coprito", "coprato", "copruto"] },
 { frase: "(Verbo: risolvere) Ho ___ il problema", corretta: ["risolto"], risposte: ["risolto", "risolvuto", "risolvito", "risoluto"] },
@@ -166,7 +167,7 @@
     { frase: "(Verbo: vivere) Ha ___ in Italia per due anni", corretta: ["vissuto"], risposte: ["vissuto", "vivuto", "visto", "vivato"] },
 
     { frase: "(Verbo: parlare) Ieri ho ___ con Lucia", corretta: ["parlato"], risposte: ["parlato", "parlata", "parlatto", "parluto"] },
-    { frase: "(Verbo: mangiare) Abbiamo ___ la pizza", corretta: ["mangiato",mangiata"], risposte: ["mangiato", "mangiata", "mangiatto", "mangato"] },
+    { frase: "(Verbo: mangiare) Abbiamo ___ la pizza", corretta: ["mangiato","mangiata"], risposte: ["mangiato", "mangiata", "mangiatto", "mangato"] },
     { frase: "(Verbo: guardare) Hai ___ quel film?", corretta: ["guardato"], risposte: ["guardato", "guardita", "guarduto", "guardita"] },
     { frase: "(Verbo: ascoltare) Ho ___ la tua canzone", corretta: ["ascoltato","ascoltata"], risposte: ["ascoltato", "ascoltatto", "ascoltata", "ascoltuto"] },
     { frase: "(Verbo: lavorare) Maria ha ___ tutto il giorno", corretta: ["lavorato"], risposte: ["lavorato", "lavorata", "lavoruto", "lavoratto"] },
