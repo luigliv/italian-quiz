@@ -17,7 +17,7 @@
   { frase: "Io e Anna ___ motivati", corretta: ["siamo"], risposte: ["siamo", "sono", "siete", "è"] },
   { frase: "Tu e Paolo ___ distratti", corretta: ["siete"], risposte: ["siete", "sono", "siamo", "è"] },
   { frase: "I bambini ___ vivaci", corretta: ["sono"], risposte: ["sono", "siete", "è", "siamo"] },
-  { frase: "Luca ___ in cucina", corretta: ["è"], risposte: ["è", "sei", "sono", "siete"] },
+  { frase: "Luca ___ in cucina", corretta: ["è"], risposte: ["è", "sei", "sono", "e"] },
   { frase: "Laura ___ in ufficio", corretta: ["è"], risposte: ["è", "e", "sono", "siamo"] },
   { frase: "Marco ___ in palestra", corretta: ["è"], risposte: ["è", "sono", "siete", "siamo"] },
   { frase: "Chiara ___ in montagna", corretta: ["è"], risposte: ["è", "e", "sono", "siamo"] },
@@ -39,7 +39,7 @@
       { frase: "Loro ___ felici", corretta: ["sono"], risposte: ["siete", "è", "sono", "siamo"] },
       { frase: "Io ___ stanco", corretta: ["sono"], risposte: ["sei", "sono", "è", "siete"] },
       { frase: "Tu ___ felice", corretta: ["sei"], risposte: ["sono", "sei", "è", "siete"] },
-      { frase: "Lui ___ intelligente", corretta: ["è"], risposte: ["sono", "sei", "è", "siamo"] },
+      { frase: "Lui ___ intelligente", corretta: ["è"], risposte: ["sono", "e", "è", "siamo"] },
       { frase: "Lei ___ gentile", corretta: ["è"], risposte: ["è", "sono", "sei", "siete"] },
       { frase: "Noi ___ pronti", corretta: ["siamo"], risposte: ["siamo", "siete", "sono", "è"] },
       { frase: "Voi ___ occupati", corretta: ["siete"], risposte: ["siete", "siamo", "sono", "è"] },
@@ -53,7 +53,7 @@
       { frase: "Loro ___ occupati", corretta: ["sono"], risposte: ["sono", "sei", "siete", "siamo"] },
       { frase: "Io ___ contento", corretta: ["sono"], risposte: ["sono", "sei", "è", "siete"] },
       { frase: "Tu ___ coraggioso", corretta: ["sei"], risposte: ["sei", "sono", "è", "siete"] },
-      { frase: "Lui ___ in gamba", corretta: ["è"], risposte: ["è", "sono", "sei", "siamo"] },
+      { frase: "Lui ___ in gamba", corretta: ["è"], risposte: ["è", "sono", "e", "siamo"] },
       { frase: "Lei ___ ricca", corretta: ["è"], risposte: ["è", "sono", "sei", "siete"] },
       { frase: "Noi ___ stanchi", corretta: ["siamo"], risposte: ["siamo", "siete", "sono", "è"] },
       { frase: "Voi ___ felici", corretta: ["siete"], risposte: ["siete", "siamo", "sono", "è"] },
@@ -324,6 +324,26 @@
       { frase: "___ scuola", corretta: ["la"], risposte: ["il", "lo", "la", "l'"] },
       { frase: "___ orologio", corretta: ["l'"], risposte: ["il", "lo", "la", "l'"] },
       { frase: "___ uomini", corretta: ["gli"], risposte: ["i", "gli", "le", "lo"] },
+      { frase: "___ penna", corretta: ["la"], risposte: ["la", "il", "l'", "lo"] },
+{ frase: "___ gnomo", corretta: ["lo"], risposte: ["lo", "il", "la", "l'"] },
+{ frase: "___ idea", corretta: ["l'"], risposte: ["l'", "la", "lo", "il"] },
+{ frase: "___ bicicletta", corretta: ["la"], risposte: ["la", "l'", "il", "le"] },
+{ frase: "___ zoccolo", corretta: ["lo"], risposte: ["lo", "il", "la", "l'"] },
+{ frase: "___ treno", corretta: ["il"], risposte: ["il", "lo", "l'", "la"] },
+{ frase: "___ scuola", corretta: ["la"], risposte: ["la", "l'", "il", "le"] },
+{ frase: "___ occhi", corretta: ["gli"], risposte: ["gli", "i", "le", "lo"] },
+{ frase: "___ ospedale", corretta: ["l'"], risposte: ["l'", "lo", "il", "la"] },
+{ frase: "___ uccelli", corretta: ["gli"], risposte: ["gli", "i", "le", "lo"] },
+{ frase: "___ bambina", corretta: ["la"], risposte: ["la", "l'", "il", "lo"] },
+{ frase: "___ studenti", corretta: ["gli"], risposte: ["gli", "i", "le", "lo"] },
+{ frase: "___ ragazzi", corretta: ["i"], risposte: ["i", "gli", "le", "lo"] },
+{ frase: "___ animali", corretta: ["gli"], risposte: ["gli", "i", "le", "lo"] },
+{ frase: "___ libro", corretta: ["il"], risposte: ["il", "lo", "l'", "la"] },
+{ frase: "___ inverno", corretta: ["l'"], risposte: ["l'", "lo", "il", "la"] },
+{ frase: "___ elefante", corretta: ["l'"], risposte: ["l'", "lo", "il", "la"] },
+{ frase: "___ gnocchi", corretta: ["gli"], risposte: ["gli", "i", "le", "lo"] },
+{ frase: "___ tigre", corretta: ["la"], risposte: ["la", "l'", "lo", "il"] },
+{ frase: "___ amici", corretta: ["gli"], risposte: ["gli", "i", "le", "lo"] },
       { frase: "___ case", corretta: ["le"], risposte: ["i", "gli", "le", "la"] }
     ]
 },
@@ -360,6 +380,48 @@
       { frase: "___ finestra", corretta: ["una"], risposte: ["un", "uno", "una", "un'"] },
       { frase: "___ amica", corretta: ["un'"], risposte: ["un", "uno", "una", "un'"] },
       { frase: "___ stella", corretta: ["una"], risposte: ["un", "uno", "una", "un'"] },
+      { frase: "___ ragazzo entra nella classe.", corretta: ["un"], risposte: ["un", "uno", "una", "un'"] },
+{ frase: "___ mela è sul tavolo.", corretta: ["una"], risposte: ["una", "un", "uno", "un'"] },
+{ frase: "___ studente alza la mano.", corretta: ["uno"], risposte: ["uno", "un", "una", "un'"] },
+{ frase: "___ amica mi chiama ogni giorno.", corretta: ["un'"], risposte: ["un'", "una", "un", "uno"] },
+{ frase: "___ libro interessante!", corretta: ["un"], risposte: ["un", "uno", "una", "un'"] },
+{ frase: "___ zaino è caduto per terra.", corretta: ["uno"], risposte: ["uno", "un", "una", "un'"] },
+{ frase: "___ casa grande è in vendita.", corretta: ["una"], risposte: ["una", "un", "un'", "uno"] },
+{ frase: "___ uomo misterioso è entrato.", corretta: ["un"], risposte: ["un", "uno", "una", "un'"] },
+{ frase: "___ banana è troppo matura.", corretta: ["una"], risposte: ["una", "un", "uno", "un'"] },
+{ frase: "___ psicologo è disponibile domani.", corretta: ["uno"], risposte: ["uno", "un", "una", "un'"] },
+{ frase: "___ ape vola nel giardino.", corretta: ["un'"], risposte: ["un'", "una", "uno", "un"] },
+{ frase: "___ telefono nuovo è sul tavolo.", corretta: ["un"], risposte: ["un", "uno", "una", "un'"] },
+{ frase: "___ scimmia salta sull’albero.", corretta: ["una"], risposte: ["una", "un", "uno", "un'"] },
+{ frase: "___ studente straniero frequenta il corso.", corretta: ["uno"], risposte: ["uno", "un", "una", "un'"] },
+{ frase: "___ artista espone le sue opere.", corretta: ["un"], risposte: ["un", "uno", "una", "un'"] },
+{ frase: "___ idea geniale!", corretta: ["un'"], risposte: ["un'", "una", "uno", "un"] },
+{ frase: "___ orologio antico è in mostra.", corretta: ["un"], risposte: ["un", "uno", "una", "un'"] },
+{ frase: "___ ragazza entra in aula.", corretta: ["una"], risposte: ["una", "un", "un'", "uno"] },
+{ frase: "___ zoo molto bello!", corretta: ["uno"], risposte: ["uno", "un", "una", "un'"] },
+{ frase: "___ occasione da non perdere!", corretta: ["un'"], risposte: ["un'", "una", "un", "uno"] },
+{ frase: "___ bambino gioca nel parco.", corretta: ["un"], risposte: ["un", "uno", "una", "un'"] },
+{ frase: "___ ragazzi giocano in cortile.", corretta: ["dei"], risposte: ["dei", "degli", "delle", "dei"] },
+{ frase: "___ studenti parlano con l'insegnante.", corretta: ["degli"], risposte: ["dei", "degli", "delle", "dei"] },
+{ frase: "___ bambine cantano una canzone.", corretta: ["delle"], risposte: ["delle", "dei", "degli", "le"] },
+{ frase: "___ zaini sono per terra.", corretta: ["degli"], risposte: ["degli", "dei", "delle", "gli"] },
+{ frase: "___ amiche mi scrivono ogni giorno.", corretta: ["delle"], risposte: ["delle", "dei", "degli", "le"] },
+{ frase: "___ alberi sono molto alti.", corretta: ["degli"], risposte: ["degli", "dei", "delle", "gli"] },
+{ frase: "___ ragazzi italiani partecipano al progetto.", corretta: ["dei"], risposte: ["dei", "degli", "delle", "i"] },
+{ frase: "___ donne parlano tra loro.", corretta: ["delle"], risposte: ["delle", "degli", "dei", "le"] },
+{ frase: "___ psicologi lavorano nella scuola.", corretta: ["degli"], risposte: ["degli", "dei", "delle", "gli"] },
+{ frase: "___ studenti stranieri arrivano oggi.", corretta: ["degli"], risposte: ["degli", "dei", "delle", "gli"] },
+{ frase: "___ amiche simpatiche mi hanno invitato.", corretta: ["delle"], risposte: ["delle", "dei", "degli", "le"] },
+{ frase: "___ uomini parlano forte.", corretta: ["degli"], risposte: ["degli", "dei", "delle", "gli"] },
+{ frase: "___ libri sono sul tavolo.", corretta: ["dei"], risposte: ["dei", "degli", "delle", "i"] },
+{ frase: "___ case hanno il tetto rosso.", corretta: ["delle"], risposte: ["delle", "dei", "degli", "le"] },
+{ frase: "___ sportivi corrono al parco.", corretta: ["degli"], risposte: ["degli", "dei", "delle", "i"] },
+{ frase: "___ finestre sono aperte.", corretta: ["delle"], risposte: ["delle", "dei", "degli", "le"] },
+{ frase: "___ studenti attenti ascoltano.", corretta: ["degli"], risposte: ["degli", "dei", "delle", "i"] },
+{ frase: "___ giornalisti scrivono l'articolo.", corretta: ["dei"], risposte: ["dei", "degli", "delle", "i"] },
+{ frase: "___ insegnanti spiegano la lezione.", corretta: ["degli"], risposte: ["degli", "dei", "delle", "gli"] },
+{ frase: "___ ragazze ridono forte.", corretta: ["delle"], risposte: ["delle", "degli", "dei", "le"] },
+
       { frase: "___ fiume", corretta: ["un"], risposte: ["un", "uno", "una", "un'"] }
     ]
 },
@@ -396,6 +458,27 @@
       { frase: "Studio ___ biblioteca", corretta: ["in","nella"], risposte: ["in", "nella", "da", "su"] },
       { frase: "Il gatto è ___ sedia", corretta: ["sulla"], risposte: ["sulla", "nella", "alla", "dalla"] },
       { frase: "Parto ___ Milano", corretta: ["per","da"], risposte: ["per", "da", "in", "a"] },
+      { frase: "Corro ___ strada", corretta: ["per","sulla"], risposte: ["per", "sulla", "alla", "in", "su"] },
+{ frase: "Resto ___ casa stasera", corretta: ["a","in"], risposte: ["a", "in", "da", "per", "su"] },
+{ frase: "Il quadro è appeso ___ parete", corretta: ["alla","sulla"], risposte: ["alla", "sulla", "in", "su", "da"] },
+{ frase: "Ceniamo ___ ristorante giapponese", corretta: ["al"], risposte: ["al", "in", "dal", "sul", "alla"] },
+{ frase: "Il treno parte ___ binario 3", corretta: ["dal"], risposte: ["dal", "sul", "nel", "alla", "da"] },
+{ frase: "Passeggiamo ___ il centro storico", corretta: ["per"], risposte: ["per", "in", "a", "da", "tra"] },
+{ frase: "Il libro è ___ scaffale", corretta: ["sullo","nello"], risposte: ["sullo", "nello", "al", "in", "su"] },
+{ frase: "Ci vediamo ___ stazione", corretta: ["alla","in"], risposte: ["alla", "in", "al", "sulla", "da"] },
+{ frase: "Mi siedo ___ sedia", corretta: ["sulla"], risposte: ["sulla", "nella", "alla", "in", "su"] },
+{ frase: "I bambini giocano ___ giardino", corretta: ["in","nel"], risposte: ["in", "nel", "al", "da", "su"] },
+{ frase: "Viaggiamo ___ auto", corretta: ["in"], risposte: ["in", "con", "su", "a", "da"] },
+{ frase: "C'è una farmacia ___ angolo", corretta: ["all'","sull'"], risposte: ["all'", "sull'", "nel", "in", "da"] },
+{ frase: "Torniamo ___ una vacanza", corretta: ["da"], risposte: ["da", "di", "in", "a", "per"] },
+{ frase: "Andiamo ___ concerto stasera", corretta: ["al"], risposte: ["al", "in", "da", "su", "alla"] },
+{ frase: "Il cane dorme ___ divano", corretta: ["sul","nel"], risposte: ["sul", "nel", "al", "da", "su"] },
+{ frase: "Lavoro ___ centro della città", corretta: ["nel"], risposte: ["in", "nel", "al", "da", "per"] },
+{ frase: "Sono arrivato ___ casa tardi", corretta: ["a","in"], risposte: ["a", "in", "da", "per", "su"] },
+{ frase: "Lui viene ___ università", corretta: ["dall'", "all'"], risposte: ["dall'", "da", "in", "a", "su"] },
+{ frase: "Stanno ___ spiaggia", corretta: ["in","sulla"], risposte: ["in", "sulla", "alla", "su", "da"] },
+{ frase: "Ho lasciato il telefono ___ borsa", corretta: ["nella","in"], risposte: ["nella", "in", "alla", "sulla", "su"] },
+
       { frase: "Arrivo ___ stazione", corretta: ["alla","in","dalla","nella"], risposte: ["alla", "nella", "sulla", "dalla","in"] }
     ]
 },
@@ -414,7 +497,7 @@
   { frase: "Noi prepariamo la (<u><i>di noi</i></u>) cena ogni sera.", corretta: ["nostra"], risposte: ["vostra", "nostra", "loro", "mia"] },
   { frase: "Anna scrive nel (<u><i>di lei</i></u>) diario ogni giorno.", corretta: ["suo"], risposte: ["suo", "mio", "loro", "tuo"] },
   { frase: "Mario aspetta il (<u><i>di lui</i></u>) turno.", corretta: ["suo"], risposte: ["loro", "suo", "mio", "tuo"] },
-  { frase: "Io ho ritrovato le (<u><i>di me</i></u>) scarpe.", corretta: ["mie"], risposte: ["mie", "sue", "loro", "vostre"] },
+  { frase: "Io ho ritrovato le (<u><i>di me</i></u>) scarpe.", corretta: ["mie"], risposte: ["mie", "sue", "loro", "miei"] },
   { frase: "Tu conservi bene le (<u><i>di te</i></u>) cose.", corretta: ["tue"], risposte: ["tue", "mie", "sue", "loro"] },
   { frase: "Carlo e Luigi hanno portato i (<u><i>di loro</i></u>) strumenti.", corretta: ["loro"], risposte: ["nostri", "loro", "vostri", "suoi"] },
   { frase: "Abbiamo visitato la (<u><i>di noi</i></u>) vecchia scuola.", corretta: ["nostra"], risposte: ["nostra", "vostra", "loro", "mia"] },
@@ -427,11 +510,45 @@
   { frase: "Tu e Mario avete acceso le (<u><i>di voi</i></u>) luci.", corretta: ["vostre"], risposte: ["nostre", "vostre", "loro", "sue"] },
   { frase: "Noi abbiamo perso le (<u><i>di noi</i></u>) chiavi.", corretta: ["nostre"], risposte: ["nostre", "vostre", "loro", "mie"] },
   { frase: "Luca prepara il (<u><i>di lui</i></u>) zaino.", corretta: ["suo"], risposte: ["suo", "loro", "mio", "nostro"] },
-  { frase: "Anna ha acceso le (<u><i>di lei</i></u>) candele.", corretta: ["sue"], risposte: ["sue", "mie", "loro", "tue"] },
+  { frase: "Anna ha acceso le (<u><i>di lei</i></u>) candele.", corretta: ["sue"], risposte: ["sue", "mie", "loro", "sui"] },
   { frase: "Io e tu ricordiamo le (<u><i>di noi</i></u>) promesse.", corretta: ["nostre"], risposte: ["nostre", "loro", "vostre", "mie"] },
   { frase: "Tu hai letto il (<u><i>di te</i></u>) libro?", corretta: ["tuo"], risposte: ["suo", "tuo", "vostro", "nostro"] },
   { frase: "Carlo ha lavato la (<u><i>di lui</i></u>) macchina.", corretta: ["sua"], risposte: ["sua", "mia", "vostra", "loro"] },
-  { frase: "Anna e tu avete controllato i (<u><i>di voi</i></u>) documenti?", corretta: ["vostri"], risposte: ["vostri", "loro", "nostri", "suoi"] }
+  { frase: "Maria ha rotto il (<u><i>di lei</i></u>) telefono.", corretta: ["suo"], risposte: ["suo", "mio", "vostro", "loro"] },
+{ frase: "Avete dimenticato le (<u><i>di voi</i></u>) valigie?", corretta: ["vostre"], risposte: ["vostre", "loro", "nostre", "sue"] },
+{ frase: "Io ho controllato la (<u><i>di me</i></u>) posta.", corretta: ["mia"], risposte: ["mia", "sua", "loro", "nostra"] },
+{ frase: "Tu e Luca non trovate i (<u><i>di voi</i></u>) biglietti.", corretta: ["vostri"], risposte: ["vostri", "loro", "nostri", "suoi"] },
+{ frase: "Abbiamo aperto la (<u><i>di noi</i></u>) finestra.", corretta: ["nostra"], risposte: ["nostra", "vostra", "mia", "sua"] },
+{ frase: "Tu indossi le (<u><i>di te</i></u>) scarpe nuove.", corretta: ["tue"], risposte: ["tue", "mie", "sue", "tui"] },
+{ frase: "Giovanni ha finito il (<u><i>di lui</i></u>) compito.", corretta: ["suo"], risposte: ["suo", "mio", "loro", "nostro"] },
+{ frase: "Tu e Anna portate le (<u><i>di voi</i></u>) borse?", corretta: ["vostre"], risposte: ["vostre", "loro", "nostre", "sue"] },
+{ frase: "Io e Luigi presentiamo i (<u><i>di noi</i></u>) amici.", corretta: ["nostri"], risposte: ["nostri", "vostri", "loro", "suoi"] },
+{ frase: "Maria cerca le (<u><i>di lei</i></u>) chiavi.", corretta: ["sue"], risposte: ["sue", "mie", "tue", "sui"] },
+{ frase: "Avete salutato il (<u><i>di voi</i></u>) professore?", corretta: ["vostro"], risposte: ["vostro", "nostro", "suo", "loro"] },
+{ frase: "Luca e io sistemiamo la (<u><i>di noi</i></u>) camera.", corretta: ["nostra"], risposte: ["nostra", "loro", "mia", "vostra"] },
+{ frase: "Tu guardi le (<u><i>di te</i></u>) serie preferite.", corretta: ["tue"], risposte: ["tue", "mie", "sue", "tui"] },
+{ frase: "Loro hanno ordinato il (<u><i>di loro</i></u>) pranzo.", corretta: ["loro"], risposte: ["loro", "nostro", "suo", "vostro"] },
+{ frase: "Noi beviamo il (<u><i>di noi</i></u>) tè.", corretta: ["nostro"], risposte: ["nostro", "vostro", "mio", "loro"] },
+{ frase: "Tu hai dimenticato le (<u><i>di te</i></u>) chiavi?", corretta: ["tue"], risposte: ["tue", "mie", "sue", "tui"] },
+{ frase: "Io leggo il (<u><i>di me</i></u>) giornale ogni mattina.", corretta: ["mio"], risposte: ["mio", "suo", "nostro", "vostro"] },
+{ frase: "Anna e Paolo mangiano le (<u><i>di loro</i></u>) mele.", corretta: ["loro"], risposte: ["loro", "nostre", "vostre", "sue"] },
+{ frase: "Giulia disegna con le (<u><i>di lei</i></u>) matite.", corretta: ["sue"], risposte: ["sue", "mie", "loro", "vostre"] },
+{ frase: "Hai visto i (<u><i>di me</i></u>) libri?", corretta: ["miei"], risposte: ["miei", "tuoi", "suoi", "nostri"] },
+{ frase: "Porti i (<u><i>di te</i></u>) documenti?", corretta: ["tuoi"], risposte: ["tuoi", "miei", "suoi", "vostri"] },
+{ frase: "Marco ha dimenticato i (<u><i>di lui</i></u>) occhiali.", corretta: ["suoi"], risposte: ["suoi", "tuoi", "miei", "nostri"] },
+{ frase: "Non trovo i (<u><i>di me</i></u>) appunti.", corretta: ["miei"], risposte: ["miei", "suoi", "tuoi", "vostri"] },
+{ frase: "Hai sistemato i (<u><i>di te</i></u>) vestiti?", corretta: ["tuoi"], risposte: ["tuoi", "suoi", "miei", "nostri"] },
+{ frase: "Giulia ha venduto i (<u><i>di lei</i></u>) libri.", corretta: ["suoi"], risposte: ["suoi", "tuoi", "miei", "nostri"] },
+{ frase: "Questi sono i (<u><i>di me</i></u>) amici più cari.", corretta: ["miei"], risposte: ["miei", "mii", "suoi", "nostri"] },
+{ frase: "Hai ricevuto i (<u><i>di te</i></u>) messaggi?", corretta: ["tuoi"], risposte: ["tuoi", "miei", "tui", "loro"] },
+{ frase: "Luca ha trovato i (<u><i>di lui</i></u>) guanti.", corretta: ["suoi"], risposte: ["suoi", "tuoi", "suii", "nostri"] },
+{ frase: "I (<u><i>di me</i></u>) sogni sono strani.", corretta: ["miei"], risposte: ["miei", "suoi", "tuoi", "loro"] },
+{ frase: "Dove hai messo i (<u><i>di te</i></u>) occhiali?", corretta: ["tuoi"], risposte: ["tuoi", "tui", "suoi", "loro"] },
+{ frase: "Marco non trova i (<u><i>di lui</i></u>) quaderni.", corretta: ["suoi"], risposte: ["suoi", "tuoi", "miei", "sui"] },
+
+{ frase: "Io e te raccontiamo le (<u><i>di noi</i></u>) storie.", corretta: ["nostre"], risposte: ["nostre", "vostre", "loro", "mie"] },
+
+  { frase: "Tu e Anna avete controllato i (<u><i>di voi</i></u>) documenti?", corretta: ["vostri"], risposte: ["vostri", "loro", "nostri", "suoi"] }
 ]
     },
 Plurali :  {
@@ -439,17 +556,17 @@ Plurali :  {
        domande:[
   { frase: "La vecchia madre", corretta: ["Le vecchie madri"], risposte: ["Le vecchie madre", "Le vecchie madri", "I vecchi madri", "Le vecchi madre"] },
   { frase: "Il ragazzo simpatico", corretta: ["I ragazzi simpatici"], risposte: ["I ragazzi simpatici", "Gli ragazzi simpatici", "I ragazze simpatiche", "I ragazzi simpatichi"] },
-  { frase: "L’amico leale", corretta: ["Gli amici leali"], risposte: ["Gli amici leali", "I amici leali", "Gli amichi leali", "Gli amici leale"] },
+  { frase: "L’amico fedele", corretta: ["Gli amici fedeli"], risposte: ["Gli amici fedeli", "I amici fedeli", "Gli amichi fedeli", "Gli amici fedele"] },
   { frase: "La mela rossa", corretta: ["Le mele rosse"], risposte: ["Le mele rossi", "Le mele rosse", "I mele rosse", "Le meli rosse"] },
-  { frase: "Il fiore profumato", corretta: ["I fiori profumati"], risposte: ["I fiori profumati", "I fiori profumate", "Gli fiori profumati", "I fiore profumati"] },
+  { frase: "Il fiore profumato", corretta: ["I fiori profumati"], risposte: ["I fiori profumati", "I fiori profumate", "Gli fiori profumati", "Li fiori profumati"] },
   { frase: "L’automobile veloce", corretta: ["Le automobili veloci"], risposte: ["Le automobili veloce", "Le automobili veloci", "Gli automobili veloci", "Le automobile veloci"] },
-  { frase: "Lo studente attento", corretta: ["Gli studenti attenti"], risposte: ["Gli studenti attenti", "I studenti attenti", "Gli studente attenti", "Gli studenti attente"] },
+  { frase: "Lo studente attento", corretta: ["Gli studenti attenti"], risposte: ["Gli studenti attenti", "I studenti attenti", "Gli studente attenti", "Li studenti attenti"] },
   { frase: "La casa grande", corretta: ["Le case grandi"], risposte: ["Le case grandi", "Le case grande", "I casi grandi", "Le casa grandi"] },
   { frase: "Il cane fedele", corretta: ["I cani fedeli"], risposte: ["I cani fedeli", "Gli cani fedeli", "I cane fedeli", "I cani fedele"] },
   { frase: "La bambina gentile", corretta: ["Le bambine gentili"], risposte: ["Le bambine gentili", "Le bambine gentile", "Le bambini gentili", "I bambini gentili"] },
-  { frase: "Il gatto pigro", corretta: ["I gatti pigri"], risposte: ["I gatti pigri", "I gatto pigri", "Gli gatti pigri", "I gatti pigre"] },
+  { frase: "Il gatto pigro", corretta: ["I gatti pigri"], risposte: ["I gatti pigri", "I gatto pigri", "Gli gatti pigri", "Li gatti pigri"] },
   { frase: "La finestra chiusa", corretta: ["Le finestre chiuse"], risposte: ["Le finestre chiuse", "Le finestre chiusi", "Le finestri chiuse", "I finestre chiuse"] },
-  { frase: "Il libro interessante", corretta: ["I libri interessanti"], risposte: ["I libri interessanti", "I libri interessante", "Gli libri interessanti", "Le libri interessante"] },
+  { frase: "Il libro interessante", corretta: ["I libri interessanti"], risposte: ["I libri interessanti", "I libri interessante", "Gli libri interessanti", "Li libri interessanti"] },
   { frase: "La scarpa nuova", corretta: ["Le scarpe nuove"], risposte: ["Le scarpe nuove", "Le scarpe nuovi", "Le scarpi nuove", "I scarpe nuovi"] },
   { frase: "Lo zaino pesante", corretta: ["Gli zaini pesanti"], risposte: ["Gli zaini pesanti", "I zaini pesanti", "I zaini pesante", "Gli zaini pesante"] },
   { frase: "Il vestito elegante", corretta: ["I vestiti eleganti"], risposte: ["I vestiti eleganti", "Gli vestiti elegante", "Gli vestiti eleganti", "I vestiti elegante"] },
@@ -466,6 +583,28 @@ Plurali :  {
   { frase: "La parola gentile", corretta: ["Le parole gentili"], risposte: ["Le parole gentili", "Le paroli gentili", "Le parole gentile", "Le paroli gentile"] },
   { frase: "Il soldato coraggioso", corretta: ["I soldati coraggiosi"], risposte: ["I soldati coraggiosi", "I soldate coraggiosi", "Gli soldati coraggiosi", "I soldati coraggiose"] },
   { frase: "La canzone bella", corretta: ["Le canzoni belle"], risposte: ["Le canzoni belle", "Le canzone belle", "Le canzoni belli", "Le canzone belli"] },
+  { frase: "La donna elegante", corretta: ["Le donne eleganti"], risposte: ["Le donne eleganti", "Le donna eleganti", "Le donne elegante", "I donne eleganti"] },
+{ frase: "L’uomo forte", corretta: ["Gli uomini forti"], risposte: ["Gli uomini forti", "I uomini forti", "Gli uomo forti", "Gli uomini forte"] },
+{ frase: "La voce chiara", corretta: ["Le voci chiare"], risposte: ["Le voci chiare", "Le voce chiare", "Le voci chiari", "I voci chiare"] },
+{ frase: "Il piatto sporco", corretta: ["I piatti sporchi"], risposte: ["I piatti sporchi", "Gli piatti sporchi", "I piatti sporche", "I piatti sporci"] },
+{ frase: "La sedia comoda", corretta: ["Le sedie comode"], risposte: ["Le sedie comode", "Le sedie comodi", "Le sedia comode", "I sedie comodi"] },
+{ frase: "L’occhio attento", corretta: ["Gli occhi attenti"], risposte: ["Gli occhi attenti", "I occhi attenti", "Gli occhio attenti", "Gli occhi attente"] },
+{ frase: "Il dente sano", corretta: ["I denti sani"], risposte: ["I denti sani", "Gli denti sani", "I dente sani", "I denti sane"] },
+{ frase: "La parete bianca", corretta: ["Le pareti bianche"], risposte: ["Le pareti bianche", "Le pareti bianchi", "Le parete bianche", "I pareti bianchi"] },
+{ frase: "Il vestito sporco", corretta: ["I vestiti sporchi"], risposte: ["I vestiti sporchi", "I vestiti sporche", "Gli vestiti sporchi", "I vestiti sporci"] },
+{ frase: "La lingua lunga", corretta: ["Le lingue lunghe"], risposte: ["Le lingue lunghe", "Le lingua lunghe", "Le lingue lunghe", "Le lingue lunghi"] },
+{ frase: "Il muro alto", corretta: ["I muri alti"], risposte: ["I muri alti", "Gli muri alti", "I muro alti", "I muri alte"] },
+{ frase: "L'uovo cotto", corretta: ["Le uova cotte"], risposte: ["Le uova cotte", "Gli uovi cotti", "I uovi cotti", "Li uovi cotti"] },
+{ frase: "La scarpa elegante", corretta: ["Le scarpe eleganti"], risposte: ["Le scarpe eleganti", "Le scarpa eleganti", "I scarpe eleganti", "Le scarpe elegante"] },
+{ frase: "L’orologio nuovo", corretta: ["Gli orologi nuovi"], risposte: ["Gli orologi nuovi", "I orologi nuovi", "Gli orologio nuovi", "Li orologi nuovi"] },
+{ frase: "La parete verde", corretta: ["Le pareti verdi"], risposte: ["Le pareti verdi", "Le pareti verde", "Le parete verdi", "I pareti verdi"] },
+{ frase: "Il soldato valoroso", corretta: ["I soldati valorosi"], risposte: ["I soldati valorosi", "I soldato valorosi", "Gli soldati valorosi", "I soldati valorose"] },
+{ frase: "La bottiglia vuota", corretta: ["Le bottiglie vuote"], risposte: ["Le bottiglie vuote", "Le bottiglia vuote", "Le bottiglie vuoti", "I bottiglie vuote"] },
+{ frase: "Il compito difficile", corretta: ["I compiti difficili"], risposte: ["I compiti difficili", "I compiti difficile", "Gli compiti difficili", "Li compiti difficili"] },
+{ frase: "L’amica simpatica", corretta: ["Le amiche simpatiche"], risposte: ["Le amiche simpatiche", "Le amiche simpatico", "Le amica simpatiche", "Le amiche simpatici"] },
+{ frase: "Il fiore colorato", corretta: ["I fiori colorati"], risposte: ["I fiori colorati", "Gli fiori colorati", "I fiore colorati", "Li fiori colorati"] },
+{ frase: "La penna nera", corretta: ["Le penne nere"], risposte: ["Le penne nere", "Le penne neri", "Le penna nere", "I penne nere"] },
+
   { frase: "Lo specchio pulito", corretta: ["Gli specchi puliti"], risposte: ["Gli specchi puliti", "I specchi puliti", "Gli specci puliti", "Gli specchi pulite"] }
 ]
 },
@@ -647,7 +786,108 @@ Plurali :  {
       frase: "Scrivo una lettera a te e Lucia e a voi mando un saluto.<br><br>Scrivo una lettera a te e Lucia e ___ mando un saluto.",
       corretta: ["vi"],
       risposte: ["le", "vi", "gli", "ci"]
-    }
+    },
+    {
+  frase: "Abbiamo comprato i libri e leggiamo i libri.<br><br>Abbiamo comprato i libri e ___ leggiamo.",
+  corretta: ["li"],
+  risposte: ["li", "le", "lo", "gli"]
+},
+{
+  frase: "Mando un messaggio a te.<br><br>___ mando un messaggio.",
+  corretta: ["ti"],
+  risposte: ["ti", "lo", "gli", "ci"]
+},
+{
+  frase: "Voglio un po’ di torta. Prendo un po’ di torta.<br><br>___ prendo un po'.",
+  corretta: ["ne"],
+  risposte: ["ne", "la", "ci", "gli"]
+},
+{
+  frase: "Portiamo i bicchieri a Carlo e a lui diamo anche i piatti.<br><br>Portiamo i bicchieri a Carlo e ___ diamo anche i piatti.",
+  corretta: ["gli"],
+  risposte: ["gli", "lo", "li", "ci"]
+},
+{
+  frase: "Conosco quelle ragazze.  Ora saluto quelle ragazze.<br><br>Conosco quelle ragazze? Ora  ___ saluto.",
+  corretta: ["le"],
+  risposte: ["le", "li", "la", "gli"]
+},
+{
+  frase: "Mi serve del latte. Compro un po’ di latte.<br><br>Mi serve del latte. ___ compro un po’.",
+  corretta: ["ne"],
+  risposte: ["ne", "lo", "ci", "gli"]
+},
+{
+  frase: "Abbiamo un fratello. Parliamo spesso di nostro fratello.<br><br>Abbiamo un fratello. ___ parliamo spesso.",
+  corretta: ["ne"],
+  risposte: ["ne", "gli", "lo", "ci"]
+},
+{
+  frase: "Hai visto il film? Sì, ho visto il film.<br><br>Hai visto il film? Sì, ___ ho visto.",
+  corretta: ["l'"],
+  risposte: ["l'", "gli", "ne", "ci"]
+},
+{
+  frase: "Dico la verità a voi.<br><br>___ dico la verità.",
+  corretta: ["vi"],
+  risposte: ["vi", "ci", "gli", "le"]
+},
+{
+  frase: "Invito te e Paolo alla festa.<br><br>___ invito alla festa.",
+  corretta: ["vi"],
+  risposte: ["vi", "ci", "li", "le"]
+},
+{
+  frase: "Ricevo molte lettere. Leggo tutte le lettere.<br><br>Ricevo molte lettere. ___ leggo tutte.",
+  corretta: ["le"],
+  risposte: ["le", "li", "la", "gli"]
+},
+{
+  frase: "Spedisco un regalo a mia sorella.<br><br>___ spedisco un regalo.",
+  corretta: ["le"],
+  risposte: ["le", "gli", "la", "ci"]
+},
+{
+  frase: "Ho dei panini nel  frigo. Prendo due panini dal frigo<br><br>Ho dei panini nel  frigo.__ prendo due .",
+  corretta: ["ne"],
+  risposte: ["ne", "li", "lo", "gli"]
+},
+{
+  frase: "Scrivete a me una mail?<br><br>___ scrivete una mail?",
+  corretta: ["mi"],
+  risposte: ["mi", "vi", "ti", "gli"]
+},
+{
+  frase: "Diciamo la verità a loro.<br><br>Diciamo ___  la verità.",
+  corretta: ["gli"],
+  risposte: ["gli", "le", "li", "ci"]
+},
+{
+  frase: "Lucia mi ha regalato un libro. Io leggo il libro.<br><br>Lucia mi ha regalato un libro. Io ___ leggo.",
+  corretta: ["lo"],
+  risposte: ["lo", "gli", "le", "li"]
+},
+{
+  frase: "Compro i quaderni per voi.<br><br>___ compro i quaderni.",
+  corretta: ["vi"],
+  risposte: ["vi", "ci", "gli", "le"]
+},
+{
+  frase: "Parli spesso di quella storia? Sì, parlo spesso di quella storia.<br><br>Parli spesso di quella storia? Sì, ___parlo spesso.",
+  corretta: ["ne"],
+  risposte: ["ne", "lo", "gli", "la"]
+},
+{
+  frase: "Chiamiamo la professoressa? Sì, chiamiamo subito la professoressa.<br><br> Chiamiamo la professoressa? Sì, ___ chiamiamo subito.",
+  corretta: ["la"],
+  risposte: ["la", "le", "gli", "ci"]
+},
+{
+  frase: "Invito Marco e Anna alla cena.<br><br>___ invito alla cena.",
+  corretta: ["li"],
+  risposte: ["li", "le", "gli", "vi"]
+}
+
   ]
 }
 
