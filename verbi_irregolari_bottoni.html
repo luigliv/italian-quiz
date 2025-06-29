@@ -82,28 +82,47 @@
       "avere": ["ho", "hai", "ha", "abbiamo", "avete", "hanno"],
       "andare": ["vado", "vai", "va", "andiamo", "andate", "vanno"],
       "dire": ["dico", "dici", "dice", "diciamo", "dite", "dicono"],
-      "fare": ["faccio", "fai", "fa", "facciamo", "fate", "fanno"]
+      "fare": ["faccio", "fai", "fa", "facciamo", "fate", "fanno"],
+      "venire": ["vengo", "vieni", "viene", "veniamo", "venite", "vengono"],
+      "uscire": ["esco", "esci", "esce", "usciamo", "uscite", "escono"],
+      "volere": ["voglio", "vuoi", "vuole", "vogliamo", "volete", "vogliono"],
+      "potere": ["posso", "puoi", "può", "possiamo", "potete", "possono"],
+      "dovere": ["devo", "devi", "deve", "dobbiamo", "dovete", "devono"],
+      "sapere": ["so", "sai", "sa", "sappiamo", "sapete", "sanno"],
+      "bere": ["bevo", "bevi", "beve", "beviamo", "bevete", "bevono"],
+      "scegliere": ["scelgo", "scegli", "sceglie", "scegliamo", "scegliete", "scelgono"],
+      "tenere": ["tengo", "tieni", "tiene", "teniamo", "tenete", "tengono"],
+      "morire": ["muoio", "muori", "muore", "moriamo", "morite", "muoiono"],
+      "rimanere": ["rimango", "rimani", "rimane", "rimaniamo", "rimanete", "rimangono"],
+      "salire": ["salgo", "sali", "sale", "saliamo", "salite", "salgono"],
+      "togliere": ["tolgo", "togli", "toglie", "togliamo", "togliete", "tolgono"],
+      "accogliere": ["accolgo", "accogli", "accoglie", "accogliamo", "accogliete", "accolgono"],
+      "proporre": ["propongo", "proponi", "propone", "proponiamo", "proponete", "propongono"]
     };
 
     const distrattoriInsidiosi = {
       "è": ["e"],
-      "siamo": ["stiamo"],
-      "sono": ["sanno"],
-      "ho": ["o"],
-      "hai": ["ai"],
-      "hanno": ["anno"],
-      "va": ["anda"],
-      "vado": ["ando"],
-      "dite": ["dicete"],
+      "siamo": ["stiamo", "saimo", "siemi"],
+      "sono": ["sanno", "seno", "sonoo"],
+      "ho": ["o", "hau", "hò"],
+      "hai": ["ai", "haj", "haii"],
+      "hanno": ["anno", "hannno", "hano"],
+      "va": ["anda", "và", "vao"],
+      "vado": ["ando", "vadiamo", "vada"],
+      "dite": ["dicete", "ditte", "diciate"],
+      "fate": ["facete", "fatete", "fatte"],
+      "andate": ["vadate", "andeti", "andite"],
+      "viene": ["venie", "vienea", "vieni"],
+      "esci": ["usci", "escie", "esce"],
+      "venite": ["vienite", "veneti", "veniate"],
+      "uscite": ["escite", "usceti", "usciate"],
+      "voglio": ["vollio", "vòglio", "vogliò"],
+      "volete": ["vuolete", "volette", "volite"],
+      "andiamo": ["vadiamo", "andemo", "andiemo"],
+      "dici": ["dichi", "dissi", "daci"],
+      "veniamo": ["vieniamo", "veniemo", "venate"],
+      "dobbiamo": ["deviamo", "dobiamo", "debiamo"],
       "fate": ["facete"],
-       "andate": ["vadate"],
-       "viene": ["venie"],
-       "esci": ["usci"],
-       "venite": ["viente"],
-       "uscite": ["escite"],
-       "voglio": ["vollio"],
-       "volete": ["vuolete"]
-    
     };
 
     const pronomi = [
@@ -151,11 +170,9 @@
         this.ultimaCorretta = corretta;
 
         const distrattori = new Set();
-        // Aggiungi distrattori simili definiti manualmente
         if (distrattoriInsidiosi[corretta]) {
           distrattoriInsidiosi[corretta].forEach(f => distrattori.add(f));
         }
-        // Aggiungi altre forme del verbo escluse la corretta
         coniugazioni.forEach(f => {
           if (f !== corretta && distrattori.size < 3) distrattori.add(f);
         });
@@ -222,7 +239,6 @@
 
     window.onload = () => new QuizIrregolari().init();
   </script>
-  <a href="index.html" id="torna-menu">← Menu</a>
+  <a href="menu.html" id="torna-menu">← Menu</a>
 </body>
 </html>
-
