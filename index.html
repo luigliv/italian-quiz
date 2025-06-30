@@ -9,23 +9,25 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
-      background-color: #fdfdfd;
+      background-color: #121212;
+      color: #f0f0f0;
+      font-size: 1rem;
     }
 
     h1 {
-      font-size: 6vw;
-      color: #664e54;
+      font-size: 2rem;
+      color: #ffcccb;
       margin-bottom: 10px;
     }
 
     h2 {
-      font-size: 5vw;
-      color: #664e54;
+      font-size: 1.5rem;
+      color: #ffcccb;
       margin-bottom: 5px;
     }
 
     p {
-      font-size: 5vw;
+      font-size: 1.2rem;
     }
 
     ol {
@@ -38,19 +40,19 @@
     }
 
     a {
-      font-size: 5vw;
-      color: blue;
+      font-size: 1.2rem;
+      color: #99ccff;
       text-decoration: underline;
     }
 
     a:hover {
-      background-color: darkblue;
+      background-color: #0055aa;
       color: white;
     }
 
     button {
       padding: 10px 16px;
-      font-size: 18px;
+      font-size: 1rem;
       text-align: left;
       cursor: pointer;
       border: none;
@@ -79,10 +81,10 @@
     }
 
     @media (min-width: 700px) {
-      h1 { font-size: 35px; }
-      h2 { font-size: 25px; }
-      p, a { font-size: 20px; }
-      button { font-size: 16px; }
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 2rem; }
+      p, a { font-size: 1.3rem; }
+      button { font-size: 1rem; }
 
       .contenitore-colonne {
         flex-direction: row;
@@ -130,9 +132,9 @@
     </div>
   </div>
 
-  <p id="argomento-scelto" style="display: none; font-weight: bold; font-size: 20px; margin-top: 20px;"></p>
+  <p id="argomento-scelto" style="display: none; font-weight: bold; font-size: 1.3rem; margin-top: 20px;"></p>
 
-  <p id="livello" style="display: none; font-size: 18px; margin-top: 10px;">Scegli la modalità:</p>
+  <p id="livello" style="display: none; font-size: 1.2rem; margin-top: 10px;">Scegli la modalità:</p>
 
   <div id="scelta-livello" style="display: none;">
     <button onclick="caricaLivello('bottoni')">Livello 1</button>
@@ -145,7 +147,7 @@
     function seleziona(scelta) {
       argomento = scelta;
       document.getElementById("argomenti").style.display = "none";
-      document.getElementById("argomento-scelto").textContent = "Hai scelto: " + scelta.replaceAll("%20", " ");
+      document.getElementById("argomento-scelto").textContent = "Hai scelto: " + decodeURIComponent(scelta);
       document.getElementById("argomento-scelto").style.display = "block";
       document.getElementById("livello").style.display = "block";
       document.getElementById("scelta-livello").style.display = "flex";
