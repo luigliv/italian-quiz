@@ -6,7 +6,7 @@
     <title>Quiz - Livello 1</title>
     <style>
         html {
-            font-size: 16px; /* base font size */
+            font-size: 24px; /* base font size */
         }
         body {
             font-family: Arial, sans-serif;
@@ -90,7 +90,7 @@
                       ? parole.slice(0, 2).join(" ") + "<br><span style='font-size: 80%;'>" + parole.slice(2).join(" ") + "</span>"
                     : argomento;
 
-                document.getElementById("titolo_quiz").innerHTML = "Quiz su:<br><strong>" + titoloFormattato + "</strong><br>Livello 1";
+                document.getElementById("titolo_quiz").innerHTML = "Quiz 1su:<br><strong>" + titoloFormattato + "</strong><br>Livello 1";
                 document.getElementById("descrizione").textContent = this.descrizione;
 
                 this.domandeSelezionate = [];
