@@ -59,6 +59,17 @@
         #torna-menu:hover {
             background-color: #e0e0e0;
         }
+      @media (max-width: 480px) {
+  html {
+    font-size: 20px;
+  }
+  body {
+    font-size: 1.125rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+}
     </style>
 </head>
 <body>
@@ -90,7 +101,7 @@
                       ? parole.slice(0, 2).join(" ") + "<br><span style='font-size: 80%;'>" + parole.slice(2).join(" ") + "</span>"
                     : argomento;
 
-                document.getElementById("titolo_quiz").innerHTML = "Quiz 1su:<br><strong>" + titoloFormattato + "</strong><br>Livello 1";
+                document.getElementById("titolo_quiz").innerHTML = "Quiz 2su:<br><strong>" + titoloFormattato + "</strong><br>Livello 1";
                 document.getElementById("descrizione").textContent = this.descrizione;
 
                 this.domandeSelezionate = [];
