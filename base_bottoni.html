@@ -1,53 +1,59 @@
   <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz - Livello 1</title>
     <style>
-        h1 {
-            font-size: 35px;
-            color: rgb(255, 0, 64);
+        html {
+            font-size: 16px; /* base font size */
         }
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin-top: 30px;
-            font-size: 18px;
+            margin-top: 1.875rem; /* 30px */
+            font-size: 1.125rem; /* 18px */
+            background-color: #121212;
+            color: #f0f0f0;
+        }
+        h1 {
+            font-size: 2.1875rem; /* 35px */
+            color: rgb(255, 0, 64);
         }
         #titolo-quiz {
             line-height: 1.2;
         }
         .bottone-risposta {
-            padding: 10px 20px;
-            font-size: 18px;
-            margin: 10px;
+            padding: 0.625rem 1.25rem; /* 10px 20px */
+            font-size: 1.125rem; /* 18px */
+            margin: 0.625rem; /* 10px */
             cursor: pointer;
+            border-radius: 0.25rem;
         }
         #message {
-            margin-top: 20px;
-            font-size: 20px;
+            margin-top: 1.25rem; /* 20px */
+            font-size: 1.25rem; /* 20px */
         }
         #descrizione {
             font-style: italic;
-            font-size: 25px;
-            margin-bottom: 20px;
+            font-size: 1.5625rem; /* 25px */
+            margin-bottom: 1.25rem; /* 20px */
         }
         #frase {
-            font-size: 20px;
+            font-size: 1.25rem; /* 20px */
         }
         #torna-menu {
             position: fixed;
-            bottom: 20px;
-            left: 20px;
+            bottom: 1.25rem; /* 20px */
+            left: 1.25rem; /* 20px */
             background-color: #f0f0f0;
-            padding: 10px 15px;
+            padding: 0.625rem 0.9375rem; /* 10px 15px */
             border: 1px solid #aaa;
-            border-radius: 8px;
-            font-size: 16px;
+            border-radius: 0.5rem; /* 8px */
+            font-size: 1rem; /* 16px */
             text-decoration: none;
             color: #333;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0.125rem 0.125rem 0.3125rem rgba(0,0,0,0.2); /* 2px 2px 5px */
             z-index: 1000;
         }
         #torna-menu:hover {
@@ -112,10 +118,10 @@
                 const domanda = this.domandeSelezionate[this.domandaCorrente];
                 document.getElementById("frase").innerHTML = domanda.frase;
                 if (this.argomento === "pronomi") {
-                    document.getElementById("frase").style.fontSize = "20px";
+                    document.getElementById("frase").style.fontSize = "1.25rem"; // 20px
                     document.getElementById("frase").style.lineHeight = "1.4";
                 } else {
-                    document.getElementById("frase").style.fontSize = "25px";
+                    document.getElementById("frase").style.fontSize = "1.5625rem"; // 25px
                     document.getElementById("frase").style.lineHeight = "normal";
                 }
                 const risposteMescolate = this.shuffle([...domanda.risposte]);
