@@ -1,4 +1,11 @@
-     html {
+ <!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Livello 2</title>
+  <style>
+    html {
       font-size: 30px;
     }
 
@@ -83,3 +90,175 @@
     #torna-menu:hover {
       background-color: #555;
     }
+  </style>
+</head>
+<body>
+  <h1 id="titolo_quiz">Caricamento...</h1>
+  <p id="descrizione" style="font-style: italic; font-size: 1.25rem; margin-bottom: 1.2rem;"></p>
+  <p id="frase">Caricamento...</p>
+  <input type="text" id="risposta" placeholder="Completa la frase" autocapitalize="off" autocomplete="off">
+  <button onclick="quiz.controllaRisposta()">Invia</button>
+  <p id="message"></p>
+  <div id="bottoni-continuazione"></div>
+
+  <script src="dati.js"></script>
+  <script>
+    class Quiz {
+      constructor(argomento) {
+        this.argomento = argomento;
+        const sezione = dati[this.argomento];
+
+        if (!sezione || !Array.isArray(sezione.domande)) {
+          alert("Argomento non valido o dati mancanti.");
+          document.body.innerHTML = "<h2>Errore: dati non disponibili per l'argomento selezionato.</h2><a href='menu.html'>Torna al menu</a>";
+          return;
+        }
+
+        this.descrizione = sezione.descrizione || "";
+        this.domande = sezione.domande;
+
+        const parole = argomento.split(" ");
+        let titoloFormattato = parole.length >= 2
+          ? parole.slice(0, 2).join(" ") + "<br>" + parole.slice(2).join(" ")
+          : argomento;
+
+        document.getElementById("titolo_quiz").innerHTML = "Quiz su:<br><strong>" + titoloFormattato + "</strong><br>Livello 2";
+        document.getElementById("descrizione").textContent = this.descrizione;
+
+        if (this.argomento.toLowerCase() === "pronomi") {
+          document.getElementById("frase").style.fontSize = "1.7rem";
+          document.getElementById("frase").style.lineHeight = "1.4";
+        }
+
+        this.domandeSelezionate = [];
+        this.domandaCorrente = 0;
+        this.inizioTempo = null;
+        this.erroriConsecutivi = 0;
+        this.mostraRisposta = false;
+        this.rispostaDaRipetere = "";
+      }
+
+      caricaDati() {
+        this.inizioTempo = new Date();
+        this.domandeSelezionate = this.domande.sort(() => Math.random() - 0.5).slice(0, 3);
+        this.domandaCorrente = 0;
+        this.erroriConsecutivi = 0;
+        this.poniDomanda();
+        document.getElementById("bottoni-continuazione").innerHTML = "";
+      }
+
+      poniDomanda() {
+        const domanda = this.domandeSelezionate[this.domandaCorrente];
+        document.getElementById("frase").innerHTML = domanda.frase;
+        document.getElementById("risposta").value = "";
+        document.getElementById("message").textContent = "";
+        this.mostraRisposta = false;
+        this.rispostaDaRipetere = "";
+        document.getElementById("risposta").disabled = false;
+        document.getElementById("risposta").focus();
+      }
+
+      controllaRisposta() {
+        const rispostaUtente = document.getElementById("risposta").value.trim().toLowerCase();
+        const domanda = this.domandeSelezionate[this.domandaCorrente];
+        const corrette = domanda.corretta.map(r => r.toLowerCase());
+        const message = document.getElementById("message");
+
+        if (this.mostraRisposta) {
+          if (rispostaUtente === this.rispostaDaRipetere.toLowerCase()) {
+            message.textContent = "Esatto! Puoi continuare.";
+            message.style.color = "lightgreen";
+            setTimeout(() => {
+              this.domandaCorrente++;
+              if (this.domandaCorrente < this.domandeSelezionate.length) {
+                this.poniDomanda();
+              } else {
+                this.mostraRisultato();
+              }
+            }, 1000);
+          } else {
+            message.innerHTML = `<span class="risposta-corretta">Risposta corretta:<br><span class="risposta-evidenziata">${this.rispostaDaRipetere}</span><br>Scrivila per continuare.</span>`;
+            message.style.color = "white";
+          }
+          return;
+        }
+
+        if (corrette.includes(rispostaUtente)) {
+          message.textContent = "Risposta corretta!";
+          message.style.color = "lightgreen";
+          this.erroriConsecutivi = 0;
+          setTimeout(() => {
+            this.domandaCorrente++;
+            if (this.domandaCorrente < this.domandeSelezionate.length) {
+              this.poniDomanda();
+            } else {
+              this.mostraRisultato();
+            }
+          }, 1000);
+        } else {
+          this.erroriConsecutivi++;
+          if (this.erroriConsecutivi >= 3 && !this.mostraRisposta) {
+            this.mostraRispostaCorretta(corrette);
+          } else {
+            message.textContent = "Risposta sbagliata! Riprova.";
+            message.style.color = "orange";
+            setTimeout(() => {
+              message.textContent = "";
+            }, 1000);
+          }
+        }
+      }
+
+      mostraRispostaCorretta(risposteCorrette) {
+        const rispostaTesto = risposteCorrette[0];
+        const message = document.getElementById("message");
+        message.innerHTML = `<span class="risposta-corretta">Risposta corretta:<br><span class="risposta-evidenziata">${rispostaTesto}</span><br>Scrivila per continuare.</span>`;
+        message.style.color = "white";
+        this.mostraRisposta = true;
+        this.rispostaDaRipetere = rispostaTesto;
+        this.erroriConsecutivi = 0;
+      }
+
+      mostraRisultato() {
+        const tempoFine = new Date();
+        const tempoTotale = Math.round((tempoFine - this.inizioTempo) / 1000);
+        document.getElementById("frase").textContent = "Hai completato il quiz!";
+        document.getElementById("risposta").style.display = "none";
+        const button = document.querySelector("button");
+        if (button) button.style.display = "none";
+        const message = document.getElementById("message");
+        message.innerHTML = `Tempo impiegato: ${tempoTotale} secondi.<br>Vuoi continuare?`;
+        const bottoniContainer = document.getElementById("bottoni-continuazione");
+        bottoniContainer.innerHTML = "";
+
+        const bottoneSi = document.createElement("button");
+        bottoneSi.textContent = "Sì";
+        bottoneSi.onclick = () => {
+          document.getElementById("risposta").style.display = "";
+          if (button) button.style.display = "";
+          this.caricaDati();
+        };
+
+        const bottoneNo = document.createElement("button");
+        bottoneNo.textContent = "No";
+        bottoneNo.onclick = () => {
+          message.textContent = "Ciao! Alla prossima.";
+          bottoniContainer.innerHTML = "";
+        };
+
+        bottoniContainer.appendChild(bottoneSi);
+        bottoniContainer.appendChild(bottoneNo);
+      }
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const argomento = urlParams.get("argomento");
+    const quiz = new Quiz(argomento);
+    window.onload = () => {
+      if (quiz.domande) quiz.caricaDati();
+    };
+  </script>
+
+  <a href="index.html" id="torna-menu">← Menu</a>
+</body>
+</html>
