@@ -1,15 +1,10 @@
- <!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz - Livello 2</title>
-  <style>
-    html {
-      font-size: 30px; /* puoi aumentare a 20px se serve ancora più grande */
+     html {
+      font-size: 30px;
     }
 
     body {
+      background-color: #121212;
+      color: #f0f0f0;
       font-family: Arial, sans-serif;
       text-align: center;
       margin-top: 2.5rem;
@@ -18,7 +13,7 @@
 
     h1 {
       font-size: 1.8rem;
-      color: rgb(255, 0, 64);
+      color: #ff4081;
     }
 
     #frase {
@@ -31,6 +26,9 @@
       font-size: 1.25rem;
       width: 10rem;
       margin-top: 1.2rem;
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #555;
     }
 
     button {
@@ -38,6 +36,13 @@
       font-size: 1.25rem;
       margin-top: 0.6rem;
       cursor: pointer;
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #666;
+    }
+
+    button:hover {
+      background-color: #444;
     }
 
     #message {
@@ -51,203 +56,30 @@
       padding: 0.6rem;
       border: 0.15rem solid black;
       display: inline-block;
+      color: black;
     }
 
     .risposta-evidenziata {
       font-size: 1.375rem;
       font-weight: bold;
-      color: #c1272d;
+      color: #ff6666;
     }
 
     #torna-menu {
       position: fixed;
       bottom: 1.2rem;
       left: 1.2rem;
-      background-color: #f0f0f0;
+      background-color: #333;
       padding: 0.6rem 1rem;
-      border: 0.06rem solid #aaa;
+      border: 0.06rem solid #999;
       border-radius: 0.5rem;
       font-size: 1rem;
       text-decoration: none;
-      color: #333;
-      box-shadow: 0.125rem 0.125rem 0.3rem rgba(0,0,0,0.2);
+      color: #fff;
+      box-shadow: 0.125rem 0.125rem 0.3rem rgba(0,0,0,0.4);
       z-index: 1000;
     }
 
     #torna-menu:hover {
-      background-color: #e0e0e0;
+      background-color: #555;
     }
-  </style>
-</head>
-<body>
-  <h1 id="titolo_quiz">Caricamento...</h1>
-  <p id="descrizione" style="font-style: italic; font-size: 1.25rem; margin-bottom: 1.2rem;"></p>
-  <p id="frase">Caricamento...</p>
-  <input type="text" id="risposta" placeholder="Completa la frase" autocapitalize="off" autocomplete="off">
-  <button onclick="quiz.controllaRisposta()">Invia</button>
-  <p id="message"></p>
-  <div id="bottoni-continuazione"></div>
-
-  <script src="dati.js"></script>
-  <script>
-    class Quiz {
-      constructor(argomento) {
-        this.argomento = argomento;
-        const sezione = dati[this.argomento];
-
-        if (!sezione || !Array.isArray(sezione.domande)) {
-          alert("Argomento non valido o dati mancanti.");
-          document.body.innerHTML = "<h2>Errore: dati non disponibili per l'argomento selezionato.</h2><a href='menu.html'>Torna al menu</a>";
-          return;
-        }
-
-        this.descrizione = sezione.descrizione || "";
-        this.domande = sezione.domande;
-
-        const parole = argomento.split(" ");
-        let titoloFormattato = parole.length >= 2
-          ? parole.slice(0, 2).join(" ") + "<br>" + parole.slice(2).join(" ")
-          : argomento;
-
-        document.getElementById("titolo_quiz").innerHTML = "Quiz su:<br><strong>" + titoloFormattato + "</strong><br>Livello 2";
-        document.getElementById("descrizione").textContent = this.descrizione;
-
-        if (this.argomento.toLowerCase() === "pronomi") {
-          document.getElementById("frase").style.fontSize = "1.7rem";
-          document.getElementById("frase").style.lineHeight = "1.4";
-        }
-
-        this.domandeSelezionate = [];
-        this.domandaCorrente = 0;
-        this.inizioTempo = null;
-        this.erroriConsecutivi = 0;
-        this.mostraRisposta = false;
-        this.rispostaDaRipetere = "";
-      }
-
-      caricaDati() {
-        this.inizioTempo = new Date();
-        this.domandeSelezionate = this.domande
-          .sort(() => Math.random() - 0.5)
-          .slice(0, 3);
-        this.domandaCorrente = 0;
-        this.erroriConsecutivi = 0;
-        this.poniDomanda();
-        document.getElementById("bottoni-continuazione").innerHTML = "";
-      }
-
-      poniDomanda() {
-        const domanda = this.domandeSelezionate[this.domandaCorrente];
-        document.getElementById("frase").innerHTML = domanda.frase;
-        document.getElementById("risposta").value = "";
-        document.getElementById("message").textContent = "";
-        this.mostraRisposta = false;
-        this.rispostaDaRipetere = "";
-        document.getElementById("risposta").disabled = false;
-        document.getElementById("risposta").focus();
-      }
-
-      controllaRisposta() {
-        const rispostaUtente = document.getElementById("risposta").value.trim().toLowerCase();
-        const domanda = this.domandeSelezionate[this.domandaCorrente];
-        const corrette = domanda.corretta.map(r => r.toLowerCase());
-        const message = document.getElementById("message");
-
-        if (this.mostraRisposta) {
-          if (rispostaUtente === this.rispostaDaRipetere.toLowerCase()) {
-            message.textContent = "Esatto! Puoi continuare.";
-            message.style.color = "green";
-            setTimeout(() => {
-              this.domandaCorrente++;
-              if (this.domandaCorrente < this.domandeSelezionate.length) {
-                this.poniDomanda();
-              } else {
-                this.mostraRisultato();
-              }
-            }, 1000);
-          } else {
-            message.innerHTML = `<span class="risposta-corretta">Risposta corretta:<span class="risposta-evidenziata"><br>${this.rispostaDaRipetere}</span><br>Scrivila per continuare.`;
-            message.style.color = "black";
-          }
-          return;
-        }
-
-        if (corrette.includes(rispostaUtente)) {
-          message.textContent = "Risposta corretta!";
-          message.style.color = "green";
-          this.erroriConsecutivi = 0;
-          setTimeout(() => {
-            this.domandaCorrente++;
-            if (this.domandaCorrente < this.domandeSelezionate.length) {
-              this.poniDomanda();
-            } else {
-              this.mostraRisultato();
-            }
-          }, 1000);
-        } else {
-          this.erroriConsecutivi++;
-          if (this.erroriConsecutivi >= 3 && !this.mostraRisposta) {
-            this.mostraRispostaCorretta(corrette);
-          } else {
-            message.textContent = "Risposta sbagliata! Riprova.";
-            message.style.color = "red";
-            setTimeout(() => {
-              message.textContent = "";
-            }, 1000);
-          }
-        }
-      }
-
-      mostraRispostaCorretta(risposteCorrette) {
-        const rispostaTesto = risposteCorrette[0];
-        const message = document.getElementById("message");
-        message.innerHTML = `<span class="risposta-corretta">Risposta corretta:<span class="risposta-evidenziata"><br>${rispostaTesto}</span><br>Scrivila per continuare.`;
-        message.style.color = "black";
-        this.mostraRisposta = true;
-        this.rispostaDaRipetere = rispostaTesto;
-        this.erroriConsecutivi = 0;
-      }
-
-      mostraRisultato() {
-        const tempoFine = new Date();
-        const tempoTotale = Math.round((tempoFine - this.inizioTempo) / 1000);
-        document.getElementById("frase").textContent = "Hai completato il quiz!";
-        document.getElementById("risposta").style.display = "none";
-        const button = document.querySelector("button");
-        if (button) button.style.display = "none";
-        const message = document.getElementById("message");
-        message.innerHTML = `Tempo impiegato: ${tempoTotale} secondi.<br>Vuoi continuare?`;
-        const bottoniContainer = document.getElementById("bottoni-continuazione");
-        bottoniContainer.innerHTML = "";
-
-        const bottoneSi = document.createElement("button");
-        bottoneSi.textContent = "Sì";
-        bottoneSi.onclick = () => {
-          document.getElementById("risposta").style.display = "";
-          if (button) button.style.display = "";
-          this.caricaDati();
-        };
-
-        const bottoneNo = document.createElement("button");
-        bottoneNo.textContent = "No";
-        bottoneNo.onclick = () => {
-          message.textContent = "Ciao! Alla prossima.";
-          bottoniContainer.innerHTML = "";
-        };
-
-        bottoniContainer.appendChild(bottoneSi);
-        bottoniContainer.appendChild(bottoneNo);
-      }
-    }
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const argomento = urlParams.get("argomento");
-    const quiz = new Quiz(argomento);
-    window.onload = () => {
-      if (quiz.domande) quiz.caricaDati();
-    };
-  </script>
-
-  <a href="index.html" id="torna-menu">← Menu</a>
-</body>
-</html>
