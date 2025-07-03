@@ -146,160 +146,171 @@
 
   <script>
     const verbiIrregolari = {
-      "avere": ["ho", "hai", "ha", "abbiamo", "avete", "hanno"],
-      "essere": ["sono", "sei", "è", "siamo", "siete", "sono"],
-      "fare": ["faccio", "fai", "fa", "facciamo", "fate", "fanno"],
-      "andare": ["vado", "vai", "va", "andiamo", "andate", "vanno"],
-      "venire": ["vengo", "vieni", "viene", "veniamo", "venite", "vengono"],
-      "dire": ["dico", "dici", "dice", "diciamo", "dite", "dicono"],
-      "uscire": ["esco", "esci", "esce", "usciamo", "uscite", "escono"],
-      "dovere": ["devo", "devi", "deve", "dobbiamo", "dovete", "devono"],
-      "potere": ["posso", "puoi", "può", "possiamo", "potete", "possono"],
-      "volere": ["voglio", "vuoi", "vuole", "vogliamo", "volete", "vogliono"],
-      "sapere": ["so", "sai", "sa", "sappiamo", "sapete", "sanno"],
-      "stare": ["sto", "stai", "sta", "stiamo", "state", "stanno"],
-      "bere": ["bevo", "bevi", "beve", "beviamo", "bevete", "bevono"],
-      "tenere": ["tengo", "tieni", "tiene", "teniamo", "tenete", "tengono"],
-      "perdere": ["perdo", "perdi", "perde", "perdiamo", "perdete", "perdono"],
-      "correre": ["corro", "corri", "corre", "corriamo", "correte", "corrono"],
-      "scegliere": ["scelgo", "scegli", "sceglie", "scegliamo", "scegliete", "scelgono"],
-      "piacere": ["piaccio", "piaci", "piace", "piacciamo", "piacete", "piacciono"],
-      "tradurre": ["traduisco", "traduci", "traduce", "traduciamo", "traducete", "traducono"],
-      "produrre": ["produco", "produci", "produce", "produciamo", "producete", "producono"],
-      "ridere": ["rido", "ridi", "ride", "ridiamo", "ridete", "ridono"],
-      "salire": ["salgo", "sali", "sale", "saliamo", "salite", "salgono"]
-    };
+    "avere": ["ho", "hai", "ha", "abbiamo", "avete", "hanno"],
+    "essere": ["sono", "sei", "è", "siamo", "siete", "sono"],
+    "fare": ["faccio", "fai", "fa", "facciamo", "fate", "fanno"],
+    "andare": ["vado", "vai", "va", "andiamo", "andate", "vanno"],
+    "venire": ["vengo", "vieni", "viene", "veniamo", "venite", "vengono"],
+    "dire": ["dico", "dici", "dice", "diciamo", "dite", "dicono"],
+    "uscire": ["esco", "esci", "esce", "usciamo", "uscite", "escono"],
+    "dovere": ["devo", "devi", "deve", "dobbiamo", "dovete", "devono"],
+    "potere": ["posso", "puoi", "può", "possiamo", "potete", "possono"],
+    "volere": ["voglio", "vuoi", "vuole", "vogliamo", "volete", "vogliono"],
+    "sapere": ["so", "sai", "sa", "sappiamo", "sapete", "sanno"],
+    "stare": ["sto", "stai", "sta", "stiamo", "state", "stanno"],
+    "bere": ["bevo", "bevi", "beve", "beviamo", "bevete", "bevono"],
+    "tenere": ["tengo", "tieni", "tiene", "teniamo", "tenete", "tengono"],
+    "perdere": ["perdo", "perdi", "perde", "perdiamo", "perdete", "perdono"],
+    "correre": ["corro", "corri", "corre", "corriamo", "correte", "corrono"],
+    "scegliere": ["scelgo", "scegli", "sceglie", "scegliamo", "scegliete", "scelgono"],
+    "piacere": ["piaccio", "piaci", "piace", "piacciamo", "piacete", "piacciono"],
+    "tradurre": ["traduisco", "traduci", "traduce", "traduciamo", "traducete", "traducono"],
+    "produrre": ["produco", "produci", "produce", "produciamo", "producete", "producono"],
+    "ridere": ["rido", "ridi", "ride", "ridiamo", "ridete", "ridono"],
+    "salire": ["salgo", "sali", "sale", "saliamo", "salite", "salgono"]
+  };
 
-    const pronomi = [
-      { soggetto: "io", indice: 0 },
-      { soggetto: "tu", indice: 1 },
-      { soggetto: "lui/lei", indice: 2 },
-      { soggetto: "noi", indice: 3 },
-      { soggetto: "voi", indice: 4 },
-      { soggetto: "loro", indice: 5 }
-    ];
+  const pronomi = [
+    { soggetto: "io", indice: 0 },
+    { soggetto: "tu", indice: 1 },
+    { soggetto: "lui/lei", indice: 2 },
+    { soggetto: "noi", indice: 3 },
+    { soggetto: "voi", indice: 4 },
+    { soggetto: "loro", indice: 5 }
+  ];
 
-    class QuizIrregolariInput {
-      constructor() {
-        this.domandeTotali = 5;
-        this.domandaCorrente = 0;
-        this.listaDomande = [];
-        this.inizioTempo = null;
-        this.ultimaCorretta = "";
-        this.statoAttesa = false;
+  class QuizIrregolariInput {
+    constructor() {
+      this.domandeTotali = 5;
+      this.domandaCorrente = 0;
+      this.listaDomande = [];
+      this.inizioTempo = null;
+      this.ultimaCorretta = "";
+      this.tentativi = 0;
+      this.statoAttesa = false;
+    }
+
+    init() {
+      this.inizioTempo = new Date();
+      const verbi = Object.keys(verbiIrregolari);
+      while (this.listaDomande.length < this.domandeTotali) {
+        const idx = Math.floor(Math.random() * verbi.length);
+        const verbo = verbi.splice(idx, 1)[0];
+        const pronome = pronomi[Math.floor(Math.random() * pronomi.length)];
+        this.listaDomande.push({ verbo, pronome });
+      }
+      this.domandaCorrente = 0;
+      this.mostraDomanda();
+    }
+
+    mostraDomanda() {
+      this.statoAttesa = false;
+      this.tentativi = 0;
+      document.getElementById("message").textContent = "";
+      document.getElementById("bottoni-continuazione").innerHTML = "";
+      const inp = document.getElementById("risposta");
+      inp.value = "";
+      inp.disabled = false;
+      inp.focus();
+
+      if (this.domandaCorrente >= this.domandeTotali) {
+        this.mostraTempoFinale();
+        return;
       }
 
-      init() {
-        this.inizioTempo = new Date();
-        const verbi = Object.keys(verbiIrregolari);
-        while (this.listaDomande.length < this.domandeTotali) {
-          const idx = Math.floor(Math.random() * verbi.length);
-          const verbo = verbi.splice(idx, 1)[0];
-          const pronome = pronomi[Math.floor(Math.random() * pronomi.length)];
-          this.listaDomande.push({ verbo, pronome });
-        }
-        this.domandaCorrente = 0;
-        this.mostraDomanda();
-      }
+      const { verbo, pronome } = this.listaDomande[this.domandaCorrente];
+      document.getElementById("frase-verbo").textContent =
+        `"${verbo}" → ${pronome.soggetto} ___`;
+      this.ultimaCorretta = verbiIrregolari[verbo][pronome.indice];
+    }
 
-      mostraDomanda() {
-        this.statoAttesa = false;
-        document.getElementById("message").textContent = "";
-        document.getElementById("bottoni-continuazione").innerHTML = "";
-        const inp = document.getElementById("risposta");
-        inp.value = "";
-        inp.disabled = false;
-        inp.focus();
+    gestisciInvio() {
+      const inp = document.getElementById("risposta");
+      const val = inp.value.trim().toLowerCase();
+      const corr = this.ultimaCorretta.toLowerCase();
+      const msgEl = document.getElementById("message");
 
-        if (this.domandaCorrente >= this.domandeTotali) {
-          this.mostraTempoFinale();
-          return;
-        }
-
-        const { verbo, pronome } = this.listaDomande[this.domandaCorrente];
-        document.getElementById("frase-verbo").textContent =
-          `"${verbo}" → ${pronome.soggetto} ___`;
-        this.ultimaCorretta = verbiIrregolari[verbo][pronome.indice];
-      }
-
-      gestisciInvio() {
-        const inp = document.getElementById("risposta");
-        const val = inp.value.trim().toLowerCase();
-        const corr = this.ultimaCorretta.toLowerCase();
-        const msgEl = document.getElementById("message");
-
-        if (!this.statoAttesa) {
-          if (val === corr) {
-            msgEl.textContent = "✔ Corretto!";
-            msgEl.style.color = "lightgreen";
-            inp.disabled = true;
-            setTimeout(() => {
-              this.domandaCorrente++;
-              this.mostraDomanda();
-            }, 800);
-          } else {
-            msgEl.innerHTML = `
-              ✖ Sbagliato. Forma corretta: 
-              <span class="risposta-corretta">${this.ultimaCorretta}</span><br>
-              Scrivila per continuare.
-            `;
-            msgEl.style.color = "orange";
-            this.statoAttesa = true;
-            inp.value = "";
-            inp.focus();
-          }
+      if (!this.statoAttesa) {
+        if (val === corr) {
+          msgEl.textContent = "✔ Corretto!";
+          msgEl.style.color = "green";
+          inp.disabled = true;
+          setTimeout(() => {
+            this.domandaCorrente++;
+            this.mostraDomanda();
+          }, 800);
         } else {
-          if (val === corr) {
-            msgEl.textContent = "✔ Perfetto!";
-            msgEl.style.color = "lightgreen";
-            inp.disabled = true;
-            setTimeout(() => {
-              this.domandaCorrente++;
-              this.mostraDomanda();
-            }, 800);
+          this.tentativi++;
+          if (this.tentativi >= 3) {
+            this.statoAttesa = true;
+            msgEl.innerHTML = `
+              ✖ Hai sbagliato 3 volte.<br>
+              La forma corretta è: <span class="risposta-corretta">${this.ultimaCorretta}</span><br>
+              Scrivila correttamente per continuare.
+            `;
+            msgEl.style.color = "red";
+            inp.value = "";
+            inp.focus();
           } else {
-            msgEl.textContent = `Devi scrivere esattamente “${this.ultimaCorretta}”.`;
+            msgEl.textContent = `✖ Sbagliato. Tentativo ${this.tentativi} di 3.`;
             msgEl.style.color = "orange";
             inp.value = "";
             inp.focus();
           }
         }
-      }
-
-      mostraTempoFinale() {
-        const fine = new Date();
-        const sec = Math.round((fine - this.inizioTempo) / 1000);
-        document.getElementById("frase-verbo").textContent = "Quiz terminato!";
-        document.getElementById("risposta").style.display = "none";
-        document.getElementById("invio").style.display = "none";
-
-        const msgEl = document.getElementById("message");
-        msgEl.innerHTML = `Hai completato le ${this.domandeTotali} domande in <strong>${sec}</strong> secondi.`;
-
-        const cont = document.getElementById("bottoni-continuazione");
-
-        const btnR = document.createElement("button");
-        btnR.textContent = "Ricomincia";
-        btnR.className = "bottone-si-no";
-        btnR.onclick = () => window.location.reload();
-        cont.appendChild(btnR);
-
-        const btnM = document.createElement("button");
-        btnM.textContent = "Torna al Menu";
-        btnM.className = "bottone-si-no";
-        btnM.onclick = () => window.location.href = "menu.html";
-        cont.appendChild(btnM);
+      } else {
+        if (val === corr) {
+          msgEl.textContent = "✔ Perfetto!";
+          msgEl.style.color = "green";
+          inp.disabled = true;
+          setTimeout(() => {
+            this.domandaCorrente++;
+            this.mostraDomanda();
+          }, 800);
+        } else {
+          msgEl.textContent = `Devi scrivere esattamente “${this.ultimaCorretta}”.`;
+          msgEl.style.color = "red";
+          inp.value = "";
+          inp.focus();
+        }
       }
     }
 
-    window.onload = () => {
-      const quiz = new QuizIrregolariInput();
-      quiz.init();
-      document.getElementById("invio").addEventListener("click", () => quiz.gestisciInvio());
-      document.getElementById("risposta").addEventListener("keypress", e => {
-        if (e.key === "Enter") quiz.gestisciInvio();
-      });
-    };
+    mostraTempoFinale() {
+      const fine = new Date();
+      const sec = Math.round((fine - this.inizioTempo) / 1000);
+      document.getElementById("frase-verbo").textContent = "Quiz terminato!";
+      document.getElementById("risposta").style.display = "none";
+      document.getElementById("invio").style.display = "none";
+
+      const msgEl = document.getElementById("message");
+      msgEl.innerHTML = `Hai completato le ${this.domandeTotali} domande in <strong>${sec}</strong> secondi.`;
+
+      const cont = document.getElementById("bottoni-continuazione");
+
+      const btnR = document.createElement("button");
+      btnR.textContent = "Ricomincia";
+      btnR.className = "bottone-si-no";
+      btnR.onclick = () => window.location.reload();
+      cont.appendChild(btnR);
+
+      const btnM = document.createElement("button");
+      btnM.textContent = "Torna al Menu";
+      btnM.className = "bottone-si-no";
+      btnM.onclick = () => window.location.href = "menu.html";
+      cont.appendChild(btnM);
+    }
+  }
+
+  window.onload = () => {
+    const quiz = new QuizIrregolariInput();
+    quiz.init();
+    document.getElementById("invio").addEventListener("click", () => quiz.gestisciInvio());
+    document.getElementById("risposta").addEventListener("keypress", e => {
+      if (e.key === "Enter") quiz.gestisciInvio();
+    });
+  };
+     
   </script>
   <a href="index.html" id="torna-menu">← Menu</a>
 </body>
