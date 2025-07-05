@@ -123,7 +123,7 @@
           : argomento;
 
         document.getElementById("titolo_quiz").innerHTML = "Quiz su:<br><strong>" + titoloFormattato + "</strong><br>Livello 2";
-        document.getElementById("descrizione").textContent = this.descrizione;
+        document.getElementById("descrizione").innerHTML = this.descrizione;
 
         if (this.argomento.toLowerCase() === "pronomi") {
           document.getElementById("frase").style.fontSize = "1.7rem";
