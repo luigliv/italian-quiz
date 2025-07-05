@@ -2,7 +2,7 @@
   
    const dati = {
     "Verbo ESSERE. Presente indicativo":{ 
-        descrizione: "Es: Tu ___ alto. => Tu SEI alto.",
+        descrizione: "Es: Tu ___ alto. => Tu <u>sei</> alto.",
         domande: [
         { frase: "Luca ___ allegro", corretta: ["è"], risposte: ["sei", "sono", "è", "siete"] },
   { frase: "Giulia ___ simpatica", corretta: ["è"], risposte: ["e", "è", "sono", "siete"] },
@@ -62,7 +62,7 @@
     ]
     },
     "Verbo AVERE. Presente indicativo": {
-       descrizione: "Noi ___ fretta. => Noi ABBIAMO fretta.",
+       descrizione: "Es: Noi ___ fretta. => Noi <u>abbiamo</u> fretta.",
        domande:[
           { frase: "Luca ___ un appartamento", corretta: ["ha"], risposte: ["hai", "ho", "ha", "hanno"] },
   { frase: "Giulia ___ un gatto", corretta: ["ha"], risposte: ["ha", "ho", "hai", "hanno"] },
@@ -120,7 +120,7 @@
     },
     
     "PARTICIPIO PASSATO": {
-        descrizione: " Es: (Verbo: comprare) Lei ha ___ un libro. => Lei ha COMPRATO un libro.",
+        descrizione: " Es: (Verbo: comprare) Lei ha <u>comprato</u> un libro. => Lei ha COMPRATO un libro.",
        domande:[
      { frase: "(Verbo: rompere) Hai ___ il vaso?", corretta: ["rotto"], risposte: ["rotto", "romputo", "rompito", "rupto"] },
 { frase: "(Verbo: tradurre) Ho ___ il testo", corretta: ["tradotto"], risposte: ["tradotto", "tradito", "tratto", "traduciuto"] },
@@ -180,7 +180,7 @@
 },
 
     "PASSATO PROSSIMO" : {
-        descrizione: "Es: (Verbo: Vedere) Ieri io ___ Marco => Ieri io HO VISTO Marco.",
+        descrizione: "Es: (Verbo: Vedere) Ieri io ___ Marco => Ieri io <u>ho visto</u> Marco.",
        domande: [
   { frase: "(Verbo: telefonare) Ieri Marco ___ a sua madre", corretta: ["ha telefonato"], risposte: ["ha telefonato", "ho telefonato", "è telefonato", "ha telefonata"] },
   { frase: "(Verbo: vivere) Maria  ___ in Italia per due anni", corretta: ["ha vissuto", "è vissuta"], risposte: ["è vissuta", "ha vissuto", "è vissuto", "e vissuta"] },
@@ -231,7 +231,7 @@
     ]
 },
     "IMPERFETTO Indicativo": {
-        descrizione: "Completa la frase",
+        descrizione: "Es: (Verbo: Vedere) Ogni giorno io ___ Marco => Ieri io <u>vedevo</u> Marco.",
        domande: [
   { frase: "(Verbo: parlare) Voi ___ a bassa voce quando è entrato il professore.", corretta: ["parlavate"], risposte: ["parlavate", "avete parlato", "parlaste", "parlavano"] },
   { frase: "(Verbo: parlare) Mentre voi ___ con lui, è arrivata una telefonata.", corretta: ["parlavate"], risposte: ["parlavate", "parlaste", "avete parlato", "parlate"] },
@@ -292,7 +292,7 @@
        
        
     "ARTICOLI Determinativi": {
-        descrizione: "Completa la frase",
+        descrizione: "Es: ___ sportivi =>  <u>gli </u> sportivi .",
        domande: [
       { frase: "___ ragazzo", corretta: ["il"], risposte: ["il", "lo", "la", "l'"] },
       { frase: "___ fiore", corretta: ["il"], risposte: ["il", "lo", "la", "l'"] },
