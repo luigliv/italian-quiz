@@ -150,7 +150,7 @@
     let argomento = "";
 
     function seleziona(scelta) {
-      argomento = scelta;
+       argomento = decodeURIComponent(scelta); // 🔧 decodifica %20 in spazi
       document.getElementById("argomenti").style.display = "none";
       document.getElementById("argomento-scelto").textContent = "Hai scelto: " + scelta.replaceAll("%20", " ");
       document.getElementById("argomento-scelto").style.display = "block";
