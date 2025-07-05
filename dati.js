@@ -291,7 +291,7 @@
 
        
        
-    "ARTICOLI DETERMINATIVI": {
+    "ARTICOLI Determinativi": {
         descrizione: "Completa la frase",
        domande: [
       { frase: "___ ragazzo", corretta: ["il"], risposte: ["il", "lo", "la", "l'"] },
@@ -347,7 +347,7 @@
       { frase: "___ case", corretta: ["le"], risposte: ["i", "gli", "le", "la"] }
     ]
 },
-    "ARTICOLI INDETERMINATIVI":  {
+    "ARTICOLI Indeterminativi":  {
         descrizione: "Completa la frase",
        domande:[
       { frase: "___ isola", corretta: ["un'"], risposte: ["un", "uno", "una", "un'"] },
@@ -482,7 +482,7 @@
       { frase: "Arrivo ___ stazione", corretta: ["alla","in","dalla","nella"], risposte: ["alla", "nella", "sulla", "dalla","in"] }
     ]
 },
-    "AGGETTIVI POSSESSIVI":  {
+    "AGGETTIVI possessivi":  {
         descrizione: "Completa la frase",
        domande:[
   { frase: "Io e Mario abbiamo dimenticato la (<u><i>di noi</i></u>) borsa.", corretta: ["nostra"], risposte: ["nostra", "mia", "vostra", "loro"] },
@@ -608,7 +608,7 @@ PLURALI :  {
   { frase: "Lo specchio pulito", corretta: ["Gli specchi puliti"], risposte: ["Gli specchi puliti", "I specchi puliti", "Gli specci puliti", "Gli specchi pulite"] }
 ]
 },
- "FUTURO SEMPLICE":{
+ "FUTURO Semplice":{
         descrizione: "Completa la frase",
        domande: [
   // --- Verbi regolari (gruppo 1) ---
