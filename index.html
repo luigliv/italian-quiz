@@ -159,9 +159,9 @@
     }
 
     function caricaLivello(livello) {
-      if (argomento === "VERBI%20REGOLARI. Presente indicativo") {
+      if (argomento === "VERBI REGOLARI. Presente indicativo") {
         window.location.href = livello === "bottoni" ? "verbi_bottoni.html" : "verbi_input.html";
-      } else if (argomento === "VERBI%20IRREGOLARI. Presente indicativo") {
+      } else if (argomento === "VERBI IRREGOLARI. Presente indicativo") {
         window.location.href = livello === "bottoni" ? "verbi_irregolari_bottoni.html" : "verbi_irregolari_input.html";
       } else {
         window.location.href = `base_${livello}.html?argomento=${argomento}`;
