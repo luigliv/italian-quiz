@@ -1,8 +1,8 @@
      
   
    const dati = {
-    "Verbo Essere. Presente indicativo":{ 
-        descrizione: "Completa la frase",
+    "Verbo ESSERE. Presente indicativo":{ 
+        descrizione: "Es: Tu ___ alto. => Tu SEI alto.",
         domande: [
         { frase: "Luca ___ allegro", corretta: ["è"], risposte: ["sei", "sono", "è", "siete"] },
   { frase: "Giulia ___ simpatica", corretta: ["è"], risposte: ["e", "è", "sono", "siete"] },
@@ -62,7 +62,7 @@
     ]
     },
     "Verbo Avere. Presente indicativo": {
-       descrizione: "Completa la frase ",
+       descrizione: "Noi ___ fretta. => Noi ABBIAMO fretta.",
        domande:[
           { frase: "Luca ___ un appartamento", corretta: ["ha"], risposte: ["hai", "ho", "ha", "hanno"] },
   { frase: "Giulia ___ un gatto", corretta: ["ha"], risposte: ["ha", "ho", "hai", "hanno"] },
@@ -120,7 +120,7 @@
     },
     
     "Participio passato": {
-        descrizione: " Completa la frase",
+        descrizione: " Es: (Verbo: comprare) Lei ha ___ un libro. => Lei ha COMPRATO un libro.",
        domande:[
      { frase: "(Verbo: rompere) Hai ___ il vaso?", corretta: ["rotto"], risposte: ["rotto", "romputo", "rompito", "rupto"] },
 { frase: "(Verbo: tradurre) Ho ___ il testo", corretta: ["tradotto"], risposte: ["tradotto", "tradito", "tratto", "traduciuto"] },
