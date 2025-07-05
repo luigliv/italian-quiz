@@ -2,7 +2,7 @@
   
    const dati = {
     "Verbo ESSERE. Presente indicativo":{ 
-        descrizione: "Es: Tu ___ alto. => Tu <u>sei</> alto.",
+        descrizione: "Es: Tu ___ alto. => Tu <u>sei</u> alto.",
         domande: [
         { frase: "Luca ___ allegro", corretta: ["è"], risposte: ["sei", "sono", "è", "siete"] },
   { frase: "Giulia ___ simpatica", corretta: ["è"], risposte: ["e", "è", "sono", "siete"] },
@@ -120,7 +120,7 @@
     },
     
     "PARTICIPIO PASSATO": {
-        descrizione: " Es: (Verbo: comprare) Lei ha <u>comprato</u> un libro. => Lei ha COMPRATO un libro.",
+        descrizione: " Es: (Verbo: comprare) Lei ha ___ un libro. => Lei ha <u>comprato</u> un libro.",
        domande:[
      { frase: "(Verbo: rompere) Hai ___ il vaso?", corretta: ["rotto"], risposte: ["rotto", "romputo", "rompito", "rupto"] },
 { frase: "(Verbo: tradurre) Ho ___ il testo", corretta: ["tradotto"], risposte: ["tradotto", "tradito", "tratto", "traduciuto"] },
@@ -231,7 +231,7 @@
     ]
 },
     "IMPERFETTO Indicativo": {
-        descrizione: "Es: (Verbo: Vedere) Ogni giorno io ___ Marco => Ieri io <u>vedevo</u> Marco.",
+        descrizione: "Es: (Verbo: Vedere) Ogni giorno io ___ Marco => Ogni giorno io <u>vedevo</u> Marco.",
        domande: [
   { frase: "(Verbo: parlare) Voi ___ a bassa voce quando è entrato il professore.", corretta: ["parlavate"], risposte: ["parlavate", "avete parlato", "parlaste", "parlavano"] },
   { frase: "(Verbo: parlare) Mentre voi ___ con lui, è arrivata una telefonata.", corretta: ["parlavate"], risposte: ["parlavate", "parlaste", "avete parlato", "parlate"] },
@@ -292,7 +292,7 @@
        
        
     "ARTICOLI Determinativi": {
-        descrizione: "Es: ___ sportivi =>  <u>gli </u> sportivi .",
+        descrizione: "Es: ___ sportivi =>  <u>gli</u> sportivi .",
        domande: [
       { frase: "___ ragazzo", corretta: ["il"], risposte: ["il", "lo", "la", "l'"] },
       { frase: "___ fiore", corretta: ["il"], risposte: ["il", "lo", "la", "l'"] },
@@ -348,7 +348,7 @@
     ]
 },
     "ARTICOLI Indeterminativi":  {
-        descrizione: "Completa la frase",
+        descrizione: "Es: ___ sportivi =>  <u>degli</u> sportivi ." ,
        domande:[
       { frase: "___ isola", corretta: ["un'"], risposte: ["un", "uno", "una", "un'"] },
       { frase: "___ arancia", corretta: ["un'"], risposte: ["un", "uno", "una", "un'"] },
@@ -426,7 +426,7 @@
     ]
 },
     PREPOSIZIONI: {
-        descrizione: "Completa la frase",
+        descrizione:  "Es: Andiamo ___ mare. =>  Andiamo <u>al</u> mare .",
        domande: [
       { frase: "Mangio ___ ristorante", corretta: ["al","nel"], risposte: ["al", "alla", "nel", "sul", "in"] },
       { frase: "Andiamo ___ montagna", corretta: ["in"], risposte: ["in", "alla", "a", "su", "per"] },
@@ -483,7 +483,7 @@
     ]
 },
     "AGGETTIVI possessivi":  {
-        descrizione: "Completa la frase",
+        descrizione: "Es: Mi piace la (di te) penna. => Mi piace la <u>tua</u> penna",
        domande:[
   { frase: "Io e Mario abbiamo dimenticato la (<u><i>di noi</i></u>) borsa.", corretta: ["nostra"], risposte: ["nostra", "mia", "vostra", "loro"] },
   { frase: "Anna cerca il (<u><i>di lei</i></u>) telefono.", corretta: ["suo"], risposte: ["suo", "loro", "tuo", "nostro"] },
