@@ -61,7 +61,7 @@
 
     ]
     },
-    "Verbo Avere. Presente indicativo": {
+    "Verbo AVERE. Presente indicativo": {
        descrizione: "Noi ___ fretta. => Noi ABBIAMO fretta.",
        domande:[
           { frase: "Luca ___ un appartamento", corretta: ["ha"], risposte: ["hai", "ho", "ha", "hanno"] },
