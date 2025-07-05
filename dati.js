@@ -119,7 +119,7 @@
        ]
     },
     
-    "Participio passato": {
+    "PARTICIPIO PASSATO": {
         descrizione: " Es: (Verbo: comprare) Lei ha ___ un libro. => Lei ha COMPRATO un libro.",
        domande:[
      { frase: "(Verbo: rompere) Hai ___ il vaso?", corretta: ["rotto"], risposte: ["rotto", "romputo", "rompito", "rupto"] },
@@ -179,8 +179,8 @@
   ]
 },
 
-    "Passato prossimo" : {
-        descrizione: "Completa la frase",
+    "PASSATO PROSSIMO" : {
+        descrizione: "Es: (Verbo: Vedere) Ieri ___ Marco => Ieri HO VISTO Marco.",
        domande: [
   { frase: "(Verbo: telefonare) Ieri Marco ___ a sua madre", corretta: ["ha telefonato"], risposte: ["ha telefonato", "ho telefonato", "è telefonato", "ha telefonata"] },
   { frase: "(Verbo: vivere) Maria  ___ in Italia per due anni", corretta: ["ha vissuto", "è vissuta"], risposte: ["è vissuta", "ha vissuto", "è vissuto", "e vissuta"] },
@@ -230,7 +230,7 @@
   { frase: "(Verbo: piovere) Ieri ___ tutto il giorno", corretta: ["ha piovuto"], risposte: ["ha piovuto", "è piovuto", "piovette", "ha piovato"] }
     ]
 },
-    "Imperfetto indicativo": {
+    "IMPERFETTO Indicativo": {
         descrizione: "Completa la frase",
        domande: [
   { frase: "(Verbo: parlare) Voi ___ a bassa voce quando è entrato il professore.", corretta: ["parlavate"], risposte: ["parlavate", "avete parlato", "parlaste", "parlavano"] },
@@ -291,7 +291,7 @@
 
        
        
-    "Articoli Determinativi": {
+    "ARTICOLI DETERMINATIVI": {
         descrizione: "Completa la frase",
        domande: [
       { frase: "___ ragazzo", corretta: ["il"], risposte: ["il", "lo", "la", "l'"] },
@@ -347,7 +347,7 @@
       { frase: "___ case", corretta: ["le"], risposte: ["i", "gli", "le", "la"] }
     ]
 },
-    "Articoli Indeterminativi":  {
+    "ARTICOLI INDETERMINATIVI":  {
         descrizione: "Completa la frase",
        domande:[
       { frase: "___ isola", corretta: ["un'"], risposte: ["un", "uno", "una", "un'"] },
@@ -425,7 +425,7 @@
       { frase: "___ fiume", corretta: ["un"], risposte: ["un", "uno", "una", "un'"] }
     ]
 },
-    Preposizioni: {
+    PREPOSIZIONI: {
         descrizione: "Completa la frase",
        domande: [
       { frase: "Mangio ___ ristorante", corretta: ["al","nel"], risposte: ["al", "alla", "nel", "sul", "in"] },
@@ -482,7 +482,7 @@
       { frase: "Arrivo ___ stazione", corretta: ["alla","in","dalla","nella"], risposte: ["alla", "nella", "sulla", "dalla","in"] }
     ]
 },
-    "Aggettivi possessivi":  {
+    "AGGETTIVI POSSESSIVI":  {
         descrizione: "Completa la frase",
        domande:[
   { frase: "Io e Mario abbiamo dimenticato la (<u><i>di noi</i></u>) borsa.", corretta: ["nostra"], risposte: ["nostra", "mia", "vostra", "loro"] },
@@ -551,7 +551,7 @@
   { frase: "Tu e Anna avete controllato i (<u><i>di voi</i></u>) documenti?", corretta: ["vostri"], risposte: ["vostri", "loro", "nostri", "suoi"] }
 ]
     },
-Plurali :  {
+PLURALI :  {
         descrizione: "Es: Il libro pesante => I libri pesanti",
        domande:[
   { frase: "La vecchia madre", corretta: ["Le vecchie madri"], risposte: ["Le vecchie madre", "Le vecchie madri", "I vecchi madri", "Le vecchi madre"] },
@@ -608,7 +608,7 @@ Plurali :  {
   { frase: "Lo specchio pulito", corretta: ["Gli specchi puliti"], risposte: ["Gli specchi puliti", "I specchi puliti", "Gli specci puliti", "Gli specchi pulite"] }
 ]
 },
- "Futuro semplice":{
+ "FUTURO SEMPLICE":{
         descrizione: "Completa la frase",
        domande: [
   // --- Verbi regolari (gruppo 1) ---
@@ -659,7 +659,7 @@ Plurali :  {
 ]
    },
 
- Pronomi: {
+ PRONOMI: {
   descrizione: "Completa la seconda frase usando un pronome.",
   domande: [
     {
