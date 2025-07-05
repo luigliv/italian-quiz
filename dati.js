@@ -180,7 +180,7 @@
 },
 
     "PASSATO PROSSIMO" : {
-        descrizione: "Es: (Verbo: Vedere) Ieri ___ Marco => Ieri HO VISTO Marco.",
+        descrizione: "Es: (Verbo: Vedere) Ieri io ___ Marco => Ieri io HO VISTO Marco.",
        domande: [
   { frase: "(Verbo: telefonare) Ieri Marco ___ a sua madre", corretta: ["ha telefonato"], risposte: ["ha telefonato", "ho telefonato", "è telefonato", "ha telefonata"] },
   { frase: "(Verbo: vivere) Maria  ___ in Italia per due anni", corretta: ["ha vissuto", "è vissuta"], risposte: ["è vissuta", "ha vissuto", "è vissuto", "e vissuta"] },
@@ -609,7 +609,7 @@ PLURALI :  {
 ]
 },
  "FUTURO semplice":{
-        descrizione: "Completa la frase",
+        descrizione: "Es: (Verbo: Vedere) Domani io ___ Marco => Domani io <u>vedrò</u> Marco.",
        domande: [
   // --- Verbi regolari (gruppo 1) ---
   { frase: "(Verbo: parlare) Voi domani ___ con il professore.", corretta: ["parlerete"], risposte: ["parlerete", "parlate", "parlavate", "parleranno"] },
