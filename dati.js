@@ -608,7 +608,7 @@ PLURALI :  {
   { frase: "Lo specchio pulito", corretta: ["Gli specchi puliti"], risposte: ["Gli specchi puliti", "I specchi puliti", "Gli specci puliti", "Gli specchi pulite"] }
 ]
 },
- "FUTURO Semplice":{
+ "FUTURO semplice":{
         descrizione: "Completa la frase",
        domande: [
   // --- Verbi regolari (gruppo 1) ---
