@@ -426,7 +426,7 @@
     ]
 },
     PREPOSIZIONI: {
-     "Es: Andiamo <u><strong>al</strong></u> mare.",
+    descrizione: "Es: Andiamo <u><strong>al</strong></u> mare.",
        domande: [
       { frase: "Mangio ___ ristorante", corretta: ["al","nel"], risposte: ["al", "alla", "nel", "sul", "in"] },
       { frase: "Andiamo ___ montagna", corretta: ["in"], risposte: ["in", "alla", "a", "su", "per"] },
