@@ -180,11 +180,11 @@
 },
 
     "PASSATO PROSSIMO" : {
-        descrizione: "Es: (Verbo: Vedere)  Ieri io <u>ho visto</u> Marco.",
+        descrizione: "Es: (Verbo: vedere)  Ieri io <u>ho visto</u> Marco.",
        domande: [
-  { frase: "(Verbo: <strong>telefonare</strong>) Ieri Marco ___ a sua madre", corretta: ["ha telefonato"], risposte: ["ha telefonato", "ho telefonato", "è telefonato", "ha telefonata"] },
-  { frase: "(Verbo: <strong>vivere</strong>) Maria  ___ in Italia per due anni", corretta: ["ha vissuto", "è vissuta"], risposte: ["è vissuta", "ha vissuto", "è vissuto", "e vissuta"] },
-  { frase: "(Verbo: <strong>scrivere</strong>) Ieri Luigi ___ una lunga lettera", corretta: ["ha scritto"], risposte: ["ha scritto", "è scritto", "ha scrivuto", "a scritto"] },
+  { frase: "(Verbo: <strong>TELEFONARE</strong>) Ieri Marco ___ a sua madre", corretta: ["ha telefonato"], risposte: ["ha telefonato", "ho telefonato", "è telefonato", "ha telefonata"] },
+  { frase: "(Verbo: <strong>VIVERE</strong>) Maria  ___ in Italia per due anni", corretta: ["ha vissuto", "è vissuta"], risposte: ["è vissuta", "ha vissuto", "è vissuto", "e vissuta"] },
+  { frase: "(Verbo: <strong>SCRIVERE</strong>) Ieri Luigi ___ una lunga lettera", corretta: ["ha scritto"], risposte: ["ha scritto", "è scritto", "ha scrivuto", "a scritto"] },
   { frase: "(Verbo: <strong>salire</strong>) Pochi minuti fa noi ___ sul treno", corretta: ["siamo saliti"], risposte: ["siamo saliti", "abbiamo saliti", "sono saliti", "siamo salito"] },
   { frase: "(Verbo: <strong>vedere</strong>) Ieri sera io ___ un bel film", corretta: ["ho visto"], risposte: ["ho visto", "ho veduto", "sono visto", "ha visto"] },
   { frase: "(Verbo: <strong>restare</strong>) Domenica passata Anna e Maria ___ a casa tutto il giorno", corretta: ["sono restate"], risposte: ["sono restati", "hanno restato", "sono restato", "sono restate"] },
