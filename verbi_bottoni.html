@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -151,11 +151,9 @@
           return;
         }
 
-        this.tentativi = 0;
-
         const { verbo, pronome } = this.listaDomande[this.domandaCorrente];
         document.getElementById("frase-verbo")
-          .textContent = `"${verbo}" → ${pronome.soggetto} ___`;
+          .textContent = "${verbo}" → ${pronome.soggetto} ___;
 
         const isIsc = iscVerbs.includes(verbo),
               isCare = verbo.endsWith("care"),
@@ -211,28 +209,20 @@
       controllaRisposta(btnC, scel) {
         const tutti = Array.from(document.querySelectorAll(".bottone-risposta"));
         const corr = this.ultimaCorretta;
-
         if (btnC.classList.contains("corretta-evidenziata")) {
           this.domandaCorrente++;
           this.mostraDomanda();
           return;
         }
-
         if (scel !== corr) {
-          this.tentativi++;
           btnC.disabled = true;
+          tutti.forEach(b => {
+            if (b.textContent === corr) b.classList.add("corretta-evidenziata");
+            else b.onclick = () => b.disabled = true;
+          });
           const msg = document.getElementById("message");
+          msg.textContent = "Risposta sbagliata. Clicca sulla forma evidenziata per continuare.";
           msg.style.color = "#f44336";
-
-          if (this.tentativi >= 3) {
-            tutti.forEach(b => {
-              b.disabled = true;
-              if (b.textContent === corr) b.classList.add("corretta-evidenziata");
-            });
-            msg.textContent = "Hai sbagliato 3 volte. La risposta corretta è evidenziata. Cliccala per continuare.";
-          } else {
-            msg.textContent = `❌ Sbagliato. Tentativi: ${this.tentativi}/3`;
-          }
         } else {
           tutti.forEach(b => b.disabled = true);
           const msg = document.getElementById("message");
@@ -251,7 +241,7 @@
         document.getElementById("frase-verbo").textContent = "Quiz terminato!";
         document.getElementById("bottoni-risposte").innerHTML = "";
         const msg = document.getElementById("message");
-        msg.innerHTML = `Hai completato le ${this.domandeTotali} domande in <strong>${sec}</strong> secondi.`;
+        msg.innerHTML = Hai completato le ${this.domandeTotali} domande in <strong>${sec}</strong> secondi.;
         const cont = document.getElementById("bottoni-continuazione");
         const r = document.createElement("button");
         r.textContent = "Ricomincia";
