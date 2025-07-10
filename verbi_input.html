@@ -1,99 +1,4 @@
- <!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quiz Verbi Regolari (Input) - Livello 2</title>
-  <style>
-    html {
-      font-size: 34px;
-      scroll-padding-bottom: 8rem;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: #f5f5f5;
-      margin: 0;
-      padding: 1rem;
-      text-align: center;
-    }
-    h1 {
-      color: #ff6b6b;
-      font-size: 2rem;
-      margin: 0.4rem 0;
-    }
-    p {
-      font-size: 1.5rem;
-      margin-bottom: 1.2rem;
-    }
-    #frase-verbo {
-      font-size: 2.2rem;
-      margin: 0.6rem 0 1.2rem;
-    }
-    #risposta {
-      font-size: 1.2rem;
-      padding: 0.6rem;
-      width: 80%;
-      max-width: 18rem;
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 0.4rem;
-    }
-    #invio {
-      font-size: 1.25rem;
-      padding: 0.6rem 1rem;
-      background-color: #ff6b6b;
-      color: white;
-      border: none;
-      border-radius: 0.5rem;
-      width: 70%;
-      max-width: 14rem;
-      margin: 1rem auto;
-      display: block;
-      cursor: pointer;
-    }
-    #invio:hover {
-      background-color: #c62828;
-    }
-    #message {
-      font-size: 1.3rem;
-      margin-top: 1rem;
-      min-height: 2.5rem;
-    }
-    .risposta-corretta {
-      font-weight: bold;
-      color: #ff6b6b;
-    }
-    .bottone-si-no {
-      font-size: 1.1rem;
-      padding: 0.6rem 1.2rem;
-      margin: 0.6rem;
-      background-color: #ff6b6b;
-      color: white;
-      border: none;
-      border-radius: 0.5rem;
-      cursor: pointer;
-    }
-    .bottone-si-no:hover {
-      background-color: #c62828;
-    }
-    #torna-menu {
-      position: fixed;
-      bottom: 1rem;
-      left: 1rem;
-      background-color: #2c2c2c;
-      padding: 0.6rem 1rem;
-      border: 0.06rem solid #888;
-      border-radius: 0.5rem;
-      font-size: 1rem;
-      text-decoration: none;
-      color: #f5f5f5;
-      box-shadow: 0.1rem 0.1rem 0.3rem rgba(0,0,0,0.5);
-      z-index: 1000;
-    }
-    #torna-menu:hover {
-      background-color: #3a3a3a;
-    }
+ }
   </style>
 </head>
 <body>
@@ -139,6 +44,7 @@
         this.inizioTempo = null;
         this.ultimaCorretta = "";
         this.statoAttesa = false;
+        this.erroriConsecutivi = 0;
       }
       init() {
         this.inizioTempo = new Date();
@@ -154,6 +60,7 @@
       }
       mostraDomanda() {
         this.statoAttesa = false;
+        this.erroriConsecutivi = 0;
         document.getElementById("message").textContent = "";
         document.getElementById("bottoni-continuazione").innerHTML = "";
         document.getElementById("risposta").value = "";
@@ -197,6 +104,7 @@
               val = inp.value.trim().toLowerCase(),
               corr = this.ultimaCorretta.toLowerCase(),
               msg = document.getElementById("message");
+        
         if (!this.statoAttesa) {
           if (val === corr) {
             msg.textContent = "✔ Corretto!";
@@ -207,9 +115,14 @@
               this.mostraDomanda();
             }, 800);
           } else {
-            msg.innerHTML = `✖ Sbagliato. Forma corretta: <span class="risposta-corretta">${this.ultimaCorretta}</span><br>Scrivila per continuare.`;
+            this.erroriConsecutivi++;
+            if (this.erroriConsecutivi >= 3) {
+              msg.innerHTML = `✖ Terzo errore. Forma corretta: <span class="risposta-corretta">${this.ultimaCorretta}</span><br>Scrivila per continuare.`;
+              this.statoAttesa = true;
+            } else {
+              msg.textContent = `✖ Sbagliato (${this.erroriConsecutivi}/3). Ritenta.`;
+            }
             msg.style.color = "#f44336";
-            this.statoAttesa = true;
             inp.value = "";
             inp.focus();
           }
