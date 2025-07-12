@@ -153,7 +153,7 @@
   { frase: "(Verbo: <strong>SCRIVERE</strong>) Lucia ha ___ una poesia", corretta: ["scritto"], risposte: ["scrivuto", "scrivito", "scritto", "scritta"] },
   { frase: "(Verbo: <strong>ESSERE</strong>) Sono ___ a Roma", corretta: ["stato"], risposte: ["stato", "essuto", "estato", "essito"] },
   { frase: "(Verbo: <strong>CORRERE</strong>) Ho ___ per prendere il treno", corretta: ["corso"], risposte: ["corso", "corruto", "corrito", "corsuto"] },
-  { frase: "(Verbo: <strong>SCELGIERE</strong>) Hai ___ il colore?", corretta: ["scelto"], risposte: ["scelto", "scegliuto", "sceltato", "scelguto"] },
+  { frase: "(Verbo: <strong>SCEGLIERE</strong>) Hai ___ il colore?", corretta: ["scelto"], risposte: ["scelto", "scegliuto", "sceltato", "scelguto"] },
   { frase: "(Verbo: <strong>PERDERE</strong>) Abbiamo ___ le chiavi", corretta: ["perso"], risposte: ["perduto", "perso", "perdito", "perdato"] },
   { frase: "(Verbo: <strong>CHIUDERE</strong>) Hai ___ la porta?", corretta: ["chiuso"], risposte: ["chiuso", "chiudato", "chiudito", "chiusa"] },
   { frase: "(Verbo: <strong>NASCERE</strong>) Mio fratello è ___ a maggio", corretta: ["nato"], risposte: ["nato", "nascuto", "nasciuto", "nasciato"] },
