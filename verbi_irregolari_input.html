@@ -206,10 +206,7 @@
             if (this.tentativi >= 3) {
               this.statoAttesa = true;
               msgEl.innerHTML = `
-                ✖ Hai sbagliato 3 volte.<br>
-                La forma corretta è: <span class="risposta-corretta">${this.ultimaCorretta}</span><br>
-                Scrivila correttamente per continuare.
-              `;
+             La forma corretta è: <span class="risposta-corretta">${this.ultimaCorretta}</span>`;
               msgEl.style.color = "red";
               inp.value = "";
               inp.focus();
