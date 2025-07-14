@@ -188,7 +188,7 @@
   { frase: "(Verbo: <strong>ACCENDERE</strong>) Al tramonto Marco ___ la luce", corretta: ["ha acceso"], risposte: ["ha acceso", "ha accenduto", "è acceso", "ho acceso"] },
   { frase: "(Verbo: <strong>ARRIVARE</strong>) Carla, ieri tu  ___ in ritardo", corretta: ["sei arrivata"], risposte: ["sei arrivata", "ha arrivata", "sei arrivato", "è arrivate"] },
   { frase: "(Verbo: <strong>PERDERE</strong>) Ieri voi ___ le chiavi", corretta: ["avete perso","avete perduto"], risposte: ["avete perso", "siete persi", "avete perduto", "ha perso"] },
-  { frase: "(Verbo: <strong>SVEGLIARSI</strong>) Ero stanca e mi ___ tardi", corretta: ["sono svegliata"], risposte: ["sono svegliato", "mi sono svegliata", "mi ho svegliato", "mi è svegliato"] },
+  { frase: "(Verbo: <strong>SVEGLIARSI</strong>) Ero stanca e mi ___ tardi", corretta: ["sono svegliata"], risposte: ["sono svegliato", "sono svegliata", "mi ho svegliato", "mi è svegliato"] },
   { frase: "(Verbo: <strong>LEGGERE</strong>) Tu ___ quel libro?", corretta: ["hai letto"], risposte: ["hai letto", "sei letto", "ai letto", "hai leggiuto"] },
   { frase: "(Verbo: <strong>USCIRE</strong>) Io Carlo e Maria ___ alle otto", corretta: ["siamo usciti"], risposte: ["siamo usciti", "abbiamo usciti", "sono usciti", "siamo uscite"] },
   { frase: "(Verbo: <strong>CADERE</strong>) Ieri lei ___ dalle scale", corretta: ["è caduta"], risposte: ["è caduta", "ha caduto", "è caduto", "ha caduta"] },
