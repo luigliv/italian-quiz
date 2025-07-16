@@ -213,7 +213,7 @@
       mostraRispostaCorretta(risposteCorrette) {
         const rispostaTesto = risposteCorrette[0];
         const message = document.getElementById("message");
-        message.innerHTML = `<span class="risposta-corretta">Risposta corretta:<br><span class="risposta-evidenziata">${rispostaTesto}</span><br>Scrivila per continuare.</span>`;
+        message.innerHTML = `<span class="risposta-corretta">Risposta corretta:<span class="risposta-evidenziata">${rispostaTesto}</span><br>Scrivila per continuare.</span>`;
         message.style.color = "white";
         this.mostraRisposta = true;
         this.rispostaDaRipetere = rispostaTesto;
