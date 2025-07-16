@@ -2,7 +2,7 @@
   
    const dati = {
     "Verbo ESSERE. Presente indicativo":{ 
-        descrizione: "Tu <u>sei</u> alto.",
+        descrizione: "Es: Tu <u>sei</u> alto.",
         domande: [
         { frase: "Luca ___ allegro", corretta: ["è"], risposte: ["sei", "e", "è", "siete"] },
   { frase: "Giulia ___ simpatica", corretta: ["è"], risposte: ["e", "è", "sono", "siete"] },
