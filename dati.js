@@ -1,4 +1,4 @@
-     
+l      
   
    const dati = {
     "Verbo ESSERE. Presente indicativo":{ 
@@ -120,7 +120,7 @@
     },
     
     "PARTICIPIO PASSATO": {
-        descrizione: " Es: (Verbo: COMPRARE)  => Lei ha <u>comprato</u> un libro.",
+        descrizione: " Es: (Verbo: COMPRARE)  => Lei ha <u>comprato</u> un bel libro.",
        domande:  [
   { frase: "(Verbo: ROMPERE) Hai ___ il vaso?", corretta: ["rotto"], risposte: ["rotto", "romputo", "rompito", "rupto"] },
   { frase: "(Verbo: TRADURRE) Ho ___ il testo", corretta: ["tradotto"], risposte: ["tradotto", "tradito", "tratto", "traduciuto"] },
