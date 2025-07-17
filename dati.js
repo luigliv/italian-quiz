@@ -1,4 +1,4 @@
-l      
+
   
    const dati = {
     "Verbo ESSERE. Presente indicativo":{ 
