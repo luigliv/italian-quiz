@@ -176,111 +176,196 @@
 
 
 },
-
-    "PASSATO PROSSIMO" : {
-        descrizione: "Es: (Verbo: VEDERE)  Ieri io <u>ho visto</u> Marco.",
-       domande: [
-  { frase: "(Verbo: <strong>TELEFONARE</strong>) Ieri Marco ___ a sua madre", corretta: ["ha telefonato"], risposte: ["ha telefonato", "ho telefonato", "è telefonato", "ha telefonata"] },
-  { frase: "(Verbo: <strong>VIVERE</strong>) Maria  ___ in Italia per due anni", corretta: ["ha vissuto", "è vissuta"], risposte: ["è vissuta", "ha vissuto", "è vissuto", "e vissuta"] },
-  { frase: "(Verbo: <strong>SCRIVERE</strong>) Ieri Luigi ___ una lunga lettera", corretta: ["ha scritto"], risposte: ["ha scritto", "è scritto", "ha scrivuto", "a scritto"] },
-  { frase: "(Verbo: <strong>SALIRE</strong>) Pochi minuti fa noi ___ sul treno", corretta: ["siamo saliti"], risposte: ["siamo saliti", "abbiamo saliti", "sono saliti", "siamo salito"] },
-  { frase: "(Verbo: <strong>VEDERE</strong>) Ieri sera io ___ un bel film", corretta: ["ho visto"], risposte: ["ho visto", "ho veduto", "sono visto", "ha visto"] },
-  { frase: "(Verbo: <strong>RESTARE</strong>) Domanica passata Anna e Maria ___ a casa tutto il giorno", corretta: ["sono restate"], risposte: ["sono restati", "hanno restato", "sono restato", "sono restate"] },
-  { frase: "(Verbo: <strong>ACCENDERE</strong>) Al tramonto Marco ___ la luce", corretta: ["ha acceso"], risposte: ["ha acceso", "ha accenduto", "è acceso", "ho acceso"] },
-  { frase: "(Verbo: <strong>ARRIVARE</strong>) Carla, ieri tu  ___ in ritardo", corretta: ["sei arrivata"], risposte: ["sei arrivata", "ha arrivata", "sei arrivato", "è arrivate"] },
-  { frase: "(Verbo: <strong>PERDERE</strong>) Ieri voi ___ le chiavi", corretta: ["avete perso","avete perduto"], risposte: ["avete perso", "siete persi", "avete perduto", "ha perso"] },
-  { frase: "(Verbo: <strong>SVEGLIARSI</strong>) Ero stanca e mi ___ tardi", corretta: ["sono svegliata"], risposte: ["sono svegliato", "sono svegliata", "mi ho svegliato", "mi è svegliato"] },
-  { frase: "(Verbo: <strong>LEGGERE</strong>) Tu ___ quel libro?", corretta: ["hai letto"], risposte: ["hai letto", "sei letto", "ai letto", "hai leggiuto"] },
-  { frase: "(Verbo: <strong>USCIRE</strong>) Io Carlo e Maria ___ alle otto", corretta: ["siamo usciti"], risposte: ["siamo usciti", "abbiamo usciti", "sono usciti", "siamo uscite"] },
-  { frase: "(Verbo: <strong>CADERE</strong>) Ieri lei ___ dalle scale", corretta: ["è caduta"], risposte: ["è caduta", "ha caduto", "è caduto", "ha caduta"] },
-  { frase: "(Verbo: <strong>DORMIRE</strong>) La notte scorsa i bambini ___ bene", corretta: ["hanno dormito"], risposte: ["hanno dormito", "sono dormiti", "anno dormito", "ha dormito"] },
-  { frase: "(Verbo: <strong>BERE</strong>) Durante il pranzo noi ___ troppo vino", corretta: ["abbiamo bevuto"], risposte: ["abbiamo bevuto", "abbiamo beuto", "siamo bevuti", "abbiamo beviti"] },
-  { frase: "(Verbo: <strong>PARTIRE</strong>) Perchè tu ___ presto?", corretta: ["sei partito"], risposte: ["sei partito", "hai partito", "sei partiti", "sei partita"] },
-  { frase: "(Verbo: <strong>SCENDERE</strong>) Io ___ per le scale lentamente", corretta: ["sono sceso"], risposte: ["sono sceso", "ho sceso", "è sceso", "ho scenduto"] },
-  { frase: "(Verbo: <strong>COMPRARE</strong>) Ieri Marco e Luisa  ___ una casa nuova", corretta: ["hanno comprato"], risposte: ["hanno comprato", "sono comprati", "hanno comprare", "anno comprato"] },
-  { frase: "(Verbo: <strong>FINIRE</strong>) Tu ___ i compiti?", corretta: ["hai finito","hai finiti"], risposte: ["hai finito", "sei finito", "hai finiti", "ai finito"] },
-  { frase: "(Verbo: <strong>DIVENTARE</strong>) Lui ___ famoso", corretta: ["è diventato", "è divenuto"], risposte: ["è diventato", "ha diventato", "è divenuto", "e diventato"] },
-  { frase: "(Verbo: <strong>SPEGNERE</strong>) Ieri sera io ___ la TV", corretta: ["ho spento"], risposte: ["ho spento", "è spento", "o spento", "ha spento"] },
-  { frase: "(Verbo: <strong>SALIRE</strong>) Marta ___  per le scale di corsa", corretta: ["è salita"], risposte: ["è salita", "ha salito", "è salite", "ha salita"] },
-  { frase: "(Verbo: <strong>ROMPERE</strong>) I bambini ___ un bicchiere", corretta: ["hanno rotto"], risposte: ["hanno rotto", "sono rotti", "anno rotto", "ha rotto"] },
-  { frase: "(Verbo: <strong>NASCERE</strong>) Tuo figlio ___ a giugno", corretta: ["è nato"], risposte: ["è nato", "ha nato", "è nascuto", "e nato"] },
-  { frase: "(Verbo: <strong>ENTRARE</strong>) L’amico di Marco ___ senza bussare", corretta: ["è entrato"], risposte: ["è entrato", "ha entrato", "è entrata", "sei  entrato"] },
-  { frase: "(Verbo: <strong>SPIEGARE</strong>) La professoressa ___ bene la lezione", corretta: ["ha spiegato"], risposte: ["ha spiegato", "è spiegata", "ha spiegata", "ha spieguto"] },
-  { frase: "(Verbo: <strong>USCIRE</strong>) Carla e Lucia ___ tardi", corretta: ["sono uscite"], risposte: ["sono uscite", "hanno uscite", "sono uscita", "sono usciti"] },
-  { frase: "(Verbo: <strong>CADERE</strong>) Le foglie ___ dagli alberi", corretta: ["sono cadute"], risposte: ["sono cadute", "sono caduti", "hanno caduto", "sono cadate"] },
-  { frase: "(Verbo: <strong>RIDERE</strong>) Noi ___ molto ieri", corretta: ["abbiamo riso"], risposte: ["abbiamo riso", "siamo risi", "abbiamo risi", "abbiamo risati"] },
-  { frase: "(Verbo: <strong>TORNARE</strong>) Voi e Guido ___ tardi a casa", corretta: ["siete tornati"], risposte: ["siete tornati", "avete tornato", "sono tornati", "siete tornate"] },
-  { frase: "(Verbo: <strong>CRESCERE</strong>) Mio fratello ___ in fretta", corretta: ["è cresciuto"], risposte: ["è cresciuto", "ha cresciuto", "è crescito", "e cresciuto"] },
-  { frase: "(Verbo: <strong>PIANGERE</strong>) Il bambino ___ per ore", corretta: ["ha pianto"], risposte: ["ha pianto", "è pianto", "ha pianguto", "a pianto"] },
-  { frase: "(Verbo: <strong>CAMBIARE</strong>) Io ___ lavoro il mese scorso", corretta: ["ho cambiato"], risposte: ["ho cambiato", "sono cambiato", "ha cambiato", "o cambiato"] },
-  { frase: "(Verbo: <strong>SEMBRARE</strong>) A tutti ___ una buona idea", corretta: ["è sembrata"], risposte: ["è sembrata", "è  sembrato", "e sembrata", "ha sembrito"] },
-  { frase: "(Verbo: <strong>FINIRE</strong>) Loro ___ il progetto ieri", corretta: ["hanno finito"], risposte: ["hanno finito", "sono finiti", "hanno finati", "anno finito"] },
-  { frase: "(Verbo: <strong>SUCCEDERE</strong>) Cosa ___ ieri sera?", corretta: ["è successo"], risposte: ["è successo", "ha successo", "è succeduto", "e successo"] },
-  { frase: "(Verbo: <strong>SALIRE</strong>) I ragazzi ___ sul pullman", corretta: ["sono saliti"], risposte: ["sono saliti", "hanno salito", "sono salita", "sono salite"] },
-  { frase: "(Verbo: <strong>VISITARE</strong>) Io e Anna ___ il museo", corretta: ["abbiamo visitato"], risposte: ["abbiamo visitato", "siamo visitati", "abbiamo visito", "habbiamo visitato"] },
-  { frase: "(Verbo: <strong>SERVIRE</strong>) Il cameriere ___ il vino", corretta: ["ha servito"], risposte: ["ha servito", "è servito", "ha servuta", "a servito"] },
-  { frase: "(Verbo: <strong>ALZARSI</strong>) Stamattina io mi ___ presto", corretta: ["sono alzato"], risposte: ["sono alzato", "ho alzato", "mi ho alzato", "mi è alzato"] },
-  { frase: "(Verbo: <strong>CORRERE</strong>) Voi ___ al parco subito", corretta: ["siete corsi"], risposte: ["siete corsi", "avete corso", "sono corso", "siete corso"] },
-  { frase: "(Verbo: <strong>PIOVERE</strong>) Ieri ___ tutto il giorno", corretta: ["ha piovuto"], risposte: ["ha piovuto", "è piovuto", "piovette", "ha piovato"] }
-]
-
-
+     "PASSATO PROSSIMO" : { 
+    descrizione: "Es: (Verbo: VEDERE)  Ieri io <u>ho visto</u> Marco.",
+    domande: [
+        { frase: "(Verbo: TELEFONARE) Ieri Marco ___ a sua madre", corretta: ["ha telefonato"], risposte: ["ha telefonato", "ho telefonato", "è telefonato", "ha telefonata"] },
+        { frase: "(Verbo: VIVERE) Maria  ___ in Italia per due anni", corretta: ["ha vissuto", "è vissuta"], risposte: ["è vissuta", "ha vissuto", "è vissuto", "e vissuta"] },
+        { frase: "(Verbo: SCRIVERE) Ieri Luigi ___ una lunga lettera", corretta: ["ha scritto"], risposte: ["ha scritto", "è scritto", "ha scrivuto", "a scritto"] },
+        { frase: "(Verbo: SALIRE) Pochi minuti fa noi ___ sul treno", corretta: ["siamo saliti"], risposte: ["siamo saliti", "abbiamo saliti", "sono saliti", "siamo salito"] },
+        { frase: "(Verbo: VEDERE) Ieri sera io ___ un bel film", corretta: ["ho visto"], risposte: ["ho visto", "ho veduto", "sono visto", "ha visto"] },
+        { frase: "(Verbo: RESTARE) Domanica passata Anna e Maria ___ a casa tutto il giorno", corretta: ["sono restate"], risposte: ["sono restati", "hanno restato", "sono restato", "sono restate"] },
+        { frase: "(Verbo: ACCENDERE) Al tramonto Marco ___ la luce", corretta: ["ha acceso"], risposte: ["ha acceso", "ha accenduto", "è acceso", "ho acceso"] },
+        { frase: "(Verbo: ARRIVARE) Carla, ieri tu  ___ in ritardo", corretta: ["sei arrivata"], risposte: ["sei arrivata", "ha arrivata", "sei arrivato", "è arrivate"] },
+        { frase: "(Verbo: PERDERE) Ieri voi ___ le chiavi", corretta: ["avete perso","avete perduto"], risposte: ["avete perso", "siete persi", "avete perduto", "ha perso"] },
+        { frase: "(Verbo: SVEGLIARSI) Ero stanca e mi ___ tardi", corretta: ["sono svegliata"], risposte: ["sono svegliato", "sono svegliata", "mi ho svegliato", "mi è svegliato"] },
+        { frase: "(Verbo: LEGGERE) Tu ___ quel libro?", corretta: ["hai letto"], risposte: ["hai letto", "sei letto", "ai letto", "hai leggiuto"] },
+        { frase: "(Verbo: USCIRE) Io Carlo e Maria ___ alle otto", corretta: ["siamo usciti"], risposte: ["siamo usciti", "abbiamo usciti", "sono usciti", "siamo uscite"] },
+        { frase: "(Verbo: CADERE) Ieri lei ___ dalle scale", corretta: ["è caduta"], risposte: ["è caduta", "ha caduto", "è caduto", "ha caduta"] },
+        { frase: "(Verbo: DORMIRE) La notte scorsa i bambini ___ bene", corretta: ["hanno dormito"], risposte: ["hanno dormito", "sono dormiti", "anno dormito", "ha dormito"] },
+        { frase: "(Verbo: BERE) Durante il pranzo noi ___ troppo vino", corretta: ["abbiamo bevuto"], risposte: ["abbiamo bevuto", "abbiamo beuto", "siamo bevuti", "abbiamo beviti"] },
+        { frase: "(Verbo: PARTIRE) Perchè tu ___ presto?", corretta: ["sei partito"], risposte: ["sei partito", "hai partito", "sei partiti", "sei partita"] },
+        { frase: "(Verbo: SCENDERE) Io ___ per le scale lentamente", corretta: ["sono sceso"], risposte: ["sono sceso", "ho sceso", "è sceso", "ho scenduto"] },
+        { frase: "(Verbo: COMPRARE) Ieri Marco e Luisa  ___ una casa nuova", corretta: ["hanno comprato"], risposte: ["hanno comprato", "sono comprati", "hanno comprare", "anno comprato"] },
+        { frase: "(Verbo: FINIRE) Tu ___ i compiti?", corretta: ["hai finito","hai finiti"], risposte: ["hai finito", "sei finito", "hai finiti", "ai finito"] },
+        { frase: "(Verbo: DIVENTARE) Lui ___ famoso", corretta: ["è diventato", "è divenuto"], risposte: ["è diventato", "ha diventato", "è divenuto", "e diventato"] },
+        { frase: "(Verbo: SPEGNERE) Ieri sera io ___ la TV", corretta: ["ho spento"], risposte: ["ho spento", "è spento", "o spento", "ha spento"] },
+        { frase: "(Verbo: SALIRE) Marta ___  per le scale di corsa", corretta: ["è salita"], risposte: ["è salita", "ha salito", "è salite", "ha salita"] },
+        { frase: "(Verbo: ROMPERE) I bambini ___ un bicchiere", corretta: ["hanno rotto"], risposte: ["hanno rotto", "sono rotti", "anno rotto", "ha rotto"] },
+        { frase: "(Verbo: NASCERE) Tuo figlio ___ a giugno", corretta: ["è nato"], risposte: ["è nato", "ha nato", "è nascuto", "e nato"] },
+        { frase: "(Verbo: ENTRARE) L’amico di Marco ___ senza bussare", corretta: ["è entrato"], risposte: ["è entrato", "ha entrato", "è entrata", "sei  entrato"] },
+        { frase: "(Verbo: SPIEGARE) La professoressa ___ bene la lezione", corretta: ["ha spiegato"], risposte: ["ha spiegato", "è spiegata", "ha spiegata", "ha spieguto"] },
+        { frase: "(Verbo: USCIRE) Carla e Lucia ___ tardi", corretta: ["sono uscite"], risposte: ["sono uscite", "hanno uscite", "sono uscita", "sono usciti"] },
+        { frase: "(Verbo: CADERE) Le foglie ___ dagli alberi", corretta: ["sono cadute"], risposte: ["sono cadute", "sono caduti", "hanno caduto", "sono cadate"] },
+        { frase: "(Verbo: RIDERE) Noi ___ molto ieri", corretta: ["abbiamo riso"], risposte: ["abbiamo riso", "siamo risi", "abbiamo risi", "abbiamo risati"] },
+        { frase: "(Verbo: TORNARE) Voi e Guido ___ tardi a casa", corretta: ["siete tornati"], risposte: ["siete tornati", "avete tornato", "sono tornati", "siete tornate"] },
+        { frase: "(Verbo: CRESCERE) Mio fratello ___ in fretta", corretta: ["è cresciuto"], risposte: ["è cresciuto", "ha cresciuto", "è crescito", "e cresciuto"] },
+        { frase: "(Verbo: PIANGERE) Il bambino ___ per ore", corretta: ["ha pianto"], risposte: ["ha pianto", "è pianto", "ha pianguto", "a pianto"] },
+        { frase: "(Verbo: CAMBIARE) Io ___ lavoro il mese scorso", corretta: ["ho cambiato"], risposte: ["ho cambiato", "sono cambiato", "ha cambiato", "o cambiato"] },
+        { frase: "(Verbo: SEMBRARE) A tutti ___ una buona idea", corretta: ["è sembrata"], risposte: ["è sembrata", "è  sembrato", "e sembrata", "ha sembrito"] },
+        { frase: "(Verbo: FINIRE) Loro ___ il progetto ieri", corretta: ["hanno finito"], risposte: ["hanno finito", "sono finiti", "hanno finati", "anno finito"] },
+        { frase: "(Verbo: SUCCEDERE) Cosa ___ ieri sera?", corretta: ["è successo"], risposte: ["è successo", "ha successo", "è succeduto", "e successo"] },
+        { frase: "(Verbo: SALIRE) I ragazzi ___ sul pullman", corretta: ["sono saliti"], risposte: ["sono saliti", "hanno salito", "sono salita", "sono salite"] },
+        { frase: "(Verbo: VISITARE) Io e Anna ___ il museo", corretta: ["abbiamo visitato"], risposte: ["abbiamo visitato", "siamo visitati", "abbiamo visito", "habbiamo visitato"] },
+        { frase: "(Verbo: SERVIRE) Il cameriere ___ il vino", corretta: ["ha servito"], risposte: ["ha servito", "è servito", "ha servuta", "a servito"] },
+        { frase: "(Verbo: ALZARSI) Stamattina io mi ___ presto", corretta: ["sono alzato"], risposte: ["sono alzato", "ho alzato", "mi ho alzato", "mi è alzato"] },
+        { frase: "(Verbo: CORRERE) Voi ___ al parco subito", corretta: ["siete corsi"], risposte: ["siete corsi", "avete corso", "sono corso", "siete corso"] },
+        { frase: "(Verbo: PIOVERE) Ieri ___ tutto il giorno", corretta: ["ha piovuto"], risposte: ["ha piovuto", "è piovuto", "piovette", "ha piovato"] }
+    ]
 },
-    "IMPERFETTO Indicativo": {
-        descrizione: "Es: (Verbo: VEDERE)  Ogni giorno io <u>vedevo</u> Marco.",
-       domande:  [
-  { frase: "(Verbo: <strong>PARLARE</strong>) Quando è entrato il professore voi ___ a bassa voce .", corretta: ["parlavate"], risposte: ["parlavate", "avete parlato", "parlaste", "parlavano"] },
-  { frase: "(Verbo: <strong>PARLARE</strong>) Mentre voi ___ con lui, è arrivata una telefonata.", corretta: ["parlavate"], risposte: ["parlavate", "parlaste", "avete parlato", "parlate"] },
-  { frase: "(Verbo: <strong>GIOCARE</strong>) Voi ___ spesso nel cortile della scuola.", corretta: ["giocavate"], risposte: ["giocavate", "giocavi", "giocate", "avete giocato"] },
-  { frase: "(Verbo: <strong>VEDERE</strong>) Da piccolo tu ___ molti cartoni animati.", corretta: ["vedevi"], risposte: ["vedevi", "vedeva", "vedeve", "hai visto"] },
-  { frase: "(Verbo: <strong>ASCOLTARE</strong>) Mentre ___ la musica,  ho sentito squillare il telefono.", corretta: ["ascoltavo"], risposte: ["ascoltavo", "ascoltai", "ho ascoltato", "ascolto"] },
-  { frase: "(Verbo: <strong>LEGGERE</strong>) Tu ___ il giornale quando ti ho chiamato?", corretta: ["leggevi"], risposte: ["hai letto", "leggeva", "leggevi", "lessi"] },
-  { frase: "(Verbo: <strong>LEGGERE</strong>) Mentre Marco___ il libro, ho sentito bussare alla porta.", corretta: ["leggeva"], risposte: ["leggeva", "lesse", "ha letto", "legge"] },
-  { frase: "(Verbo: <strong>CUCINARE</strong>) Mentre mamma ___, il telefono ha squillato.", corretta: ["cucinava"], risposte: ["ha cucinato", "cucinava", "cucinò", "cucinavai"] },
-  { frase: "(Verbo: <strong>SCRIVERE</strong>) Mentre io  ___ una lettera, la penna ha smesso di funzionare.", corretta: ["scrivevo"], risposte: ["scrivevo", "scrissi", "ho scritto", "scrivo"] },
-  { frase: "(Verbo: <strong>CUCINARE</strong>) Mentre noi ___ la cena, la luce è andata via.", corretta: ["cucinavamo"], risposte: ["cucinavamo", "abbiamo cucinato", "cucinammo", "cuciniamo"] },
-  { frase: "(Verbo: <strong>DORMIRE</strong>) Quando faceva freddo, noi ___ fino a tardi.", corretta: ["dormivamo"], risposte: ["dormivamo", "abbiamo dormito", "dormiamo", "dormivate"] },
-  { frase: "(Verbo: <strong>SCRIVERE</strong>) Da giovane lui ___ sempre lettere lunghissime.", corretta: ["scriveva"], risposte: ["scriveva", "scrivava", "ha scritto", "scrivevo"] },
-  { frase: "(Verbo: <strong>CAMMINARE</strong>) Mentre ___ per strada, ho incontrato un vecchio amico.", corretta: ["camminavo"], risposte: ["camminavo", "cammino", "camminai", "ho camminato"] },
-  { frase: "(Verbo: <strong>LEGGERE</strong>) Quando ero piccolo io ___ le fiabe.", corretta: ["leggevo"], risposte: ["ho letto", "leggevo", "leggievo", "leggeva"] },
-  { frase: "(Verbo: <strong>GUARDARE</strong>) Ieri sera mentre noi  ___ un bel film, è arrivato mio fratello", corretta: ["guardavamo"], risposte: ["abbiamo guardato", "guardavamo", "guardammo", "siamo guardati"] },
-  { frase: "(Verbo: <strong>MANGIARE</strong>) Mentre ___ la minestra , ho sentito un rumore strano.", corretta: ["mangiavo"], risposte: ["mangiavo", "ho mangiato", "mangiai", "mangio"] },
-  { frase: "(Verbo: <strong>DORMIRE</strong>) Mentre ___ profondamente, qualcuno ha bussato alla porta.", corretta: ["dormivo"], risposte: ["dormivo", "ho dormito", "dormii", "dormo"] },
-  { frase: "(Verbo: <strong>SCRIVERE</strong>) Ogni giorno, da bambina,  lei ___ una pagina del suo diario.", corretta: ["scriveva"], risposte: ["scriveva", "scrivava", "ha scritto", "scrivesse"] },
-  { frase: "(Verbo: <strong>STUDIARE</strong>) Mentre ___ per l’esame, mi è venuto mal di testa.", corretta: ["studiavo"], risposte: ["studiavo", "studio", "studiai", "ho studiato"] },
-  { frase: "(Verbo: <strong>DORMIRE</strong>) Quando è suonata la sveglia, voi ___ profondamente.", corretta: ["dormivate"], risposte: ["dormivate", "avete dormito", "dormivi", "dormivete"] },
-  { frase: "(Verbo: <strong>ANDARE</strong>) Da bambino tu ___ al mare ogni estate.", corretta: ["andavi"], risposte: ["sei andato", "andavi", "andave", "andava"] },
-  { frase: "(Verbo: <strong>ESSERE</strong>) Quando ero piccolo, la mia casa ___ vicino al fiume.", corretta: ["era"], risposte: ["era", "è", "erae", "fu"] },
-  { frase: "(Verbo: <strong>CORRERE</strong>) Io ___ nel parco ogni mattina prima della scuola.", corretta: ["correvo"], risposte: ["ho corso", "correvo", "corse", "corravo"] },
-  { frase: "(Verbo: <strong>PARLARE</strong>) Quando è entrato il professore, ___ con i miei compagni.", corretta: ["parlavo"], risposte: ["parlavo", "parlai", "parlo", "ho parlato"] },
-  { frase: "(Verbo: <strong>SCRIVERE</strong>) Quando mi hai chiamato, ___ una mail importante.", corretta: ["scrivevo"], risposte: ["scrivevo", "ho scritto", "scrissi", "scrivo"] },
-  { frase: "(Verbo: <strong>GUARDARE</strong>) Mentre ___ la televisione, il gatto è saltato sul tavolo.", corretta: ["guardavo"], risposte: ["guardavo", "ho guardato", "guardai", "guardo"] },
-  { frase: "(Verbo: <strong>BERE</strong>) Da piccolo non ___ mai il latte.", corretta: ["bevevo"], risposte: ["bevevo", "bevvo", "ho bevuto", "beveva"] },
-  { frase: "(Verbo: <strong>STUDIARE</strong>) Quando eravamo al liceo, noi ___ molto per gli esami.", corretta: ["studiavamo"], risposte: ["studiammo", "studiavamo", "abbiamo studiato", "studievamo"] },
-  { frase: "(Verbo: <strong>AVERE</strong>) Da bambino io ___ paura del buio.", corretta: ["avevo"], risposte: ["avevo", "ho avuto", "aveva", "avievo"] },
-  { frase: "(Verbo: <strong>FARE</strong>) I miei nonni ___ il pane in casa ogni sabato.", corretta: ["facevano"], risposte: ["facevano", "fanno", "faccevano", "hanno fatto"] },
-  { frase: "(Verbo: <strong>SUONARE</strong>) Quando ero piccolo ___ il pianoforte ogni giorno.", corretta: ["suonavo"], risposte: ["suonavo", "ho suonato", "suonai", "suonavano"] },
-  { frase: "(Verbo: <strong>VIVERE</strong>) Noi ___ in campagna quando ero bambino.", corretta: ["vivevamo"], risposte: ["vivevamo", "abbiamo vissuto", "vivavamo", "vivemmo"] },
-  { frase: "(Verbo: <strong>PENSARE</strong>) Tu ___ spesso ai tuoi nonni?", corretta: ["pensavi"], risposte: ["pensavi", "hai pensato", "pensava", "pensasti"] },
-  { frase: "(Verbo: <strong>VOLERE</strong>) Da ragazzo ___ diventare medico.", corretta: ["volevo"], risposte: ["volevo", "voglio", "volle", "ho voluto"] },
-  { frase: "(Verbo: <strong>SAPERE</strong>) Lei ___ già tutto quello che era successo.", corretta: ["sapeva"], risposte: ["sapeva", "ha saputo", "sappiava", "sapea"] },
-  { frase: "(Verbo: <strong>POTERE</strong>) Quando ero giovane non ___ uscire da solo.", corretta: ["potevo"], risposte: ["potevo", "posso", "poteva", "ho potuto"] },
-  { frase: "(Verbo: <strong>DOVERE</strong>) Da piccolo ___ sempre aiutare in casa.", corretta: ["dovevo"], risposte: ["dovevo", "ho dovuto", "doveva", "doverei"] },
-  { frase: "(Verbo: <strong>VIAGGIARE</strong>) Ogni estate noi ___ in Europa.", corretta: ["viaggiavamo"], risposte: ["viaggiavamo", "abbiamo viaggiato", "viaggiamo", "viaggiaste"] },
-  { frase: "(Verbo: <strong>GUARDARE</strong>) Tu ___ sempre i cartoni la domenica mattina.", corretta: ["guardavi"], risposte: ["guardavi", "guardasti", "hai guardato", "guardava"] },
-  { frase: "(Verbo: <strong>ABITARE</strong>) Loro ___ in un piccolo paese di montagna.", corretta: ["abitavano"], risposte: ["abitavano", "abitarono", "hanno abitato", "abitavamo"] },
-  { frase: "(Verbo: <strong>STUDIARE</strong>) Io ___ ogni sera dopo cena.", corretta: ["studiavo"], risposte: ["studiavo", "ho studiato", "studio", "studiavi"] },
-  { frase: "(Verbo: <strong>METTERE</strong>) Mentre ___ in ordine i libri, è caduta una fotografia.", corretta: ["mettevo"], risposte: ["mettevo", "ho messo", "misi", "mettevi"] },
-  { frase: "(Verbo: <strong>SENTIRE</strong>) Tu ___ un rumore strano?", corretta: ["sentivi"], risposte: ["sentivi", "hai sentito", "sentisti", "senti"] },
-  { frase: "(Verbo: <strong>CAPIRE</strong>) Mentre il professore spiegava, io non ___ nulla.", corretta: ["capivo"], risposte: ["capivo", "capii", "ho capito", "capiscevo"] },
-  { frase: "(Verbo: <strong>FARE</strong>) Voi ___ spesso passeggiate in montagna.", corretta: ["facevate"], risposte: ["facevate", "avete fatto", "faceste", "fate"] },
-  { frase: "(Verbo: <strong>DIRE</strong>) Mia nonna sempre mi ___ di essere gentile.", corretta: ["diceva"], risposte: ["diceva", "disse", "ha detto", "dicette"] },
-  { frase: "(Verbo: <strong>VEDERE</strong>) Ogni sera noi ___ le stelle dal terrazzo.", corretta: ["vedevamo"], risposte: ["vedevamo", "abbiamo visto", "vedevo", "vedevate"] },
-  { frase: "(Verbo: <strong>ASCOLTARE</strong>) Ogni mattina lei ___ la radio mentre faceva colazione.", corretta: ["ascoltava"], risposte: ["ascoltava", "ha ascoltato", "ascoltai", "ascolta"] },
-  { frase: "(Verbo: <strong>CAMMINARE</strong>) Mentre ___ sulla spiaggia, ho trovato una conchiglia.", corretta: ["camminavo"], risposte: ["camminavo", "cammino", "ho camminato", "camminai"] },
-  { frase: "(Verbo: <strong>MANGIARE</strong>) Ogni domenica noi ___ dalla nonna.", corretta: ["mangiavamo"], risposte: ["mangiavamo", "abbiamo mangiato", "mangiammo", "mangiavate"] },
-  { frase: "(Verbo: <strong>PIOVERE</strong>) Quando siamo usciti, non ___ più.", corretta: ["pioveva"], risposte: ["ha piovuto", "pioveva", "piovuto", "stava piovendo"] }
+"IMPERFETTO Indicativo": {
+    descrizione: "Es: (Verbo: VEDERE)  Ogni giorno io <u>vedevo</u> Marco.",
+    domande:  [
+        { frase: "(Verbo: PARLARE) Quando è entrato il professore voi ___ a bassa voce .", corretta: ["parlavate"], risposte: ["parlavate", "avete parlato", "parlaste", "parlavano"] },
+        { frase: "(Verbo: PARLARE) Mentre voi ___ con lui, è arrivata una telefonata.", corretta: ["parlavate"], risposte: ["parlavate", "parlaste", "avete parlato", "parlate"] },
+        { frase: "(Verbo: GIOCARE) Voi ___ spesso nel cortile della scuola.", risposta: ["giocavate"], risposte: ["giocavate", "giocavi", "giocate", "avete giocato"] },
+        { frase: "(Verbo: VEDERE) Da piccolo tu ___ molti cartoni animati.", corretta: ["vedevi"], risposte: ["vedevi", "vedeva", "vedeve", "hai visto"] },
+        { frase: "(Verbo: ASCOLTARE) Mentre ___ la musica,  ho sentito squillare il telefono.", corretta: ["ascoltavo"], risposte: ["ascoltavo", "ascoltai", "ho ascoltato", "ascolto"] },
+        { frase: "(Verbo: LEGGERE) Tu ___ il giornale quando ti ho chiamato?", corretta: ["leggevi"], risposte: ["hai letto", "leggeva", "leggevi", "lessi"] },
+        { frase: "(Verbo: LEGGERE) Mentre Marco___ il libro, ho sentito bussare alla porta.", corretta: ["leggeva"], risposte: ["leggeva", "lesse", "ha letto", "legge"] },
+        { frase: "(Verbo: CUCINARE) Mentre mamma ___, il telefono ha squillato.", corretta: ["cucinava"], risposte: ["ha cucinato", "cucinava", "cucinò", "cucinavai"] },
+        { frase: "(Verbo: SCRIVERE) Mentre io  ___ una lettera, la penna ha smesso di funzionare.", corretta: ["scrivevo"], risposte: ["scrivevo", "scrissi", "ho scritto", "scrivo"] },
+        { frase: "(Verbo: CUCINARE) Mentre noi ___ la cena, la luce è andata via.", corretta: ["cucinavamo"], risposte: ["cucinavamo", "abbiamo cucinato", "cucinammo", "cuciniamo"] },
+        { frase: "(Verbo: DORMIRE) Quando faceva freddo, noi ___ fino a tardi.", corretta: ["dormivamo"], risposte: ["dormivamo", "abbiamo dormito", "dormiamo", "dormivate"] },
+        { frase: "(Verbo: SCRIVERE) Da giovane lui ___ sempre lettere lunghissime.", corretta: ["scriveva"], risposte: ["scriveva", "scrivava", "ha scritto", "scrivevo"] },
+        { frase: "(Verbo: CAMMINARE) Mentre ___ per strada, ho incontrato un vecchio amico.", corretta: ["camminavo"], risposte: ["camminavo", "cammino", "camminai", "ho camminato"] },
+        { frase: "(Verbo: LEGGERE) Quando ero piccolo io ___ le fiabe.", corretta: ["leggevo"], risposte: ["ho letto", "leggevo", "leggievo", "leggeva"] },
+        { frase: "(Verbo: GUARDARE) Ieri sera mentre noi  ___ un bel film, è arrivato mio fratello", corretta: ["guardavamo"], risposte: ["abbiamo guardato", "guardavamo", "guardammo", "siamo guardati"] },
+        { frase: "(Verbo: MANGIARE) Mentre ___ la minestra , ho sentito un rumore strano.", corretta: ["mangiavo"], risposte: ["mangiavo", "ho mangiato", "mangiai", "mangio"] },
+        { frase: "(Verbo: DORMIRE) Mentre ___ profondamente, qualcuno ha bussato alla porta.", corretta: ["dormivo"], risposte: ["dormivo", "ho dormito", "dormii", "dormo"] },
+        { frase: "(Verbo: SCRIVERE) Ogni giorno, da bambina,  lei ___ una pagina del suo diario.", corretta: ["scriveva"], risposte: ["scriveva", "scrivava", "ha scritto", "scrivesse"] },
+        { frase: "(Verbo: STUDIARE) Mentre ___ per l’esame, mi è venuto mal di testa.", corretta: ["studiavo"], risposte: ["studiavo", "studio", "studiai", "ho studiato"] },
+        { frase: "(Verbo: DORMIRE) Quando è suonata la sveglia, voi ___ profondamente.", corretta: ["dormivate"], risposte: ["dormivate", "avete dormito", "dormivi", "dormivete"] },
+        { frase: "(Verbo: ANDARE) Da bambino tu ___ al mare ogni estate.", corretta: ["andavi"], risposte: ["sei andato", "andavi", "andave", "andava"] },
+        { frase: "(Verbo: ESSERE) Quando ero piccolo, la mia casa ___ vicino al fiume.", corretta: ["era"], risposte: ["era", "è", "erae", "fu"] },
+        { frase: "(Verbo: CORRERE) Io ___ nel parco ogni mattina prima della scuola.", corretta: ["correvo"], risposte: ["ho corso", "correvo", "corse", "corravo"] },
+        { frase: "(Verbo: PARLARE) Quando è entrato il professore, ___ con i miei compagni.", corretta: ["parlavo"], risposte: ["parlavo", "parlai", "parlo", "ho parlato"] },
+        { frase: "(Verbo: SCRIVERE) Quando mi hai chiamato, ___ una mail importante.", corretta: ["scrivevo"], risposte: ["scrivevo", "ho scritto", "scrissi", "scrivo"] },
+        { frase: "(Verbo: GUARDARE) Mentre ___ la televisione, il gatto è saltato sul tavolo.", corretta: ["guardavo"], risposte: ["guardavo", "ho guardato", "guardai", "guardo"] },
+        { frase: "(Verbo: BERE) Da piccolo non ___ mai il latte.", corretta: ["bevevo"], risposte: ["bevevo", "bevvo", "ho bevuto", "beveva"] },
+        { frase: "(Verbo: STUDIARE) Quando eravamo al liceo, noi ___ molto per gli esami.", corretta: ["studiavamo"], risposte: ["studiammo", "studiavamo", "abbiamo studiato", "studievamo"] },
+        { frase: "(Verbo: AVERE) Da bambino io ___ paura del buio.", corretta: ["avevo"], risposte: ["avevo", "ho avuto", "aveva", "avievo"] },
+        { frase: "(Verbo: FARE) I miei nonni ___ il pane in casa ogni sabato.", corretta: ["facevano"], risposte: ["facevano", "fanno", "faccevano", "hanno fatto"] },
+        
+  {
+    frase: "(Verbo: SUONARE) Quando ero piccolo ___ il pianoforte ogni giorno.",
+    possibili: ["suonavo", "suonai", "suonerò"],
+    corrette: ["suonavo"]
+  },
+  {
+    frase: "(Verbo: VIVERE) Noi ___ in campagna quando ero bambino.",
+    possibili: ["vivevamo", "vivremo", "vivemmo"],
+    corrette: ["vivevamo"]
+  },
+  {
+    frase: "(Verbo: PENSARE) Tu ___ spesso ai tuoi nonni?",
+    possibili: ["pensavi", "pensasti", "penserai"],
+    corrette: ["pensavi"]
+  },
+  {
+    frase: "(Verbo: VOLERE) Da ragazzo ___ diventare medico.",
+    possibili: ["volevo", "vorrò", "volli"],
+    corrette: ["volevo"]
+  },
+  {
+    frase: "(Verbo: SAPERE) Lei ___ già tutto quello che era successo.",
+    possibili: ["sapeva", "seppe", "saprà"],
+    corrette: ["sapeva"]
+  },
+  {
+    frase: "(Verbo: POTERE) Quando ero giovane non ___ uscire da solo.",
+    possibili: ["potevo", "potrò", "potei"],
+    corrette: ["potevo"]
+  },
+  {
+    frase: "(Verbo: DOVERE) Da piccolo ___ sempre aiutare in casa.",
+    possibili: ["dovevo", "dovei", "dovrò"],
+    corrette: ["dovevo"]
+  },
+  {
+    frase: "(Verbo: VIAGGIARE) Ogni estate noi ___ in Europa.",
+    possibili: ["viaggiavamo", "viaggeremo", "viaggiarono"],
+    corrette: ["viaggiavamo"]
+  },
+  {
+    frase: "(Verbo: GUARDARE) Tu ___ sempre i cartoni la domenica mattina.",
+    possibili: ["guardavi", "guarderai", "guardasti"],
+    corrette: ["guardavi"]
+  },
+  {
+    frase: "(Verbo: ABITARE) Loro ___ in un piccolo paese di montagna.",
+    possibili: ["abitavano", "abitarono", "abiteranno"],
+    corrette: ["abitavano"]
+  },
+  {
+    frase: "(Verbo: STUDIARE) Io ___ ogni sera dopo cena.",
+    possibili: ["studiavo", "studiai", "studierò"],
+    corrette: ["studiavo"]
+  },
+  {
+    frase: "(Verbo: METTERE) Mentre ___ in ordine i libri, è caduta una fotografia.",
+    possibili: ["mettevo", "misi", "metterò"],
+    corrette: ["mettevo"]
+  },
+  {
+    frase: "(Verbo: SENTIRE) Tu ___ un rumore strano?",
+    possibili: ["sentivi", "sentisti", "sentirai"],
+    corrette: ["sentivi"]
+  },
+  {
+    frase: "(Verbo: CAPIRE) Mentre il professore spiegava, io non ___ nulla.",
+    possibili: ["capivo", "capirò", "capii"],
+    corrette: ["capivo"]
+  },
+  {
+    frase: "(Verbo: FARE) Voi ___ spesso passeggiate in montagna.",
+    possibili: ["facevate", "faceste", "farete"],
+    corrette: ["facevate"]
+  },
+  {
+    frase: "(Verbo: DIRE) Mia nonna sempre mi ___ di essere gentile.",
+    possibili: ["diceva", "disse", "dirà"],
+    corrette: ["diceva"]
+  },
+  {
+    frase: "(Verbo: VEDERE) Ogni sera noi ___ le stelle dal terrazzo.",
+    possibili: ["vedevamo", "vedremo", "vedemmo"],
+    corrette: ["vedevamo"]
+  },
+  {
+    frase: "(Verbo: ASCOLTARE) Ogni mattina lei ___ la radio mentre faceva colazione.",
+    possibili: ["ascoltava", "ascoltò", "ascolterà"],
+    corrette: ["ascoltava"]
+  },
+  {
+    frase: "(Verbo: CAMMINARE) Mentre ___ sulla spiaggia, ho trovato una conchiglia.",
+    possibili: ["camminavo", "camminai", "camminerò"],
+    corrette: ["camminavo"]
+  },
+  {
+    frase: "(Verbo: MANGIARE) Ogni domenica noi ___ dalla nonna.",
+    possibili: ["mangiavamo", "mangiammo", "mangeremo"],
+    corrette: ["mangiavamo"]
+  },
+  {
+    frase: "(Verbo: PIOVERE) Quando siamo usciti, non ___ più.",
+    possibili: ["pioveva", "piovve", "pioverà"],
+    corrette: ["pioveva"]
+  }
 ]
+
+
+ 
 
     },
 
