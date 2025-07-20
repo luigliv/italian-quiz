@@ -23,6 +23,9 @@
       font-size: 2rem;
       color: #ff4081;
     }
+    descrizione {
+      font-size: 1rem !important;
+  }
 
     #frase {
       font-size: 1.5rem;
@@ -134,7 +137,7 @@
           ? parole.slice(0, 2).join(" ") + "<br>" + parole.slice(2).join(" ")
           : argomento;
 
-        document.getElementById("titolo_quiz").innerHTML = "<strong>" + titoloFormattato + "</strong> <div>Livello 24</div>";
+        document.getElementById("titolo_quiz").innerHTML = "<strong>" + titoloFormattato + "</strong> <div>Livello 25</div>";
         document.getElementById("descrizione").innerHTML = this.descrizione;
 
         if (this.argomento.toLowerCase() === "pronomi") {
