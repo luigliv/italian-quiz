@@ -1,280 +1,196 @@
   <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz - Livello 2</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Didattico – Menù</title>
   <style>
-    html {
-      font-size: 32px;
-     scroll-padding-bottom: 20vh;
+    :root {
+      font-size: 15px;
     }
 
     body {
+      margin: 0;
+      padding: 1rem;
+      font-family: Arial, sans-serif;
       background-color: #121212;
       color: #f0f0f0;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 0.6rem;
-      font-size: 1rem;
     }
 
     h1 {
-      font-size: 2rem;
-      color: #ff4081;
+      font-size: 5rem;
+      color: #ffcccb;
+      margin-bottom: 1rem;
     }
-    #descrizione {
-      font-size: 1rem ;
-        font-style: italic;
-  margin-bottom: 1.2rem;
-  }
 
-    #frase {
-      font-size: 1.4rem;
+    h2 {
+      font-size: 3rem;
+      color: #ffd6d6;
+      margin-bottom: 0.5rem;
+    }
+
+    p, li {
+      font-size: 2.5rem;
       line-height: 1.5;
     }
 
-    input {
-      padding: 0.6rem;
-      font-size: 1.5rem;
-      width: 15rem;
-      margin-top: 0.6rem;
-      background-color: #222;
-      color: #fff;
-      border: 1px solid #555;
+    ol {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+
+    ol li {
+      line-height: 1;
+      margin: 0.4rem 0;
+    }
+
+    ol li a {
+      font-size: 2rem;
+      color: #9cdcff;
+      text-decoration: underline;
+      display: inline-block;
+      padding: 0.4rem 0;
+    }
+
+    ol li a:hover {
+      background-color: #004466;
+      color: white;
     }
 
     button {
-      padding: 0.6rem 1.2rem;
-      font-size: 1.25rem;
-      margin-top: 0.6rem;
-      cursor: pointer;
-      background-color: #333;
-      color: #fff;
-      border: 1px solid #666;
-    }
-
-    button:hover {
-      background-color: #444;
-    }
-
-    #message {
-      margin-top: 1.2rem;
-      font-size: 1.4rem;
-    }
-
-    .risposta-corretta {
-      background-color: yellow;
-      font-size: 1.25rem;
-      padding: 0.6rem;
-      border: 0.15rem solid black;
-      display: inline-block;
-      color: black;
-    }
-
-    .risposta-evidenziata {
-      font-size: 1.375rem;
-      font-weight: bold;
-      color: #ff6666;
-    }
-
-    #torna-menu {
-      position: fixed;
-      bottom: 1.2rem;
-      left: 1.2rem;
-      background-color: #333;
       padding: 0.6rem 1rem;
-      border: 0.06rem solid #999;
+      font-size: 3rem;
+      text-align: left;
+      cursor: pointer;
+      border: none;
+      background-color: #c1272d;
+      color: white;
       border-radius: 0.5rem;
-      font-size: 1rem;
-      text-decoration: none;
-      color: #fff;
-      box-shadow: 0.125rem 0.125rem 0.3rem rgba(0,0,0,0.4);
-      z-index: 1000;
+      max-width: 16rem;
     }
 
-    #torna-menu:hover {
-      background-color: #555;
+    #scelta-livello {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      margin-top: 1rem;
     }
-    @media screen and (max-width: 600px) {
-  #frase {
-    font-size: 1.25rem !important;
-  }
- 
-       
-      
-      
-}
+
+    .contenitore-colonne {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .colonna {
+      flex: 1;
+    }
+
+    @media (max-width: 400px) {
+      :root {
+        font-size: 10px; /* Più piccolo per evitare caratteri giganti */
+      }
+
+      .contenitore-colonne {
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      #scelta-livello {
+        flex-direction: row;
+        gap: 1rem;
+      }
+
+      button {
+        font-size: 2rem;
+        width: 40%;
+        max-width: none;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      p, li {
+        font-size: 1.2rem;
+         line-height: 1.6;
+          margin-bottom: 0.3rem;
+      }
+
+      ol li a {
+        font-size: 1.2rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1 id="titolo_quiz">Caricamento...</h1>
-  <p id="descrizione" ></p>
-  <p id="frase">Caricamento...</p>
-  <input type="text" id="risposta" placeholder="Completa la frase" autocapitalize="off" autocomplete="off">
-  <button onclick="quiz.controllaRisposta()">Invia</button>
-  <p id="message"></p>
-  <div id="bottoni-continuazione"></div>
+  <h1>Quiz di grammatica</h1>
 
-  <script src="dati.js"></script>
+  <div id="argomenti">
+    <p>Scegli l'argomento:</p>
+    <div class="contenitore-colonne">
+      <div class="colonna">
+        <h2>VERBI</h2>
+        <ol>
+          <li><a href="#" onclick="seleziona('Verbo%20ESSERE.%20Presente%20indicativo'); return false;">ESSERE – Presente</a></li>
+          <li><a href="#" onclick="seleziona('Verbo%20AVERE.%20Presente%20indicativo'); return false;">AVERE – Presente</a></li>
+          <li><a href="#" onclick="seleziona('PARTICIPIO%20PASSATO'); return false;">PARTICIPIO PASSATO</a></li>
+          <li><a href="#" onclick="seleziona('PASSATO%20PROSSIMO'); return false;">PASSATO PROSSIMO</a></li>
+          <li><a href="#" onclick="seleziona('IMPERFETTO%20Indicativo'); return false;">IMPERFETTO</a></li>
+          <li><a href="#" onclick="seleziona('FUTURO%20semplice'); return false;">FUTURO SEMPLICE</a></li>
+          <li><a href="#" onclick="seleziona('VERBI%20REGOLARI.%20Presente%20indicativo'); return false;">VERBI REGOLARI. PRESENTE</a></li>
+          <li><a href="#" onclick="seleziona('VERBI%20IRREGOLARI.%20Presente%20indicativo'); return false;">VERBI IRREGOLARI. PRESENTE</a></li>
+        </ol>
+      </div>
+      <div class="colonna">
+        <h2>VARIE</h2>
+        <ol>
+          <li><a href="#" onclick="seleziona('ARTICOLI%20Determinativi'); return false;">ARTICOLI DETERMINATIVI</a></li>
+          <li><a href="#" onclick="seleziona('ARTICOLI%20Indeterminativi'); return false;">ARTICOLI INDETERMINATIVI</a></li>
+          <li><a href="#" onclick="seleziona('PREPOSIZIONI'); return false;">PREPOSIZIONI</a></li>
+          <li><a href="#" onclick="seleziona('PLURALI'); return false;">PLURALI</a></li>
+          <li><a href="#" onclick="seleziona('AGGETTIVI%20possessivi'); return false;">AGGETTIVI POSSESSIVI</a></li>
+          <li><a href="#" onclick="seleziona('PRONOMI'); return false;">PRONOMI</a></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <p id="argomento-scelto" style="display: none; font-weight: bold; margin-top: 1rem; font-size: 2.5rem;"></p>
+  <p id="livello" style="display: none; margin-top: 0.5rem; font-size: 2.5rem;">Scegli la modalità:</p>
+
+  <div id="scelta-livello" style="display: none;">
+    <button onclick="caricaLivello('bottoni')">Livello 1</button>
+    <button onclick="caricaLivello('input')">Livello 2</button>
+  </div>
+
   <script>
-    class Quiz {
-      constructor(argomento) {
-        this.argomento = argomento;
-        const sezione = dati[this.argomento];
+    let argomento = "";
 
-        if (!sezione || !Array.isArray(sezione.domande)) {
-          alert("Argomento non valido o dati mancanti.");
-          document.body.innerHTML = "<h2>Errore: dati non disponibili per l'argomento selezionato.</h2><a href='menu.html'>Torna al menu</a>";
-          return;
-        }
-
-        this.descrizione = sezione.descrizione || "";
-        this.domande = sezione.domande;
-
-        const parole = argomento.split(" ");
-        let titoloFormattato = parole.length >= 2
-          ? parole.slice(0, 2).join(" ") + "<br>" + parole.slice(2).join(" ")
-          : argomento;
-
-        document.getElementById("titolo_quiz").innerHTML = "<strong>" + titoloFormattato + "</strong> <div>Livello 2</div>";
-        document.getElementById("descrizione").innerHTML = this.descrizione;
-
-        if (this.argomento.toLowerCase() === "pronomi") {
-          document.getElementById("frase").style.fontSize = "1rem";
-          document.getElementById("frase").style.lineHeight = "1.1";
-        }
-
-        this.domandeSelezionate = [];
-        this.domandaCorrente = 0;
-        this.inizioTempo = null;
-        this.erroriConsecutivi = 0;
-        this.mostraRisposta = false;
-        this.rispostaDaRipetere = "";
-      }
-
-      caricaDati() {
-        this.inizioTempo = new Date();
-        this.domandeSelezionate = this.domande.sort(() => Math.random() - 0.5).slice(0, 5);
-        this.domandaCorrente = 0;
-        this.erroriConsecutivi = 0;
-        this.poniDomanda();
-        document.getElementById("bottoni-continuazione").innerHTML = "";
-      }
-
-      poniDomanda() {
-        const domanda = this.domandeSelezionate[this.domandaCorrente];
-        document.getElementById("frase").innerHTML = domanda.frase;
-        document.getElementById("risposta").value = "";
-        document.getElementById("message").textContent = "";
-        this.mostraRisposta = false;
-        this.rispostaDaRipetere = "";
-        document.getElementById("risposta").disabled = false;
-        document.getElementById("risposta").focus();
-      }
-
-      controllaRisposta() {
-        const rispostaUtente = document.getElementById("risposta").value.trim().toLowerCase();
-        const domanda = this.domandeSelezionate[this.domandaCorrente];
-        const corrette = domanda.corretta.map(r => r.toLowerCase());
-        const message = document.getElementById("message");
-
-        if (this.mostraRisposta) {
-          if (rispostaUtente === this.rispostaDaRipetere.toLowerCase()) {
-            message.textContent = "Esatto! Puoi continuare.";
-            message.style.color = "lightgreen";
-            setTimeout(() => {
-              this.domandaCorrente++;
-              if (this.domandaCorrente < this.domandeSelezionate.length) {
-                this.poniDomanda();
-              } else {
-                this.mostraRisultato();
-              }
-            }, 1000);
-          } else {
-            message.innerHTML = `<span class="risposta-corretta">Risposta corretta:<br><span class="risposta-evidenziata">${this.rispostaDaRipetere}</span><br>Scrivila per continuare.</span>`;
-            message.style.color = "white";
-          }
-          return;
-        }
-
-        if (corrette.includes(rispostaUtente)) {
-          message.textContent = "Risposta corretta!";
-          message.style.color = "lightgreen";
-          this.erroriConsecutivi = 0;
-          setTimeout(() => {
-            this.domandaCorrente++;
-            if (this.domandaCorrente < this.domandeSelezionate.length) {
-              this.poniDomanda();
-            } else {
-              this.mostraRisultato();
-            }
-          }, 1000);
-        } else {
-          this.erroriConsecutivi++;
-          if (this.erroriConsecutivi >= 3 && !this.mostraRisposta) {
-            this.mostraRispostaCorretta(corrette);
-          } else {
-            message.textContent = "Risposta sbagliata! Riprova.";
-            message.style.color = "orange";
-            setTimeout(() => {
-              message.textContent = "";
-            }, 1000);
-          }
-        }
-      }
-
-      mostraRispostaCorretta(risposteCorrette) {
-        const rispostaTesto = risposteCorrette[0];
-        const message = document.getElementById("message");
-        message.innerHTML = `<span class="risposta-corretta">Corretta:<span class="risposta-evidenziata">${rispostaTesto}</span><br>Scrivila per continuare.</span>`;
-        message.style.color = "white";
-        this.mostraRisposta = true;
-        this.rispostaDaRipetere = rispostaTesto;
-        this.erroriConsecutivi = 0;
-      }
-
-      mostraRisultato() {
-        const tempoFine = new Date();
-        const tempoTotale = Math.round((tempoFine - this.inizioTempo) / 1000);
-        document.getElementById("frase").textContent = "Hai completato il quiz!";
-        document.getElementById("risposta").style.display = "none";
-        const button = document.querySelector("button");
-        if (button) button.style.display = "none";
-        const message = document.getElementById("message");
-        message.innerHTML = `Tempo impiegato: ${tempoTotale} secondi.<br>Vuoi continuare?`;
-        const bottoniContainer = document.getElementById("bottoni-continuazione");
-        bottoniContainer.innerHTML = "";
-
-        const bottoneSi = document.createElement("button");
-        bottoneSi.textContent = "Sì";
-        bottoneSi.onclick = () => {
-          document.getElementById("risposta").style.display = "";
-          if (button) button.style.display = "";
-          this.caricaDati();
-        };
-
-        const bottoneNo = document.createElement("button");
-        bottoneNo.textContent = "No";
-        bottoneNo.onclick = () => {
-          message.textContent = "Ciao! Alla prossima.";
-          bottoniContainer.innerHTML = "";
-        };
-
-        bottoniContainer.appendChild(bottoneSi);
-        bottoniContainer.appendChild(bottoneNo);
-      }
+    function seleziona(scelta) {
+      argomento = decodeURIComponent(scelta);
+      document.getElementById("argomenti").style.display = "none";
+      document.getElementById("argomento-scelto").textContent = "Hai scelto: " + argomento;
+      document.getElementById("argomento-scelto").style.display = "block";
+      document.getElementById("livello").style.display = "block";
+      document.getElementById("scelta-livello").style.display = "flex";
     }
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const argomento = urlParams.get("argomento");
-    const quiz = new Quiz(argomento);
-    window.onload = () => {
-      if (quiz.domande) quiz.caricaDati();
-    };
-    console.log(dati);
+    function caricaLivello(livello) {
+      if (argomento === "VERBI REGOLARI. Presente indicativo") {
+        window.location.href = livello === "bottoni" ? "verbi_bottoni.html" : "verbi_input.html";
+      } else if (argomento === "VERBI IRREGOLARI. Presente indicativo") {
+        window.location.href = livello === "bottoni" ? "verbi_irregolari_bottoni.html" : "verbi_irregolari_input.html";
+      } else {
+        window.location.href = `base_${livello}.html?argomento=${encodeURIComponent(argomento)}`;
+      }
+    }
   </script>
-
-  <a href="index.html" id="torna-menu">← Menu</a>
 </body>
 </html>
