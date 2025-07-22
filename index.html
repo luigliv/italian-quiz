@@ -1,12 +1,12 @@
-   <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.3" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz Didattico – Menù</title>
   <style>
     :root {
-      font-size: 20px;
+      font-size: 15px;
     }
 
     body {
@@ -87,20 +87,44 @@
       flex: 1;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 400px) {
       :root {
-        font-size: 30px;
+        font-size: 10px; /* Più piccolo per evitare caratteri giganti */
       }
 
       .contenitore-colonne {
-        flex-direction: row;
-        gap: 2rem;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1rem;
       }
 
       #scelta-livello {
         flex-direction: row;
-        justify-content: flex-start;
-        gap: 1.5rem;
+        gap: 1rem;
+      }
+
+      button {
+        font-size: 2rem;
+        width: 40%;
+        max-width: none;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      p, li {
+        font-size: 1.2rem;
+         line-height: 1.6;
+          margin-bottom: 0.3rem;
+      }
+
+      ol li a {
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -120,7 +144,7 @@
           <li><a href="#" onclick="seleziona('PASSATO%20PROSSIMO'); return false;">PASSATO PROSSIMO</a></li>
           <li><a href="#" onclick="seleziona('IMPERFETTO%20Indicativo'); return false;">IMPERFETTO</a></li>
           <li><a href="#" onclick="seleziona('FUTURO%20semplice'); return false;">FUTURO SEMPLICE</a></li>
-          <li><a href="#" onclick="seleziona('VERBI%20REGOLARI.%20Presente%20indicativo'); return false;">VERBI REGOLARI. PRESENTE </a></li>
+          <li><a href="#" onclick="seleziona('VERBI%20REGOLARI.%20Presente%20indicativo'); return false;">VERBI REGOLARI. PRESENTE</a></li>
           <li><a href="#" onclick="seleziona('VERBI%20IRREGOLARI.%20Presente%20indicativo'); return false;">VERBI IRREGOLARI. PRESENTE</a></li>
         </ol>
       </div>
@@ -128,7 +152,7 @@
         <h2>VARIE</h2>
         <ol>
           <li><a href="#" onclick="seleziona('ARTICOLI%20Determinativi'); return false;">ARTICOLI DETERMINATIVI</a></li>
-          <li><a href="#" onclick="seleziona('ARTICOLI%20Indeterminativi'); return false;">ARTICOLI INDETERMINATIVI.</a></li>
+          <li><a href="#" onclick="seleziona('ARTICOLI%20Indeterminativi'); return false;">ARTICOLI INDETERMINATIVI</a></li>
           <li><a href="#" onclick="seleziona('PREPOSIZIONI'); return false;">PREPOSIZIONI</a></li>
           <li><a href="#" onclick="seleziona('PLURALI'); return false;">PLURALI</a></li>
           <li><a href="#" onclick="seleziona('AGGETTIVI%20possessivi'); return false;">AGGETTIVI POSSESSIVI</a></li>
@@ -138,7 +162,7 @@
     </div>
   </div>
 
-  <p id="argomento-scelto" style="display: none; font-weight: bold; margin-top: 1rem; font-size : 2.5rem";></p>
+  <p id="argomento-scelto" style="display: none; font-weight: bold; margin-top: 1rem; font-size: 2.5rem;"></p>
   <p id="livello" style="display: none; margin-top: 0.5rem; font-size: 2.5rem;">Scegli la modalità:</p>
 
   <div id="scelta-livello" style="display: none;">
@@ -150,9 +174,9 @@
     let argomento = "";
 
     function seleziona(scelta) {
-       argomento = decodeURIComponent(scelta); // 🔧 decodifica %20 in spazi
+      argomento = decodeURIComponent(scelta);
       document.getElementById("argomenti").style.display = "none";
-      document.getElementById("argomento-scelto").textContent = "Hai scelto: " + scelta.replaceAll("%20", " ");
+      document.getElementById("argomento-scelto").textContent = "Hai scelto: " + argomento;
       document.getElementById("argomento-scelto").style.display = "block";
       document.getElementById("livello").style.display = "block";
       document.getElementById("scelta-livello").style.display = "flex";
@@ -164,7 +188,7 @@
       } else if (argomento === "VERBI IRREGOLARI. Presente indicativo") {
         window.location.href = livello === "bottoni" ? "verbi_irregolari_bottoni.html" : "verbi_irregolari_input.html";
       } else {
-        window.location.href = `base_${livello}.html?argomento=${argomento}`;
+        window.location.href = `base_${livello}.html?argomento=${encodeURIComponent(argomento)}`;
       }
     }
   </script>
