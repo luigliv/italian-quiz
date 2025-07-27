@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8" />
@@ -17,19 +17,26 @@
             color: #f0f0f0;
         }
         h1 {
-            font-size: 2.1875rem; /* 35px */
+            font-size: 2rem; /* 35px */
             color: rgb(255, 0, 64);
         }
         #titolo-quiz {
             line-height: 1.2;
         }
         .bottone-risposta {
-            padding: 0.625rem 1.25rem; /* 10px 20px */
-            font-size: 1.8rem; /* 18px */
-            margin: 0.625rem; /* 10px */
-            cursor: pointer;
-            border-radius: 0.25rem;
-        }
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  max-width: 500px;
+    margin:0 auto;
+}
+.bottone-risposta:hover {
+  background-color: #1565c0;
+}
         #message {
             margin-top: 1.25rem; /* 20px */
             font-size: 1.25rem; /* 20px */
@@ -37,7 +44,7 @@
         #descrizione {
             font-style: italic;
             font-size: 1rem; /* 25px */
-            margin-bottom: 1.25rem; /* 20px */
+            margin-bottom: 1rem; /* 20px */
         }
         #frase {
             font-size: 1.25rem; /* 20px */
@@ -59,6 +66,14 @@
         #torna-menu:hover {
             background-color: #e0e0e0;
         }
+        #bottoni-risposte {
+  display: grid;
+  grid-template-columns: repeat(2, auto);   
+  gap: 0.625rem; /* spazio tra i bottoni */
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
       @media (max-width: 480px) {
   html {
     font-size: 20px;
@@ -67,7 +82,7 @@
     font-size: 1.125rem;
   }
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
     </style>
@@ -101,7 +116,7 @@
                       ? parole.slice(0, 2).join(" ") + "<br><span style='font-size: 80%;'>" + parole.slice(2).join(" ") + "</span>"
                     : argomento;
 
-                document.getElementById("titolo_quiz").innerHTML = "Quiz su:<br><strong>" + titoloFormattato + "</strong><br>Livello 1";
+                document.getElementById("titolo_quiz").innerHTML = "Quiz su:<br><strong>" + titoloFormattato + "</strong>";
                 document.getElementById("descrizione").innerHTML = this.descrizione;
 
                 this.domandeSelezionate = [];
