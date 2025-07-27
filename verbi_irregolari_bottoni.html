@@ -1,195 +1,308 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Verbi Irregolari - Bottoni</title>
+  <title>Verbi irregolari - Scelta multipla</title>
   <style>
-   html{font-size :34px}
-   
+ html {
+      font-size: 34px;
+    }
     body {
-      margin: 0;
-      padding: 2rem;
-      font-family: Arial, sans-serif;
       background-color: #121212;
-      color: #ffffff;
-      text-align: center;
-    }
-
-    h1 {
-      color: #ff6666;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    #frase {
-      font-size: 2rem;
-      margin: 2rem 0;
-    }
-
-    .bottone {
-      display: inline-block;
-      background-color: #1e1e1e;
-      border: 2px solid #555;
       color: #f0f0f0;
-      padding: 1rem 2rem;
-      margin: 1rem;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+    p{ font-size: 1.4rem;}
+    .frase {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+    .opzioni button {
       font-size: 1.5rem;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .bottone:hover {
-      background-color: #333;
-      border-color: #888;
-    }
-
-    .corretto {
-      background-color: #2e7d32 !important;
-      border-color: #66bb6a !important;
-    }
-
-    .sbagliato {
-      background-color: #c62828 !important;
-      border-color: #ef5350 !important;
-    }
-
-    #message {
-      font-size: 1.5rem;
-      margin-top: 2rem;
-      min-height: 2rem;
-    }
-
-    .bottone-si-no {
-      font-size: 1.2rem;
-      padding: 0.8rem 1.5rem;
-      margin: 1rem;
-      background-color: #ff6666;
-      color: white;
+      margin: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
       border: none;
-      border-radius: 5px;
       cursor: pointer;
-    }
-
-    #torna-menu {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
       background-color: #333;
-      padding: 10px 15px;
-      border: 1px solid #aaa;
-      border-radius: 8px;
-      font-size: 1rem;
-      text-decoration: none;
-      color: #f5f5f5;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-      z-index: 1000;
+      color: #f0f0f0;
     }
-
-    #torna-menu:hover {
+    .opzioni button:hover {
       background-color: #444;
     }
+    #messaggio {
+      margin-top: 1.5rem;
+      font-size: 1.4rem;
+    }
+      @media (max-width: 600px) {
+      :root {
+        font-size: 12px;
+      }
+    }
+    #torna-menu {
+  color: white;
+  display: block;
+  margin-top: 4rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+ 
+}
+#torna-menu {
+  color: white;
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+#torna-menu:hover {
+  text-decoration: underline;
+}
+
+#opzioni button {
+  margin: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.2rem;
+}
+
   </style>
 </head>
 <body>
-  <h1>Verbi Irregolari - Presente Indicativo</h1>
-  <div id="frase">Caricamento…</div>
-  <div id="bottoni"></div>
-  <div id="message"></div>
-  <div id="bottoni-continuazione"></div>
+
+  <h1>Verbi irregolari</h1>
+   <p>Es: dire => tu <u>dici</u></p>
+
+  <div class="frase" id="frase"></div>
+  <div class="opzioni" id="opzioni"></div>
+  <div id="messaggio"></div>
 
   <script>
-    const verbiIrregolari = [
-      { forma: "vado", persona: "io", verbo: "andare", opzioni: ["vado", "vai", "va"] },
-      { forma: "puoi", persona: "tu", verbo: "potere", opzioni: ["puoi", "può", "posso"] },
-      { forma: "dà", persona: "lui/lei", verbo: "dare", opzioni: ["da", "dà", "danno"] },
-      { forma: "stiamo", persona: "noi", verbo: "stare", opzioni: ["stiamo", "stiate", "siamo"] },
-      { forma: "fate", persona: "voi", verbo: "fare", opzioni: ["fanno", "fate", "farete"] },
-      { forma: "vengono", persona: "loro", verbo: "venire", opzioni: ["vengono", "vanno", "sono"] },
-      { forma: "posso", persona: "io", verbo: "potere", opzioni: ["posso", "puoi", "può"] },
-      { forma: "devi", persona: "tu", verbo: "dovere", opzioni: ["devo", "devono", "devi"] },
-      { forma: "dice", persona: "lui/lei", verbo: "dire", opzioni: ["dice", "dicete", "dicevano"] },
-      { forma: "usciamo", persona: "noi", verbo: "uscire", opzioni: ["usciamo", "uscite", "esco"] }
-    ];
+    const frasi = [
+          { forma: "vado", persona: "io", verbo: "andare", opzioni: ["vado", "vai", "ando"] },
+  { forma: "vai", persona: "tu", verbo: "andare", opzioni: ["andavi", "vai", "andi"] },
+  { forma: "va", persona: "lui/lei", verbo: "andare", opzioni: ["anda", "va", "vai"] },
+  { forma: "andiamo", persona: "noi", verbo: "andare", opzioni: ["andiamo", "andate", "vadiamo"] },
+  { forma: "andate", persona: "voi", verbo: "andare", opzioni: ["vadate", "andate", "andiamo"] },
+  { forma: "vanno", persona: "loro", verbo: "andare", opzioni: ["vanno", "va", "andano"] },
 
-    class Quiz {
-      constructor(domande) {
-        this.domande = domande;
-        this.indice = 0;
-        this.inizio = new Date();
-        this.mostraDomanda();
-      }
+  { forma: "do", persona: "io", verbo: "dare", opzioni: ["do'", "do", "dai"] },
+  { forma: "dai", persona: "tu", verbo: "dare", opzioni: ["davi", "date", "dai"] },
+  { forma: "dà", persona: "lui/lei", verbo: "dare", opzioni: ["dà", "dava", "da"] },
+  { forma: "diamo", persona: "noi", verbo: "dare", opzioni: ["diamo", "damo", "davamo"] },
+  { forma: "date", persona: "voi", verbo: "dare", opzioni: ["date", "davi", "da'"] },
+  { forma: "danno", persona: "loro", verbo: "dare", opzioni: ["davano", "danno", "date"] },
 
-      mostraDomanda() {
-        const d = this.domande[this.indice];
-        const frase = `"${d.verbo}" → ${d.persona} ___ <br>(Verbo: <strong>${d.verbo.toUpperCase()}</strong>)`;
-        document.getElementById("frase").innerHTML = frase;
+  { forma: "dico", persona: "io", verbo: "dire", opzioni: ["dico", "dicevo", "dice"] },
+  { forma: "dici", persona: "tu", verbo: "dire", opzioni: ["dicevi", "dici", "dice"] },
+  { forma: "dice", persona: "lui/lei", verbo: "dire", opzioni: ["dice", "dico", "diceva"] },
+  { forma: "diciamo", persona: "noi", verbo: "dire", opzioni: ["dicevamo", "diciamo", "dite"] },
+  { forma: "dite", persona: "voi", verbo: "dire", opzioni: ["dite", "dicevate", "dicete"] },
+  { forma: "dicono", persona: "loro", verbo: "dire", opzioni: ["dicevano", "dicono", "dite"] },
 
-        const bottoni = document.getElementById("bottoni");
-        bottoni.innerHTML = "";
-        d.opzioni.forEach(op => {
-          const b = document.createElement("button");
-          b.textContent = op;
-          b.className = "bottone";
-          b.onclick = () => this.controllaRisposta(op, b);
-          bottoni.appendChild(b);
-        });
+  { forma: "faccio", persona: "io", verbo: "fare", opzioni: ["fai", "faccio", "facevo"] },
+  { forma: "fai", persona: "tu", verbo: "fare", opzioni: ["faci", "fai", "facci"] },
+  { forma: "fa", persona: "lui/lei", verbo: "fare", opzioni: ["fai", "fa", "fa'"] },
+  { forma: "facciamo", persona: "noi", verbo: "fare", opzioni: ["facciamo", "fanno", "facevamo"] },
+  { forma: "fate", persona: "voi", verbo: "fare", opzioni: ["facete", "fate", "fanno"] },
+  { forma: "fanno", persona: "loro", verbo: "fare", opzioni: ["fanno", "fa", "facciano"] },
 
-        document.getElementById("message").textContent = "";
-      }
+  { forma: "posso", persona: "io", verbo: "potere", opzioni: ["posso", "poto", "può"] },
+  { forma: "puoi", persona: "tu", verbo: "potere", opzioni: ["può", "puoi", "potevi"] },
+  { forma: "può", persona: "lui/lei", verbo: "potere", opzioni: ["puo", "può", "pote"] },
+  { forma: "possiamo", persona: "noi", verbo: "potere", opzioni: ["possiamo", "potete", "potiamo"] },
+  { forma: "potete", persona: "voi", verbo: "potere", opzioni: ["potevate", "possete", "potete"] },
+  { forma: "possono", persona: "loro", verbo: "potere", opzioni: ["possono", "potete", "ponno"] },
 
-      controllaRisposta(risposta, bottone) {
-        const corretta = this.domande[this.indice].forma;
-        const bottoni = document.querySelectorAll(".bottone");
+  { forma: "esco", persona: "io", verbo: "uscire", opzioni: ["esci", "esco", "uscio"] },
+  { forma: "esci", persona: "tu", verbo: "uscire", opzioni: ["esci", "esco", "usci"] },
+  { forma: "esce", persona: "lui/lei", verbo: "uscire", opzioni: ["esce", "usce", "esci"] },
+  { forma: "usciamo", persona: "noi", verbo: "uscire", opzioni: ["usciamo", "esciamo", "uscivamo"] },
+  { forma: "uscite", persona: "voi", verbo: "uscire", opzioni: ["escite", "uscite", "usciamo"] },
+  { forma: "escono", persona: "loro", verbo: "uscire", opzioni: ["esce", "usciono", "escono"] },
 
-        bottoni.forEach(b => b.disabled = true);
+  { forma: "vengo", persona: "io", verbo: "venire", opzioni: ["vengo", "venio", "vieno"] },
+  { forma: "vieni", persona: "tu", verbo: "venire", opzioni: ["viene", "venii", "vieni"] },
+  { forma: "viene", persona: "lui/lei", verbo: "venire", opzioni: ["venie", "viene", "vienie"] },
+  { forma: "veniamo", persona: "noi", verbo: "venire", opzioni: ["veniamo", "vieniamo", "vienamo"] },
+  { forma: "venite", persona: "voi", verbo: "venire", opzioni: ["vienite", "venite", "veniate"] },
+  { forma: "vengono", persona: "loro", verbo: "venire", opzioni: ["vengono", "viengono", "vengano"] },
 
-        if (risposta === corretta) {
-          bottone.classList.add("corretto");
-          document.getElementById("message").textContent = "✔ Corretto!";
-        } else {
-          bottone.classList.add("sbagliato");
-          document.getElementById("message").textContent = `✖ Sbagliato. Risposta corretta: ${corretta}`;
-        }
+  { forma: "voglio", persona: "io", verbo: "volere", opzioni: ["voglio", "volo", "volio"] },
+  { forma: "vuoi", persona: "tu", verbo: "volere", opzioni: ["voi", "vuoli", "vuoi"] },
+  { forma: "vuole", persona: "lui/lei", verbo: "volere", opzioni: ["vuole", "vole", "voglie"] },
+  { forma: "vogliamo", persona: "noi", verbo: "volere", opzioni: ["voliamo", "vogliamo", "volemo"] },
+  { forma: "volete", persona: "voi", verbo: "volere", opzioni: ["vogliete", "volete", "vogliate"] },
+  { forma: "vogliono", persona: "loro", verbo: "volere", opzioni: ["vogliono", "voliono", "vuolono"] },
 
-        setTimeout(() => {
-          this.indice++;
-          if (this.indice < this.domande.length) {
-            this.mostraDomanda();
-          } else {
-            this.fineQuiz();
-          }
-        }, 1000);
-      }
+  { forma: "bevo", persona: "io", verbo: "bere", opzioni: ["beve", "bevo", "beva"] },
+  { forma: "bevi", persona: "tu", verbo: "bere", opzioni: ["beve", "bevi", "beva"] },
+  { forma: "beve", persona: "lui/lei", verbo: "bere", opzioni: ["beve", "beva", "bevo"] },
+  { forma: "beviamo", persona: "noi", verbo: "bere", opzioni: ["beviamo", "bevamo", "bevano"] },
+  { forma: "bevete", persona: "voi", verbo: "bere", opzioni: ["bevono", "bevete", "bevate"] },
+  { forma: "bevono", persona: "loro", verbo: "bere", opzioni: ["bevono", "beono", "beve"] },
 
-      fineQuiz() {
-        const fine = new Date();
-        const secondi = Math.round((fine - this.inizio) / 1000);
-        document.getElementById("frase").textContent = "Quiz terminato!";
-        document.getElementById("bottoni").innerHTML = "";
-        document.getElementById("message").innerHTML = `Hai completato il quiz in <strong>${secondi}</strong> secondi.`;
+  { forma: "muoio", persona: "io", verbo: "morire", opzioni: ["muoro", "muoio", "morio"] },
+  { forma: "muori", persona: "tu", verbo: "morire", opzioni: ["mori", "muori", "muore"] },
+  { forma: "muore", persona: "lui/lei", verbo: "morire", opzioni: ["muore", "more", "moria"] },
+  { forma: "moriamo", persona: "noi", verbo: "morire", opzioni: ["morimo", "muoiamo", "moriamo"] },
+  { forma: "morite", persona: "voi", verbo: "morire", opzioni: ["morite", "moriate", "muorite"] },
+  { forma: "muoiono", persona: "loro", verbo: "morire", opzioni: ["muoiono", "muorono", "moriono"] },
 
-        const cont = document.getElementById("bottoni-continuazione");
-        cont.innerHTML = "";
+  { forma: "pongo", persona: "io", verbo: "porre", opzioni: ["pono", "pongo", "ponio"] },
+  { forma: "poni", persona: "tu", verbo: "porre", opzioni: ["pone", "poni", "pona"] },
+  { forma: "pone", persona: "lui/lei", verbo: "porre", opzioni: ["pone", "pongo", "pona"] },
+  { forma: "poniamo", persona: "noi", verbo: "porre", opzioni: ["poniamo", "ponete", "ponevamo"] },
+  { forma: "ponete", persona: "voi", verbo: "porre", opzioni: ["poniete", "ponete", "poniate"] },
+  { forma: "pongono", persona: "loro", verbo: "porre", opzioni: ["pongono", "ponno", "pono"] },
 
-        const r = document.createElement("button");
-        r.textContent = "Ricomincia";
-        r.className = "bottone-si-no";
-        r.onclick = () => window.location.reload();
-        cont.appendChild(r);
+  { forma: "so", persona: "io", verbo: "sapere", opzioni: ["so", "sapo", "sò"] },
+  { forma: "sai", persona: "tu", verbo: "sapere", opzioni: ["sapi", "sà", "sai"] },
+  { forma: "sa", persona: "lui/lei", verbo: "sapere", opzioni: ["sà", "sa", "sape"] },
+  { forma: "sappiamo", persona: "noi", verbo: "sapere", opzioni: ["sapiamo", "sappiamo", "sanno"] },
+  { forma: "sapete", persona: "voi", verbo: "sapere", opzioni: ["sapete", "sappete", "sappiate"] },
+  { forma: "sanno", persona: "loro", verbo: "sapere", opzioni: ["sanno", "sapieno", "sapete"] },
 
-        const m = document.createElement("button");
-        m.textContent = "Torna al Menu";
-        m.className = "bottone-si-no";
-        m.onclick = () => window.location.href = "menu.html";
-        cont.appendChild(m);
+  { forma: "siedo", persona: "io", verbo: "sedere", opzioni: ["sedo", "siedo", "sedio"] },
+  { forma: "siedi", persona: "tu", verbo: "sedere", opzioni: ["siedi", "sedevi", "siedo"] },
+  { forma: "siede", persona: "lui/lei", verbo: "sedere", opzioni: ["siede", "sede", "sedie"] },
+  { forma: "sediamo", persona: "noi", verbo: "sedere", opzioni: ["sediamo", "siediamo", "sedamo"] },
+  { forma: "sedete", persona: "voi", verbo: "sedere", opzioni: ["siedete", "sedete", "sediete"] },
+  { forma: "siedono", persona: "loro", verbo: "sedere", opzioni: ["siedono", "sedono", "sediono"] },
+
+  { forma: "odo", persona: "io", verbo: "udire", opzioni: ["odo", "udo", "odio"] },
+  { forma: "odi", persona: "tu", verbo: "udire", opzioni: ["odi", "ode", "udi"] },
+  { forma: "ode", persona: "lui/lei", verbo: "udire", opzioni: ["ude", "ode", "odo"] },
+  { forma: "udiamo", persona: "noi", verbo: "udire", opzioni: ["udivamo", "udite", "udiamo"] },
+  { forma: "udite", persona: "voi", verbo: "udire", opzioni: ["udite", "odite", "udiate"] },
+  { forma: "odono", persona: "loro", verbo: "udire", opzioni: ["odino", "udono", "odono"] },
+  
+{ forma: "devo", persona: "io", verbo: "dovere", opzioni: ["deve", "devo", "dobbiamo"] },
+{ forma: "devi", persona: "tu", verbo: "dovere", opzioni: ["devi", "devo", "deve"] },
+{ forma: "deve", persona: "lui/lei", verbo: "dovere", opzioni: ["deve", "devo", "deva"] },
+{ forma: "dobbiamo", persona: "noi", verbo: "dovere", opzioni: ["dobbiamo", "doviamo", "dobiamo"] },
+{ forma: "dovete", persona: "voi", verbo: "dovere", opzioni: ["dovete", "devete", "debete"] },
+{ forma: "devono", persona: "loro", verbo: "dovere", opzioni: ["devono", "dovete", "devano"] },
+
+{ forma: "sto", persona: "io", verbo: "stare", opzioni: ["sto", "sta", "stò"] },
+{ forma: "stai", persona: "tu", verbo: "stare", opzioni: ["stai", "sta", "stia"] },
+{ forma: "sta", persona: "lui/lei", verbo: "stare", opzioni: ["sta", "stia", "stà"] },
+{ forma: "stiamo", persona: "noi", verbo: "stare", opzioni: ["stiamo", "stanno", "stamo"] },
+{ forma: "state", persona: "voi", verbo: "stare", opzioni: ["state", "stanno", "stiamo"] },
+{ forma: "stanno", persona: "loro", verbo: "stare", opzioni: ["sta", "stanno", "stiano"] },
+
+{ forma: "scelgo", persona: "io", verbo: "scegliere", opzioni: ["scelgo", "sceglio", "sceglie"] },
+{ forma: "scegli", persona: "tu", verbo: "scegliere", opzioni: ["scegli", "scelgo", "sceglie"] },
+{ forma: "sceglie", persona: "lui/lei", verbo: "scegliere", opzioni: ["sceglie", "scegli", "scelgo"] },
+{ forma: "scegliamo", persona: "noi", verbo: "scegliere", opzioni: ["scegliamo", "sceliamo", "sceglie"] },
+{ forma: "scegliete", persona: "voi", verbo: "scegliere", opzioni: ["scegliete", "scegliamo", "sceliete"] },
+{ forma: "scelgono", persona: "loro", verbo: "scegliere", opzioni: ["scelgono", "scegliete", "scelgano"] },
+
+{ forma: "tengo", persona: "io", verbo: "tenere", opzioni: ["tengo", "tieno", "tiene"] },
+{ forma: "tieni", persona: "tu", verbo: "tenere", opzioni: ["tieni", "tengo", "tiene"] },
+{ forma: "tiene", persona: "lui/lei", verbo: "tenere", opzioni: ["tiene", "tengo", "tene"] },
+{ forma: "teniamo", persona: "noi", verbo: "tenere", opzioni: ["teniamo", "tieniamo", "tengono"] },
+{ forma: "tenete", persona: "voi", verbo: "tenere", opzioni: ["tenete", "tengono", "teniete"] },
+{ forma: "tengono", persona: "loro", verbo: "tenere", opzioni: ["tengono", "tenete", "tengano"] },
+
+{ forma: "salgo", persona: "io", verbo: "salire", opzioni: ["salgo", "salisco", "salo"] },
+{ forma: "sali", persona: "tu", verbo: "salire", opzioni: ["sali", "salgo", "sale"] },
+{ forma: "sale", persona: "lui/lei", verbo: "salire", opzioni: ["sale", "salgo", "salie"] },
+{ forma: "saliamo", persona: "noi", verbo: "salire", opzioni: ["saliamo", "salite", "salamo"] },
+{ forma: "salite", persona: "voi", verbo: "salire", opzioni: ["salite", "salate", "salete"] },
+{ forma: "salgono", persona: "loro", verbo: "salire", opzioni: ["salamo", "salite", "saliamo"] }
+];
+    
+ 
+  let domandeCorrette = 0;
+  let erroriConsecutivi = 0;
+  let rispostaGiusta = "";
+  let tempoInizio = Date.now();
+
+  function scegliFraseCasuale() {
+  if (domandeCorrette >= 5) {
+  const tempoTotale = Math.floor((Date.now() - tempoInizio) / 1000);
+  document.getElementById("frase").textContent = "🎉 Complimenti! Hai completato il quiz.";
+  document.getElementById("opzioni").innerHTML = `
+    <p>⏱️ Tempo impiegato: ${tempoTotale} secondi</p>
+    <button onclick="ricominciaQuiz()">🔁 Sì, continua</button>
+    <a href="index.html" id="torna-menu">❌ No, torna al menu</a>
+  `;
+  document.getElementById("messaggio").textContent = "";
+  return;
+}
+
+
+    const domanda = frasi[Math.floor(Math.random() * frasi.length)];
+    const fraseHTML = `${domanda.verbo} => <strong>${domanda.persona}</strong> ___`;
+    document.getElementById("frase").innerHTML = fraseHTML;
+
+    const opzioniContainer = document.getElementById("opzioni");
+    opzioniContainer.innerHTML = "";
+    document.getElementById("messaggio").textContent = "";
+    rispostaGiusta = domanda.forma;
+    erroriConsecutivi = 0;
+
+    domanda.opzioni.forEach(opzione => {
+      const bottone = document.createElement("button");
+      bottone.textContent = opzione;
+      bottone.onclick = () => gestisciRisposta(opzione, bottone);
+      opzioniContainer.appendChild(bottone);
+    });
+  }
+
+  function gestisciRisposta(rispostaUtente, bottone) {
+    const messaggio = document.getElementById("messaggio");
+
+    if (rispostaUtente === rispostaGiusta) {
+      messaggio.textContent = "✅ Corretto!";
+      domandeCorrette++;
+      setTimeout(scegliFraseCasuale, 1000);
+    } else {
+      erroriConsecutivi++;
+      messaggio.textContent = "❌ Riprova.";
+
+      if (erroriConsecutivi === 3) {
+        messaggio.textContent = `✖ Sbagliato. Risposta corretta: ${rispostaGiusta}`;
+        evidenziaRispostaCorretta();
+        disabilitaTutti();
       }
     }
+  }
 
-    window.onload = () => new Quiz([...verbiIrregolari]);
-  </script>
+  function evidenziaRispostaCorretta() {
+    const bottoni = document.querySelectorAll("#opzioni button");
+    bottoni.forEach(btn => {
+      if (btn.textContent === rispostaGiusta) {
+        btn.style.backgroundColor = "green";
+        btn.disabled = false;
+        btn.onclick = () => {
+          document.getElementById("messaggio").textContent = "✅ Corretto!";
+          domandeCorrette++;
+          setTimeout(scegliFraseCasuale, 2000);
+        };
+      } else {
+        btn.disabled = true;
+      }
+    });
+  }
 
-  <a href="menu.html" id="torna-menu">← Menu</a>
+  function disabilitaTutti() {
+    const bottoni = document.querySelectorAll("#opzioni button");
+    bottoni.forEach(btn => btn.disabled = true);
+  }
+
+  scegliFraseCasuale();
+  function ricominciaQuiz() {
+  domandeCorrette = 0;
+  tempoInizio = Date.now();
+  scegliFraseCasuale();
+}
+</script>
+
+<a href="index.html" id="torna-menu">← Menu</a>
+
 </body>
 </html>
