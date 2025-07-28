@@ -7,7 +7,7 @@
   <title>Quiz - Livello 2</title>
   <style>
     html {
-      font-size: 25px;
+      font-size: 32px;
      scroll-padding-bottom: 20vh;
     }
 
@@ -95,7 +95,11 @@
     #torna-menu:hover {
       background-color: #555;
     }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 400px) {
+      :root {
+        font-size: 12px; /* Più piccolo per evitare caratteri giganti */
+      }
+    
   #frase {
     font-size: 1.25rem !important;
   }
