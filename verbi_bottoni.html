@@ -1,8 +1,8 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Verbi Regolari – Livello 1 (Bottoni)</title>
   <style>
     html {
@@ -73,11 +73,16 @@
       font-size: 1rem;
       text-decoration: none;
       color: #f5f5f5;
-      box-shadow: 0.1rem 0.1rem 0.3rem rgba(0,0,0,0.5);
+      box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.5);
       z-index: 1000;
     }
     #torna-menu:hover {
       background-color: #3a3a3a;
+    }
+    @media (max-width: 600px) {
+      :root {
+        font-size: 12px;
+      }
     }
   </style>
 </head>
@@ -92,12 +97,12 @@
 
   <script>
     const listaVerbi = [
-      "parlare","mangiare","lavorare","studiare","amare",
-      "ascoltare","guardare","comprare","pensare","arrivare",
-      "dimenticare","cercare","pagare","festeggiare","viaggiare","abitare",
-      "leggere","credere","scrivere","prendere","mettere",
-      "vedere","ricevere","spendere","rispondere","correre",
-      "dormire","aprire","partire","finire","capire"
+      "parlare", "mangiare", "lavorare", "studiare", "amare",
+      "ascoltare", "guardare", "comprare", "pensare", "arrivare",
+      "dimenticare", "cercare", "pagare", "festeggiare", "viaggiare", "abitare",
+      "leggere", "credere", "scrivere", "prendere", "mettere",
+      "vedere", "ricevere", "spendere", "rispondere", "correre",
+      "dormire", "aprire", "partire", "finire", "capire"
     ];
     const pronomi = [
       { soggetto: "io", indice: 0 },
@@ -108,11 +113,11 @@
       { soggetto: "loro", indice: 5 }
     ];
     const des = {
-      are: ["o","i","a","iamo","ate","ano"],
-      ere: ["o","i","e","iamo","ete","ono"],
-      ire: ["o","i","e","iamo","ite","ono"]
+      are: ["o", "i", "a", "iamo", "ate", "ano"],
+      ere: ["o", "i", "e", "iamo", "ete", "ono"],
+      ire: ["o", "i", "e", "iamo", "ite", "ono"]
     };
-    const iscVerbs = ["finire","capire"];
+    const iscVerbs = ["finire", "capire"];
 
     class QuizBottoni {
       constructor() {
@@ -151,11 +156,8 @@
           return;
         }
 
-        this.tentativi = 0;
-
         const { verbo, pronome } = this.listaDomande[this.domandaCorrente];
-        document.getElementById("frase-verbo")
-          .textContent = `"${verbo}" → ${pronome.soggetto} ___`;
+        document.getElementById("frase-verbo").textContent = `"${verbo}" → ${pronome.soggetto} ___`;
 
         const isIsc = iscVerbs.includes(verbo),
               isCare = verbo.endsWith("care"),
@@ -212,37 +214,22 @@
         const tutti = Array.from(document.querySelectorAll(".bottone-risposta"));
         const corr = this.ultimaCorretta;
 
-        if (btnC.classList.contains("corretta-evidenziata")) {
-          this.domandaCorrente++;
-          this.mostraDomanda();
+        if (scel !== corr) {
+          const msg = document.getElementById("message");
+          msg.style.color = "#f44336";
+          msg.textContent = "❌ Riprova";
           return;
         }
 
-        if (scel !== corr) {
-          this.tentativi++;
-          btnC.disabled = true;
-          const msg = document.getElementById("message");
-          msg.style.color = "#f44336";
-
-          if (this.tentativi >= 3) {
-            tutti.forEach(b => {
-              b.disabled = true;
-              if (b.textContent === corr) b.classList.add("corretta-evidenziata");
-            });
-            msg.textContent = "Hai sbagliato 3 volte. La risposta corretta è evidenziata. Cliccala per continuare.";
-          } else {
-            msg.textContent = `❌ Sbagliato. Tentativi: ${this.tentativi}/3`;
-          }
-        } else {
-          tutti.forEach(b => b.disabled = true);
-          const msg = document.getElementById("message");
-          msg.textContent = "✔ Corretto!";
-          msg.style.color = "#4caf50";
-          setTimeout(() => {
-            this.domandaCorrente++;
-            this.mostraDomanda();
-          }, 1000);
-        }
+        // Se la risposta è corretta
+        tutti.forEach(b => b.disabled = true);
+        const msg = document.getElementById("message");
+        msg.textContent = "✔ Corretto!";
+        msg.style.color = "#4caf50";
+        setTimeout(() => {
+          this.domandaCorrente++;
+          this.mostraDomanda();
+        }, 1000);
       }
 
       mostraRisultato() {
