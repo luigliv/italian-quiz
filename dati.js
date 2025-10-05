@@ -5,6 +5,27 @@
         descrizione: "Es: Tu <u>sei</u> alto.",
         domande: [
         { frase: "Luca ___ allegro", corretta: ["è"], risposte: ["sei", "e", "è", "siete"] },
+          { frase: "Io ___ felice", corretta: ["sono"], risposte: ["sono", "sei", "è", "siamo"] },
+{ frase: "Tu ___ simpatico", corretta: ["sei"], risposte: ["sei", "è", "sono", "siete"] },
+{ frase: "Noi ___ stanchi", corretta: ["siamo"], risposte: ["siamo", "sono", "siete", "è"] },
+{ frase: "Voi ___ gentili", corretta: ["siete"], risposte: ["siete", "siamo", "sono", "è"] },
+{ frase: "Loro ___ allegri", corretta: ["sono"], risposte: ["sono", "siete", "è", "siamo"] },
+{ frase: "Carla ___ malata", corretta: ["è"], risposte: ["è", "e", "sono", "siete"] },
+{ frase: "Gianni ___ occupato", corretta: ["è"], risposte: ["è", "e", "sono", "siamo"] },
+{ frase: "Noi ___ a casa", corretta: ["siamo"], risposte: ["siamo", "sono", "siete", "è"] },
+{ frase: "Tu ___ in ritardo", corretta: ["sei"], risposte: ["sei", "è", "sono", "siete"] },
+{ frase: "Loro ___ al mare", corretta: ["sono"], risposte: ["sono", "siete", "è", "siamo"] },
+{ frase: "Io ___ a scuola", corretta: ["sono"], risposte: ["sono", "sei", "è", "siamo"] },
+{ frase: "Paolo e io ___ amici", corretta: ["siamo"], risposte: ["siamo", "siete", "sono", "è"] },
+{ frase: "Voi ___ fortunati", corretta: ["siete"], risposte: ["siete", "siamo", "sono", "è"] },
+{ frase: "Le ragazze ___ felici", corretta: ["sono"], risposte: ["sono", "siete", "è", "siamo"] },
+{ frase: "Tu ___ gentile", corretta: ["sei"], risposte: ["sei", "è", "sono", "siamo"] },
+{ frase: "Io e Marco ___ in vacanza", corretta: ["siamo"], risposte: ["siamo", "sono", "siete", "è"] },
+{ frase: "I gatti ___ sul divano", corretta: ["sono"], risposte: ["sono", "siete", "è", "siamo"] },
+{ frase: "Mia madre ___ in giardino", corretta: ["è"], risposte: ["è", "e", "sono", "siete"] },
+{ frase: "Tu e Giulia ___ sorelle", corretta: ["siete"], risposte: ["siete", "siamo", "sono", "è"] },
+{ frase: "Gli studenti ___ in classe", corretta: ["sono"], risposte: ["sono", "siete", "è", "siamo"] },
+
   { frase: "Giulia ___ simpatica", corretta: ["è"], risposte: ["e", "è", "sono", "siete"] },
   { frase: "Marco ___ gentile", corretta: ["è"], risposte: ["è", "e", "sono", "siete"] },
   { frase: "Io e te ___ in classe", corretta: ["siamo"], risposte: ["siamo", "sono", "siete", "è"] },
@@ -976,4 +997,5 @@ PLURALI :  {
   };
   
   
+
 
